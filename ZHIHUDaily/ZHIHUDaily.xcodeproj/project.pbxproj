@@ -7,25 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C24245F720141A72FE15714 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */; };
+		D3743EF81C1A5F7A00A222BB /* YSYCustomerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */; };
+		D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFC1C1AA00B00A222BB /* YSY_HttpRequest.m */; };
+		D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFF1C1AA07500A222BB /* YSY_NetWorkManage.m */; };
+		D3743F051C1AA76300A222BB /* YSY_Api.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743F041C1AA76300A222BB /* YSY_Api.m */; };
+		D375C34A1C17FC060040E03E /* YSYMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3491C17FC060040E03E /* YSYMainVC.m */; };
+		D375C34D1C17FC1B0040E03E /* YSYLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C34C1C17FC1B0040E03E /* YSYLeftVC.m */; };
+		D375C3521C180DCF0040E03E /* YSYSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3511C180DCF0040E03E /* YSYSetVC.m */; };
+		D375C3551C180E020040E03E /* YSYNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3541C180E020040E03E /* YSYNewsVC.m */; };
+		D375C3581C180E270040E03E /* YSYCollectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3571C180E270040E03E /* YSYCollectVC.m */; };
+		D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */; };
+		D375C3601C1831680040E03E /* YSYRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C35F1C1831680040E03E /* YSYRootVC.m */; };
 		D377D5B11C16D270000000E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B01C16D270000000E9 /* main.m */; };
 		D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B31C16D270000000E9 /* AppDelegate.m */; };
-		D377D5B71C16D270000000E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B61C16D270000000E9 /* ViewController.m */; };
-		D377D5BA1C16D270000000E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D377D5B81C16D270000000E9 /* Main.storyboard */; };
 		D377D5BC1C16D270000000E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D377D5BB1C16D270000000E9 /* Assets.xcassets */; };
-		D377D5BF1C16D270000000E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D377D5BD1C16D270000000E9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		243E3377E580A4F62F55B4E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		42F38086E8FF062ECC36D0A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCustomerBtn.h; sourceTree = "<group>"; };
+		D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCustomerBtn.m; sourceTree = "<group>"; };
+		D3743EFB1C1AA00B00A222BB /* YSY_HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSY_HttpRequest.h; sourceTree = "<group>"; };
+		D3743EFC1C1AA00B00A222BB /* YSY_HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSY_HttpRequest.m; sourceTree = "<group>"; };
+		D3743EFE1C1AA07500A222BB /* YSY_NetWorkManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSY_NetWorkManage.h; sourceTree = "<group>"; };
+		D3743EFF1C1AA07500A222BB /* YSY_NetWorkManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSY_NetWorkManage.m; sourceTree = "<group>"; };
+		D3743F031C1AA76300A222BB /* YSY_Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSY_Api.h; sourceTree = "<group>"; };
+		D3743F041C1AA76300A222BB /* YSY_Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSY_Api.m; sourceTree = "<group>"; };
+		D375C3481C17FC060040E03E /* YSYMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYMainVC.h; sourceTree = "<group>"; };
+		D375C3491C17FC060040E03E /* YSYMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYMainVC.m; sourceTree = "<group>"; };
+		D375C34B1C17FC1B0040E03E /* YSYLeftVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYLeftVC.h; sourceTree = "<group>"; };
+		D375C34C1C17FC1B0040E03E /* YSYLeftVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYLeftVC.m; sourceTree = "<group>"; };
+		D375C34F1C17FC680040E03E /* YSYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYHeader.h; sourceTree = "<group>"; };
+		D375C3501C180DCF0040E03E /* YSYSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYSetVC.h; sourceTree = "<group>"; };
+		D375C3511C180DCF0040E03E /* YSYSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYSetVC.m; sourceTree = "<group>"; };
+		D375C3531C180E020040E03E /* YSYNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYNewsVC.h; sourceTree = "<group>"; };
+		D375C3541C180E020040E03E /* YSYNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYNewsVC.m; sourceTree = "<group>"; };
+		D375C3561C180E270040E03E /* YSYCollectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCollectVC.h; sourceTree = "<group>"; };
+		D375C3571C180E270040E03E /* YSYCollectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCollectVC.m; sourceTree = "<group>"; };
+		D375C35A1C1822750040E03E /* UIColor+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YSYCategory.h"; sourceTree = "<group>"; };
+		D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YSYCategory.m"; sourceTree = "<group>"; };
+		D375C35D1C1824470040E03E /* YSYPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYPrefixHeader.pch; sourceTree = "<group>"; };
+		D375C35E1C1831680040E03E /* YSYRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRootVC.h; sourceTree = "<group>"; };
+		D375C35F1C1831680040E03E /* YSYRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRootVC.m; sourceTree = "<group>"; };
 		D377D5AC1C16D270000000E9 /* ZHIHUDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHIHUDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D377D5B01C16D270000000E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D377D5B21C16D270000000E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D377D5B31C16D270000000E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D377D5B51C16D270000000E9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D377D5B61C16D270000000E9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D377D5B91C16D270000000E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D377D5BB1C16D270000000E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D377D5BE1C16D270000000E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D377D5C01C16D270000000E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +65,87 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C24245F720141A72FE15714 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33EBDB2E76D68084870F95B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				243E3377E580A4F62F55B4E4 /* Pods.debug.xcconfig */,
+				42F38086E8FF062ECC36D0A7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B6ECF443AF4ED9571894A83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3743EF51C1A5F5100A222BB /* YSYSubClass */ = {
+			isa = PBXGroup;
+			children = (
+				D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */,
+				D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */,
+			);
+			path = YSYSubClass;
+			sourceTree = "<group>";
+		};
+		D3743EF91C1A9DE500A222BB /* YSYNetWorkManage */ = {
+			isa = PBXGroup;
+			children = (
+				D3743F031C1AA76300A222BB /* YSY_Api.h */,
+				D3743F041C1AA76300A222BB /* YSY_Api.m */,
+				D3743EFB1C1AA00B00A222BB /* YSY_HttpRequest.h */,
+				D3743EFC1C1AA00B00A222BB /* YSY_HttpRequest.m */,
+				D3743EFE1C1AA07500A222BB /* YSY_NetWorkManage.h */,
+				D3743EFF1C1AA07500A222BB /* YSY_NetWorkManage.m */,
+			);
+			path = YSYNetWorkManage;
+			sourceTree = "<group>";
+		};
+		D375C3471C17FAE60040E03E /* VIewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D375C35E1C1831680040E03E /* YSYRootVC.h */,
+				D375C35F1C1831680040E03E /* YSYRootVC.m */,
+				D375C34B1C17FC1B0040E03E /* YSYLeftVC.h */,
+				D375C34C1C17FC1B0040E03E /* YSYLeftVC.m */,
+				D375C3561C180E270040E03E /* YSYCollectVC.h */,
+				D375C3571C180E270040E03E /* YSYCollectVC.m */,
+				D375C3531C180E020040E03E /* YSYNewsVC.h */,
+				D375C3541C180E020040E03E /* YSYNewsVC.m */,
+				D375C3501C180DCF0040E03E /* YSYSetVC.h */,
+				D375C3511C180DCF0040E03E /* YSYSetVC.m */,
+				D375C3481C17FC060040E03E /* YSYMainVC.h */,
+				D375C3491C17FC060040E03E /* YSYMainVC.m */,
+			);
+			path = VIewControllers;
+			sourceTree = "<group>";
+		};
+		D375C3591C1822250040E03E /* YSYCategory */ = {
+			isa = PBXGroup;
+			children = (
+				D375C35A1C1822750040E03E /* UIColor+YSYCategory.h */,
+				D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */,
+			);
+			path = YSYCategory;
+			sourceTree = "<group>";
+		};
 		D377D5A31C16D270000000E9 = {
 			isa = PBXGroup;
 			children = (
 				D377D5AE1C16D270000000E9 /* ZHIHUDaily */,
 				D377D5AD1C16D270000000E9 /* Products */,
+				33EBDB2E76D68084870F95B4 /* Pods */,
+				6B6ECF443AF4ED9571894A83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,15 +160,17 @@
 		D377D5AE1C16D270000000E9 /* ZHIHUDaily */ = {
 			isa = PBXGroup;
 			children = (
+				D375C34F1C17FC680040E03E /* YSYHeader.h */,
 				D377D5B21C16D270000000E9 /* AppDelegate.h */,
 				D377D5B31C16D270000000E9 /* AppDelegate.m */,
-				D377D5B51C16D270000000E9 /* ViewController.h */,
-				D377D5B61C16D270000000E9 /* ViewController.m */,
-				D377D5B81C16D270000000E9 /* Main.storyboard */,
+				D3743EF91C1A9DE500A222BB /* YSYNetWorkManage */,
+				D3743EF51C1A5F5100A222BB /* YSYSubClass */,
+				D375C3591C1822250040E03E /* YSYCategory */,
+				D375C3471C17FAE60040E03E /* VIewControllers */,
 				D377D5BB1C16D270000000E9 /* Assets.xcassets */,
-				D377D5BD1C16D270000000E9 /* LaunchScreen.storyboard */,
 				D377D5C01C16D270000000E9 /* Info.plist */,
 				D377D5AF1C16D270000000E9 /* Supporting Files */,
+				D375C35D1C1824470040E03E /* YSYPrefixHeader.pch */,
 			);
 			path = ZHIHUDaily;
 			sourceTree = "<group>";
@@ -86,9 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D377D5C31C16D270000000E9 /* Build configuration list for PBXNativeTarget "ZHIHUDaily" */;
 			buildPhases = (
+				26F6316AA69D6311B30EF907 /* Check Pods Manifest.lock */,
 				D377D5A81C16D270000000E9 /* Sources */,
 				D377D5A91C16D270000000E9 /* Frameworks */,
 				D377D5AA1C16D270000000E9 /* Resources */,
+				F423CC60E382AF2BE3BBCB0D /* Embed Pods Frameworks */,
+				16717237437A6F614DB5B8EE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,45 +243,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D377D5BF1C16D270000000E9 /* LaunchScreen.storyboard in Resources */,
 				D377D5BC1C16D270000000E9 /* Assets.xcassets in Resources */,
-				D377D5BA1C16D270000000E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16717237437A6F614DB5B8EE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26F6316AA69D6311B30EF907 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F423CC60E382AF2BE3BBCB0D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D377D5A81C16D270000000E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D377D5B71C16D270000000E9 /* ViewController.m in Sources */,
+				D3743EF81C1A5F7A00A222BB /* YSYCustomerBtn.m in Sources */,
+				D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */,
+				D375C34A1C17FC060040E03E /* YSYMainVC.m in Sources */,
 				D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */,
+				D375C3601C1831680040E03E /* YSYRootVC.m in Sources */,
+				D375C3521C180DCF0040E03E /* YSYSetVC.m in Sources */,
+				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
+				D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */,
+				D375C3551C180E020040E03E /* YSYNewsVC.m in Sources */,
+				D3743F051C1AA76300A222BB /* YSY_Api.m in Sources */,
+				D375C3581C180E270040E03E /* YSYCollectVC.m in Sources */,
 				D377D5B11C16D270000000E9 /* main.m in Sources */,
+				D375C34D1C17FC1B0040E03E /* YSYLeftVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D377D5B81C16D270000000E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D377D5B91C16D270000000E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D377D5BD1C16D270000000E9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D377D5BE1C16D270000000E9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D377D5C11C16D270000000E9 /* Debug */ = {
@@ -213,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -259,9 +403,13 @@
 		};
 		D377D5C41C16D270000000E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 243E3377E580A4F62F55B4E4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = ZHIHUDaily/YSYPrefixHeader.pch;
 				INFOPLIST_FILE = ZHIHUDaily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ule.ZHIHUDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,9 +418,13 @@
 		};
 		D377D5C51C16D270000000E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42F38086E8FF062ECC36D0A7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = ZHIHUDaily/YSYPrefixHeader.pch;
 				INFOPLIST_FILE = ZHIHUDaily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ule.ZHIHUDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,6 +450,7 @@
 				D377D5C51C16D270000000E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

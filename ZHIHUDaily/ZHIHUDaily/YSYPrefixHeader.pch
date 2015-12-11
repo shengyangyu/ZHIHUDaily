@@ -1,0 +1,16 @@
+//
+//  YSYPrefixHeader.pch
+//  ZHIHUDaily
+//
+//  Created by shengyang_yu on 15/12/9.
+//  Copyright © 2015年 yushengyang. All rights reserved.
+//
+
+#ifndef YSYPrefixHeader_pch
+#define YSYPrefixHeader_pch
+
+#import "UIColor+YSYCategory.h"
+#import "YSYHeader.h"
+
+
+#endif /* YSYPrefixHeader_pch */
