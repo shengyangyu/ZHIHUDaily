@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		6C24245F720141A72FE15714 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */; };
+		D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E31C1E52A900580A1E /* YSYCollectVC.m */; };
+		D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E51C1E52A900580A1E /* YSYLeftVC.m */; };
+		D36BE1EB1C1E52A900580A1E /* YSYNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E71C1E52A900580A1E /* YSYNewsVC.m */; };
+		D36BE1ED1C1E52BB00580A1E /* YSYSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1EC1C1E52BB00580A1E /* YSYSetVC.m */; };
+		D36BE1F31C1E61E100580A1E /* ThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1F21C1E61E100580A1E /* ThemeCell.m */; };
+		D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1F51C1E641400580A1E /* YSYTableView.m */; };
+		D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1F81C1E642200580A1E /* YSYTableViewCell.m */; };
+		D36BE2061C1EC5AC00580A1E /* ThemeListsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2051C1EC5AC00580A1E /* ThemeListsCell.m */; };
+		D36BE2091C1EC5CD00580A1E /* YSYThemeListsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2081C1EC5CD00580A1E /* YSYThemeListsVC.m */; };
 		D3743EF81C1A5F7A00A222BB /* YSYCustomerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */; };
 		D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFC1C1AA00B00A222BB /* YSY_HttpRequest.m */; };
 		D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFF1C1AA07500A222BB /* YSY_NetWorkManage.m */; };
 		D3743F051C1AA76300A222BB /* YSY_Api.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743F041C1AA76300A222BB /* YSY_Api.m */; };
 		D375C34A1C17FC060040E03E /* YSYMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3491C17FC060040E03E /* YSYMainVC.m */; };
-		D375C34D1C17FC1B0040E03E /* YSYLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C34C1C17FC1B0040E03E /* YSYLeftVC.m */; };
-		D375C3521C180DCF0040E03E /* YSYSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3511C180DCF0040E03E /* YSYSetVC.m */; };
-		D375C3551C180E020040E03E /* YSYNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3541C180E020040E03E /* YSYNewsVC.m */; };
-		D375C3581C180E270040E03E /* YSYCollectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C3571C180E270040E03E /* YSYCollectVC.m */; };
 		D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */; };
 		D375C3601C1831680040E03E /* YSYRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D375C35F1C1831680040E03E /* YSYRootVC.m */; };
 		D377D5B11C16D270000000E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B01C16D270000000E9 /* main.m */; };
@@ -27,6 +32,24 @@
 /* Begin PBXFileReference section */
 		243E3377E580A4F62F55B4E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		42F38086E8FF062ECC36D0A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D36BE1E21C1E52A900580A1E /* YSYCollectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCollectVC.h; sourceTree = "<group>"; };
+		D36BE1E31C1E52A900580A1E /* YSYCollectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCollectVC.m; sourceTree = "<group>"; };
+		D36BE1E41C1E52A900580A1E /* YSYLeftVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYLeftVC.h; sourceTree = "<group>"; };
+		D36BE1E51C1E52A900580A1E /* YSYLeftVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYLeftVC.m; sourceTree = "<group>"; };
+		D36BE1E61C1E52A900580A1E /* YSYNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYNewsVC.h; sourceTree = "<group>"; };
+		D36BE1E71C1E52A900580A1E /* YSYNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYNewsVC.m; sourceTree = "<group>"; };
+		D36BE1E81C1E52A900580A1E /* YSYSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYSetVC.h; sourceTree = "<group>"; };
+		D36BE1EC1C1E52BB00580A1E /* YSYSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYSetVC.m; sourceTree = "<group>"; };
+		D36BE1F11C1E61E100580A1E /* ThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeCell.h; sourceTree = "<group>"; };
+		D36BE1F21C1E61E100580A1E /* ThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeCell.m; sourceTree = "<group>"; };
+		D36BE1F41C1E641400580A1E /* YSYTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYTableView.h; sourceTree = "<group>"; };
+		D36BE1F51C1E641400580A1E /* YSYTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYTableView.m; sourceTree = "<group>"; };
+		D36BE1F71C1E642200580A1E /* YSYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYTableViewCell.h; sourceTree = "<group>"; };
+		D36BE1F81C1E642200580A1E /* YSYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYTableViewCell.m; sourceTree = "<group>"; };
+		D36BE2041C1EC5AC00580A1E /* ThemeListsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeListsCell.h; sourceTree = "<group>"; };
+		D36BE2051C1EC5AC00580A1E /* ThemeListsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeListsCell.m; sourceTree = "<group>"; };
+		D36BE2071C1EC5CD00580A1E /* YSYThemeListsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYThemeListsVC.h; sourceTree = "<group>"; };
+		D36BE2081C1EC5CD00580A1E /* YSYThemeListsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYThemeListsVC.m; sourceTree = "<group>"; };
 		D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCustomerBtn.h; sourceTree = "<group>"; };
 		D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCustomerBtn.m; sourceTree = "<group>"; };
 		D3743EFB1C1AA00B00A222BB /* YSY_HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSY_HttpRequest.h; sourceTree = "<group>"; };
@@ -37,15 +60,7 @@
 		D3743F041C1AA76300A222BB /* YSY_Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSY_Api.m; sourceTree = "<group>"; };
 		D375C3481C17FC060040E03E /* YSYMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYMainVC.h; sourceTree = "<group>"; };
 		D375C3491C17FC060040E03E /* YSYMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYMainVC.m; sourceTree = "<group>"; };
-		D375C34B1C17FC1B0040E03E /* YSYLeftVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYLeftVC.h; sourceTree = "<group>"; };
-		D375C34C1C17FC1B0040E03E /* YSYLeftVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYLeftVC.m; sourceTree = "<group>"; };
 		D375C34F1C17FC680040E03E /* YSYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYHeader.h; sourceTree = "<group>"; };
-		D375C3501C180DCF0040E03E /* YSYSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYSetVC.h; sourceTree = "<group>"; };
-		D375C3511C180DCF0040E03E /* YSYSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYSetVC.m; sourceTree = "<group>"; };
-		D375C3531C180E020040E03E /* YSYNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYNewsVC.h; sourceTree = "<group>"; };
-		D375C3541C180E020040E03E /* YSYNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYNewsVC.m; sourceTree = "<group>"; };
-		D375C3561C180E270040E03E /* YSYCollectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCollectVC.h; sourceTree = "<group>"; };
-		D375C3571C180E270040E03E /* YSYCollectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCollectVC.m; sourceTree = "<group>"; };
 		D375C35A1C1822750040E03E /* UIColor+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YSYCategory.h"; sourceTree = "<group>"; };
 		D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YSYCategory.m"; sourceTree = "<group>"; };
 		D375C35D1C1824470040E03E /* YSYPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYPrefixHeader.pch; sourceTree = "<group>"; };
@@ -89,11 +104,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D36BE1E11C1E529600580A1E /* YSY_Left */ = {
+			isa = PBXGroup;
+			children = (
+				D36BE1F11C1E61E100580A1E /* ThemeCell.h */,
+				D36BE1F21C1E61E100580A1E /* ThemeCell.m */,
+				D36BE1E41C1E52A900580A1E /* YSYLeftVC.h */,
+				D36BE1E51C1E52A900580A1E /* YSYLeftVC.m */,
+				D36BE1E21C1E52A900580A1E /* YSYCollectVC.h */,
+				D36BE1E31C1E52A900580A1E /* YSYCollectVC.m */,
+				D36BE1E61C1E52A900580A1E /* YSYNewsVC.h */,
+				D36BE1E71C1E52A900580A1E /* YSYNewsVC.m */,
+				D36BE1E81C1E52A900580A1E /* YSYSetVC.h */,
+				D36BE1EC1C1E52BB00580A1E /* YSYSetVC.m */,
+			);
+			path = YSY_Left;
+			sourceTree = "<group>";
+		};
+		D36BE1FD1C1EC53600580A1E /* YSY_Lists */ = {
+			isa = PBXGroup;
+			children = (
+				D36BE2041C1EC5AC00580A1E /* ThemeListsCell.h */,
+				D36BE2051C1EC5AC00580A1E /* ThemeListsCell.m */,
+				D36BE2071C1EC5CD00580A1E /* YSYThemeListsVC.h */,
+				D36BE2081C1EC5CD00580A1E /* YSYThemeListsVC.m */,
+			);
+			path = YSY_Lists;
+			sourceTree = "<group>";
+		};
 		D3743EF51C1A5F5100A222BB /* YSYSubClass */ = {
 			isa = PBXGroup;
 			children = (
 				D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */,
 				D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */,
+				D36BE1F41C1E641400580A1E /* YSYTableView.h */,
+				D36BE1F51C1E641400580A1E /* YSYTableView.m */,
+				D36BE1F71C1E642200580A1E /* YSYTableViewCell.h */,
+				D36BE1F81C1E642200580A1E /* YSYTableViewCell.m */,
 			);
 			path = YSYSubClass;
 			sourceTree = "<group>";
@@ -114,16 +161,10 @@
 		D375C3471C17FAE60040E03E /* VIewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D36BE1E11C1E529600580A1E /* YSY_Left */,
+				D36BE1FD1C1EC53600580A1E /* YSY_Lists */,
 				D375C35E1C1831680040E03E /* YSYRootVC.h */,
 				D375C35F1C1831680040E03E /* YSYRootVC.m */,
-				D375C34B1C17FC1B0040E03E /* YSYLeftVC.h */,
-				D375C34C1C17FC1B0040E03E /* YSYLeftVC.m */,
-				D375C3561C180E270040E03E /* YSYCollectVC.h */,
-				D375C3571C180E270040E03E /* YSYCollectVC.m */,
-				D375C3531C180E020040E03E /* YSYNewsVC.h */,
-				D375C3541C180E020040E03E /* YSYNewsVC.m */,
-				D375C3501C180DCF0040E03E /* YSYSetVC.h */,
-				D375C3511C180DCF0040E03E /* YSYSetVC.m */,
 				D375C3481C17FC060040E03E /* YSYMainVC.h */,
 				D375C3491C17FC060040E03E /* YSYMainVC.m */,
 			);
@@ -303,18 +344,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3743EF81C1A5F7A00A222BB /* YSYCustomerBtn.m in Sources */,
+				D36BE1EB1C1E52A900580A1E /* YSYNewsVC.m in Sources */,
 				D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */,
 				D375C34A1C17FC060040E03E /* YSYMainVC.m in Sources */,
+				D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */,
+				D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */,
 				D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */,
 				D375C3601C1831680040E03E /* YSYRootVC.m in Sources */,
-				D375C3521C180DCF0040E03E /* YSYSetVC.m in Sources */,
+				D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */,
+				D36BE1ED1C1E52BB00580A1E /* YSYSetVC.m in Sources */,
 				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
+				D36BE2091C1EC5CD00580A1E /* YSYThemeListsVC.m in Sources */,
 				D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */,
-				D375C3551C180E020040E03E /* YSYNewsVC.m in Sources */,
+				D36BE2061C1EC5AC00580A1E /* ThemeListsCell.m in Sources */,
 				D3743F051C1AA76300A222BB /* YSY_Api.m in Sources */,
-				D375C3581C180E270040E03E /* YSYCollectVC.m in Sources */,
+				D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */,
 				D377D5B11C16D270000000E9 /* main.m in Sources */,
-				D375C34D1C17FC1B0040E03E /* YSYLeftVC.m in Sources */,
+				D36BE1F31C1E61E100580A1E /* ThemeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

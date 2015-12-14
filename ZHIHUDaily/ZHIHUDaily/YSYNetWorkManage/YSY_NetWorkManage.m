@@ -28,12 +28,13 @@
 
 - (void)beginServiceRequestWithSSL:(BOOL)isSSL {
     // 有网络
-    if (1/*[[AFNetworkReachabilityManager manager] isReachable]*/) {
+    if ([[YSY_RequestClient sharedClient].reachabilityManager isReachable]) {
         self.mSession = [YSY_HttpRequest httpRequest:self.mApiName extraParams:self.mParams className:self.mTargetString object:self.mTargetClass action:@selector(backCall:) operation:self.mSession isSSL:isSSL];
     }
     // 无网络
     else {
-    
+        NSError *error = [NSError errorWithDomain:@"errormessage" code:404 userInfo:[NSDictionary dictionaryWithObject:@"网络已断开" forKey:NSLocalizedDescriptionKey]];
+        [self failWithError:error];
     }
 }
 
@@ -73,6 +74,37 @@
             [self excuteSuccess:jsonObject];
         }
     }*/
+}
+
+#pragma mark -回调
+// 失败
+- (void)failWithError:(NSError *)error {
+    Class currentClass = object_getClass(self.delegate);
+    if (currentClass == _mTargetClass) {
+        if ([self.delegate respondsToSelector:@selector(interfaceExcuteError:apiName:apiFlag:)])
+            [self.delegate interfaceExcuteError:error apiName:self.mApiName apiFlag:self.mFlagCommonApi];
+    }
+}
+
+- (void)failWithErrorText:(NSString *)text {
+    NSError *error = [NSError errorWithDomain:@"errormessage" code:0 userInfo:[NSDictionary dictionaryWithObject:text forKey:NSLocalizedDescriptionKey]];
+    [self failWithError:error];
+}
+
+- (void)failWithErrorText:(NSString *)text errorCode:(NSInteger) errorCode {
+    NSDictionary *userInfoDic = [NSDictionary dictionaryWithObject:text forKey:NSLocalizedDescriptionKey];
+    NSError *error = [NSError errorWithDomain:@"errormessage"
+                                         code:errorCode
+                                     userInfo:userInfoDic];
+    [self failWithError:error];
+}
+// 成功
+- (void)excuteSuccess:(id)retObj {
+    Class currentClass = object_getClass(self.delegate);
+    if (currentClass == _mTargetClass) {
+        if ([self.delegate respondsToSelector:@selector(interfaceExcuteSuccess:apiName:apiFlag:)])
+            [self.delegate interfaceExcuteSuccess:retObj apiName:self.mApiName apiFlag:self.mFlagCommonApi];
+    }
 }
 
 

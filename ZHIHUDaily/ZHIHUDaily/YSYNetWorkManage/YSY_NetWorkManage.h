@@ -18,7 +18,7 @@
                      apiFlag:(NSString *)apiFlag;
 - (void)interfaceExcuteSuccess:(id)retObj
                        apiName:(NSString *)apiName
-                      aapiFlag:(NSString *)apiFlag;
+                      apiFlag:(NSString *)apiFlag;
 @end
 
 @interface YSY_NetWorkManage : NSObject

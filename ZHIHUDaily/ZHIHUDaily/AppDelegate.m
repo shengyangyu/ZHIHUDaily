@@ -53,8 +53,6 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // 监测网络状态
-    [self connectStatus];
     // 显示
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -82,29 +80,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-#pragma mark -监测网络状态
-- (void)connectStatus {
-    AFNetworkReachabilityManager *tmp = [AFNetworkReachabilityManager manager];
-    [tmp setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        switch (status) {
-            case AFNetworkReachabilityStatusNotReachable:{
-                NSLog(@"无网络");
-                break;
-            }
-            case AFNetworkReachabilityStatusReachableViaWiFi:{
-                NSLog(@"WiFi网络");
-                break;
-            }
-            case AFNetworkReachabilityStatusReachableViaWWAN:{
-                NSLog(@"无线网络");
-                break;
-            }
-            default:
-                break;
-        }
-    }];
-    [tmp startMonitoring];
 }
 
 #pragma mark -禁止横屏

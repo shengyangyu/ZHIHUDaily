@@ -8,15 +8,19 @@
 
 #import "YSYLeftVC.h"
 
+#import "YSYRootVC.h"
+#import "YSYMainVC.h"
 #import "YSYCollectVC.h"
 #import "YSYNewsVC.h"
 #import "YSYSetVC.h"
-#import "YSYMainVC.h"
-#import "YSYRootVC.h"
+#import "YSYThemeListsVC.h"
 
 #import "YSYCustomerBtn.h"
+#import "ThemeCell.h"
+#import "YSYTableView.h"
 
-@interface YSYLeftVC ()
+
+@interface YSYLeftVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     YSY_NetWorkManage *bb;
 }
@@ -33,24 +37,34 @@
 @property (nonatomic, strong) YSYCustomerBtn *mMessageBtn;
 @property (nonatomic, strong) YSYCustomerBtn *mSettingBtn;
 // table
-@property (nonatomic, strong) UITableView *mTypeTable;
+@property (nonatomic, strong) YSYTableView *mTypeTable;
+@property (nonatomic, strong) NSArray *themes;
 // bottom
 @property (nonatomic, strong) UIView *mBottomView;
 @property (nonatomic, strong) YSYCustomerBtn *mDownloadBtn;
 @property (nonatomic, strong) YSYCustomerBtn *mStyleBtn;
 
-
 @end
 
-
-
-
 @implementation YSYLeftVC
+
+- (instancetype)init {
+    self = [super init];
+    _mTypeTable = [YSYTableView new];
+    _mTypeTable.delegate = self;
+    _mTypeTable.dataSource = self;
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.view.backgroundColor = [UIColor convertHexToRGB:@"232A30"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor convertHexToRGB:@"1A2430"];
+    self.view.backgroundColor = [UIColor convertHexToRGB:@"232A30"];
     [self setUI];
     /*
     CGFloat offset_y = 0.0f;
@@ -63,6 +77,13 @@
         [self.view addSubview:btn];
         offset_y += 50;
     }*/
+    [ZHThemes themesWithBlock:^(ZHThemes *themes, NSError *error) {
+        // 成功
+        if (!error) {
+            _themes = [NSArray arrayWithArray:themes.others];
+            [_mTypeTable reloadData];
+        }
+    }];
 }
 
 
@@ -101,17 +122,6 @@
 #pragma mark -点击事件
 - (void)loginAction:(UIButton *)sender {
     NSLog(@"login");
-    
-//    [[YSY_RequestClient sharedClient] GET:@"api/4/themes" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        
-//        NSLog(@"%@",responseObject);
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        
-//        NSLog(@"%@",error);
-//    }];
-//    return;
-    bb = [[YSY_NetWorkManage alloc] initWithApi:@"" targetClass:@"" params:nil delegate:self];
-    [bb beginServiceRequestWithSSL:NO];
 }
 
 - (void)jump:(UIButton *)sender {
@@ -131,6 +141,33 @@
      */
 }
 
+#pragma mark -UITableView delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return _themes.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *cellID = @"ThemeCell";
+    ThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[ThemeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell.textLabel.font = [UIFont systemFontOfSize:__View_Scale(16.0)];
+        cell.textLabel.textColor = [UIColor convertHexToRGB:@"94999f"];
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    }
+    [cell setCellModel:_themes[indexPath.row]];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
+        if (finished) {
+            [self.mm_drawerController setCenterViewController:[[UINavigationController alloc] initWithRootViewController:[YSYThemeListsVC new]]];
+        }
+    }];
+}
 
 #pragma mark -set UI
 - (void)setUI {
@@ -311,8 +348,16 @@
     }
     // table
     {
-        //UITableView *mtable = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        //mtable.
+        _mTypeTable.backgroundColor = [UIColor clearColor];
+        _mTypeTable.backgroundView.backgroundColor = [UIColor clearColor];
+        _mTypeTable.rowHeight = __View_Scale(51.0f);
+        [self.view addSubview:_mTypeTable];
+        [_mTypeTable mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(__View_Scale(__LeftScreen_Width));
+            make.left.equalTo(self.view).with.offset(0);
+            make.top.equalTo(self.mSegmentView.mas_bottom).with.offset(0);
+            make.bottom.equalTo(self.mBottomView.mas_top).with.offset(0);
+        }];
     }
 }
 
