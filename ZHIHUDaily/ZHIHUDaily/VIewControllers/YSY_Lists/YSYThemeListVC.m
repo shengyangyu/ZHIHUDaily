@@ -1,23 +1,27 @@
 //
-//  YSYThemeListsVC.m
+//  YSYThemeListVC.m
 //  ZHIHUDaily
 //
 //  Created by shengyang_yu on 15/12/14.
 //  Copyright © 2015年 yushengyang. All rights reserved.
 //
 
-#import "YSYThemeListsVC.h"
+#import "YSYThemeListVC.h"
+#import "ThemeListCell.h"
 
-@interface YSYThemeListsVC ()
+@interface YSYThemeListVC ()
 
 @end
 
-@implementation YSYThemeListsVC
+@implementation YSYThemeListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    [ThemeLists themesListsID:11 withBlock:^(ThemeLists *themes, NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

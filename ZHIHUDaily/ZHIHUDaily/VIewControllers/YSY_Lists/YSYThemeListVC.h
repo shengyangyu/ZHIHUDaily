@@ -1,5 +1,5 @@
 //
-//  ThemeListsCell.h
+//  YSYThemeListVC.h
 //  ZHIHUDaily
 //
 //  Created by shengyang_yu on 15/12/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThemeListsCell : UITableViewCell
+@interface YSYThemeListVC : UIViewController
 
 @end

@@ -15,8 +15,8 @@
 		D36BE1F31C1E61E100580A1E /* ThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1F21C1E61E100580A1E /* ThemeCell.m */; };
 		D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1F51C1E641400580A1E /* YSYTableView.m */; };
 		D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1F81C1E642200580A1E /* YSYTableViewCell.m */; };
-		D36BE2061C1EC5AC00580A1E /* ThemeListsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2051C1EC5AC00580A1E /* ThemeListsCell.m */; };
-		D36BE2091C1EC5CD00580A1E /* YSYThemeListsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2081C1EC5CD00580A1E /* YSYThemeListsVC.m */; };
+		D36BE2061C1EC5AC00580A1E /* ThemeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */; };
+		D36BE2091C1EC5CD00580A1E /* YSYThemeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */; };
 		D3743EF81C1A5F7A00A222BB /* YSYCustomerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */; };
 		D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFC1C1AA00B00A222BB /* YSY_HttpRequest.m */; };
 		D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFF1C1AA07500A222BB /* YSY_NetWorkManage.m */; };
@@ -46,10 +46,10 @@
 		D36BE1F51C1E641400580A1E /* YSYTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYTableView.m; sourceTree = "<group>"; };
 		D36BE1F71C1E642200580A1E /* YSYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYTableViewCell.h; sourceTree = "<group>"; };
 		D36BE1F81C1E642200580A1E /* YSYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYTableViewCell.m; sourceTree = "<group>"; };
-		D36BE2041C1EC5AC00580A1E /* ThemeListsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeListsCell.h; sourceTree = "<group>"; };
-		D36BE2051C1EC5AC00580A1E /* ThemeListsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeListsCell.m; sourceTree = "<group>"; };
-		D36BE2071C1EC5CD00580A1E /* YSYThemeListsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYThemeListsVC.h; sourceTree = "<group>"; };
-		D36BE2081C1EC5CD00580A1E /* YSYThemeListsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYThemeListsVC.m; sourceTree = "<group>"; };
+		D36BE2041C1EC5AC00580A1E /* ThemeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeListCell.h; sourceTree = "<group>"; };
+		D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeListCell.m; sourceTree = "<group>"; };
+		D36BE2071C1EC5CD00580A1E /* YSYThemeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYThemeListVC.h; sourceTree = "<group>"; };
+		D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYThemeListVC.m; sourceTree = "<group>"; };
 		D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCustomerBtn.h; sourceTree = "<group>"; };
 		D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCustomerBtn.m; sourceTree = "<group>"; };
 		D3743EFB1C1AA00B00A222BB /* YSY_HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSY_HttpRequest.h; sourceTree = "<group>"; };
@@ -124,10 +124,10 @@
 		D36BE1FD1C1EC53600580A1E /* YSY_Lists */ = {
 			isa = PBXGroup;
 			children = (
-				D36BE2041C1EC5AC00580A1E /* ThemeListsCell.h */,
-				D36BE2051C1EC5AC00580A1E /* ThemeListsCell.m */,
-				D36BE2071C1EC5CD00580A1E /* YSYThemeListsVC.h */,
-				D36BE2081C1EC5CD00580A1E /* YSYThemeListsVC.m */,
+				D36BE2041C1EC5AC00580A1E /* ThemeListCell.h */,
+				D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */,
+				D36BE2071C1EC5CD00580A1E /* YSYThemeListVC.h */,
+				D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */,
 			);
 			path = YSY_Lists;
 			sourceTree = "<group>";
@@ -354,9 +354,9 @@
 				D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */,
 				D36BE1ED1C1E52BB00580A1E /* YSYSetVC.m in Sources */,
 				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
-				D36BE2091C1EC5CD00580A1E /* YSYThemeListsVC.m in Sources */,
+				D36BE2091C1EC5CD00580A1E /* YSYThemeListVC.m in Sources */,
 				D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */,
-				D36BE2061C1EC5AC00580A1E /* ThemeListsCell.m in Sources */,
+				D36BE2061C1EC5AC00580A1E /* ThemeListCell.m in Sources */,
 				D3743F051C1AA76300A222BB /* YSY_Api.m in Sources */,
 				D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */,
 				D377D5B11C16D270000000E9 /* main.m in Sources */,

@@ -23,7 +23,7 @@ NSString * const storyextra_Api = @"api/4/story-extra/#{id}";
 NSString * const longcomments_Api = @"api/4/story/4232852/long-comments";
 NSString * const shorcommentst_Api =@"api/4/story/4232852/short-comments";
 NSString * const themes_Api = @"api/4/themes";
-NSString * const themesextra_Api = @"api/4/theme/11";
+NSString * const themesextra_Api = @"api/4/theme/";
 
 NSString * const newshot_Api = @"api/3/news/hot";
 NSString * const sections_Api = @"api/3/sections";

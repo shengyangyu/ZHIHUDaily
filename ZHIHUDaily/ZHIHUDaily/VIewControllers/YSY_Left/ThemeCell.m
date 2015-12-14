@@ -7,7 +7,6 @@
 //
 
 #import "ThemeCell.h"
-#import "YSY_HttpRequest.h"
 
 @implementation ZHBaseThemes
 
@@ -25,7 +24,7 @@
 
 + (NSURLSessionDataTask *)themesWithBlock:(void(^)(ZHThemes *themes, NSError *error))block {
     
-    return [[YSY_RequestClient sharedClient] GET:@"api/4/themes" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [[YSY_RequestClient sharedClient] GET:themes_Api parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         ZHThemes *themes = [ZHThemes yy_modelWithJSON:responseObject];
         // 请求成功

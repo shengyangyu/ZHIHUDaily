@@ -13,7 +13,7 @@
 #import "YSYCollectVC.h"
 #import "YSYNewsVC.h"
 #import "YSYSetVC.h"
-#import "YSYThemeListsVC.h"
+#import "YSYThemeListVC.h"
 
 #import "YSYCustomerBtn.h"
 #import "ThemeCell.h"
@@ -164,7 +164,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
         if (finished) {
-            [self.mm_drawerController setCenterViewController:[[UINavigationController alloc] initWithRootViewController:[YSYThemeListsVC new]]];
+            [self.mm_drawerController setCenterViewController:[[UINavigationController alloc] initWithRootViewController:[YSYThemeListVC new]]];
         }
     }];
 }

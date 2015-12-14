@@ -22,16 +22,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZHIHUDaily/VIewControllers/YSY_Lists/ThemeListsCell.m"
+            timestampString = "471778975.222185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "+themesListsWithBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZHIHUDaily/VIewControllers/YSY_Left/ThemeCell.m"
-            timestampString = "471770377.107907"
+            filePath = "ZHIHUDaily/VIewControllers/YSY_Lists/YSYThemeListVC.m"
+            timestampString = "471779188.006597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-accessAction:"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[YSYThemeListVC viewDidLoad]"
+                  moduleName = "ZHIHUDaily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///yushengyang/github/ZHIHUDaily/ZHIHUDaily/ZHIHUDaily/VIewControllers/YSY_Lists/YSYThemeListVC.m"
+                  timestampString = "471779264.708779"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "250">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[YSYThemeListVC viewDidLoad]_block_invoke"
+                  moduleName = "ZHIHUDaily"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///yushengyang/github/ZHIHUDaily/ZHIHUDaily/ZHIHUDaily/VIewControllers/YSY_Lists/YSYThemeListVC.m"
+                  timestampString = "471779264.709044"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZHIHUDaily/VIewControllers/YSY_Lists/ThemeListCell.m"
+            timestampString = "471779196.830805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "+themesListsID:withBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

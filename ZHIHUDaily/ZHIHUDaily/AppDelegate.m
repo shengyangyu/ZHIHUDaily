@@ -89,6 +89,7 @@
 }
 
 #pragma mark -应用进入后台时间过长，重进支持进入原来界面
+/*
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
     
     return YES;
@@ -110,6 +111,6 @@
     }
     return nil;
 }
-
+*/
 
 @end
