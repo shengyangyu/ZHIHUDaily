@@ -8,6 +8,17 @@
 
 #import "ThemeListCell.h"
 
+@implementation ThemeStories
+
+
+@end
+
+@implementation ThemeEditors
+
+
+@end
+
+
 @implementation ThemeLists
 
 + (NSURLSessionDataTask *)themesListsID:(u_int64_t)mID withBlock:(void(^)(ThemeLists *themes, NSError *error))block {
