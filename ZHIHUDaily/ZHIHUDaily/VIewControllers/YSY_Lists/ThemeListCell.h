@@ -8,15 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 主题详情
+ */
 @interface ThemeStories : NSObject
 
 @property (nonatomic, assign) uint64_t mID;
 @property (nonatomic, assign) uint64_t type;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) NSValue *tFrame;
+@property (nonatomic, strong) NSValue *cFrame;
 
 @end
-
+/**
+ 主题编辑者
+ */
 @interface ThemeEditors : NSObject
 
 @property (nonatomic, assign) uint64_t mID;
@@ -27,6 +34,9 @@
 
 @end
 
+/**
+ 主题信息列表
+ */
 @interface ThemeLists : NSObject
 
 @property (nonatomic, assign) uint64_t color;
@@ -43,6 +53,24 @@
 
 @end
 
+/**
+ 主题信息cell
+ */
 @interface ThemeListCell : UITableViewCell
+
+// 插图
+@property (nonatomic, strong) UIImageView *mIcon;
+// 标题
+@property (nonatomic, strong) UILabel *mTitle;
+// 已经绘制
+@property (nonatomic, assign) BOOL mDrawed;
+// 值
+@property (nonatomic, strong) ThemeStories *mData;
+
+- (void)setCellModel:(ThemeStories *)base;
+
+- (void)clearCell;
+
+- (void)drawCell;
 
 @end

@@ -66,17 +66,6 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor convertHexToRGB:@"232A30"];
     [self setUI];
-    /*
-    CGFloat offset_y = 0.0f;
-    for (NSInteger i = 0; i < 4; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setFrame:CGRectMake(0, offset_y, 100, 44)];
-        [btn setBackgroundColor:[UIColor greenColor]];
-        btn.tag = 100+i;
-        [btn addTarget:self action:@selector(jump:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:btn];
-        offset_y += 50;
-    }*/
     [ZHThemes themesWithBlock:^(ZHThemes *themes, NSError *error) {
         // 成功
         if (!error) {
@@ -85,7 +74,6 @@
         }
     }];
 }
-
 
 #pragma mark -生成同种类型的按钮
 - (YSYCustomerBtn *)createSimilarButtonFontSize:(CGFloat)size {

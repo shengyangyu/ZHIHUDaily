@@ -27,6 +27,9 @@
 		D377D5B11C16D270000000E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B01C16D270000000E9 /* main.m */; };
 		D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B31C16D270000000E9 /* AppDelegate.m */; };
 		D377D5BC1C16D270000000E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D377D5BB1C16D270000000E9 /* Assets.xcassets */; };
+		D391FC9C1C1FEE88008E9EAA /* UIView+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D391FC9B1C1FEE88008E9EAA /* UIView+YSYCategory.m */; };
+		D391FC9F1C1FF35B008E9EAA /* NSString+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */; };
+		D391FCA21C1FF806008E9EAA /* YSYListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D391FCA11C1FF806008E9EAA /* YSYListTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,12 @@
 		D377D5B31C16D270000000E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D377D5BB1C16D270000000E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D377D5C01C16D270000000E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D391FC9A1C1FEE88008E9EAA /* UIView+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSYCategory.h"; sourceTree = "<group>"; };
+		D391FC9B1C1FEE88008E9EAA /* UIView+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSYCategory.m"; sourceTree = "<group>"; };
+		D391FC9D1C1FF35B008E9EAA /* NSString+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YSYCategory.h"; sourceTree = "<group>"; };
+		D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YSYCategory.m"; sourceTree = "<group>"; };
+		D391FCA01C1FF806008E9EAA /* YSYListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYListTableView.h; sourceTree = "<group>"; };
+		D391FCA11C1FF806008E9EAA /* YSYListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYListTableView.m; sourceTree = "<group>"; };
 		EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +135,8 @@
 			children = (
 				D36BE2041C1EC5AC00580A1E /* ThemeListCell.h */,
 				D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */,
+				D391FCA01C1FF806008E9EAA /* YSYListTableView.h */,
+				D391FCA11C1FF806008E9EAA /* YSYListTableView.m */,
 				D36BE2071C1EC5CD00580A1E /* YSYThemeListVC.h */,
 				D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */,
 			);
@@ -176,6 +187,10 @@
 			children = (
 				D375C35A1C1822750040E03E /* UIColor+YSYCategory.h */,
 				D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */,
+				D391FC9A1C1FEE88008E9EAA /* UIView+YSYCategory.h */,
+				D391FC9B1C1FEE88008E9EAA /* UIView+YSYCategory.m */,
+				D391FC9D1C1FF35B008E9EAA /* NSString+YSYCategory.h */,
+				D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */,
 			);
 			path = YSYCategory;
 			sourceTree = "<group>";
@@ -345,6 +360,7 @@
 			files = (
 				D3743EF81C1A5F7A00A222BB /* YSYCustomerBtn.m in Sources */,
 				D36BE1EB1C1E52A900580A1E /* YSYNewsVC.m in Sources */,
+				D391FC9F1C1FF35B008E9EAA /* NSString+YSYCategory.m in Sources */,
 				D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */,
 				D375C34A1C17FC060040E03E /* YSYMainVC.m in Sources */,
 				D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */,
@@ -353,7 +369,9 @@
 				D375C3601C1831680040E03E /* YSYRootVC.m in Sources */,
 				D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */,
 				D36BE1ED1C1E52BB00580A1E /* YSYSetVC.m in Sources */,
+				D391FC9C1C1FEE88008E9EAA /* UIView+YSYCategory.m in Sources */,
 				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
+				D391FCA21C1FF806008E9EAA /* YSYListTableView.m in Sources */,
 				D36BE2091C1EC5CD00580A1E /* YSYThemeListVC.m in Sources */,
 				D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */,
 				D36BE2061C1EC5AC00580A1E /* ThemeListCell.m in Sources */,

@@ -10,16 +10,34 @@
 
 @implementation ThemeStories
 
++ (NSArray *)modelPropertyBlacklist {
+    return @[@"tFrame",@"cFrame"];
+}
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{ @"mID":@"id"};
+}
 
 @end
 
 @implementation ThemeEditors
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{ @"mID":@"id"};
+}
 
 @end
 
 
 @implementation ThemeLists
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{ @"des":@"description"};
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{ @"stories":ThemeStories.class ,@"editors":ThemeEditors.class };
+}
 
 + (NSURLSessionDataTask *)themesListsID:(u_int64_t)mID withBlock:(void(^)(ThemeLists *themes, NSError *error))block {
     
@@ -43,14 +61,61 @@
 
 @implementation ThemeListCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (!self) {
+        return nil;
+    }
+    // default
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.contentView.backgroundColor = [UIColor clearColor];
+    self.backgroundView.backgroundColor = [UIColor clearColor];
+    // customer
+    self.clipsToBounds = YES;
+    _mIcon = ({
+        UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [self.contentView insertSubview:image atIndex:0];
+        image;
+    });
+    _mTitle = ({
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.textColor = [UIColor convertHexToRGB:@"383838"];
+        label.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:label];
+        label;
+    });
+    // line
+    ({
+        
+    });
+    
+    return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)setCellModel:(ThemeStories *)base {
+    
+    [self clearCell];
+    
+}
 
-    // Configure the view for the selected state
+- (void)drawCell {
+
+}
+
+
+- (void)clearCell {
+    
+    if (!_mDrawed) {
+        return;
+    }
+    
+    _mIcon.frame = CGRectZero;
+    _mIcon = nil;
+    
+    _mTitle.text = @"";
+    
+    _mDrawed = NO;
 }
 
 @end

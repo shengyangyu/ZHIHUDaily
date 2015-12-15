@@ -4,7 +4,7 @@
 //
 //  Created by shengyang_yu on 15/12/11.
 //  Copyright © 2015年 yushengyang. All rights reserved.
-//
+//  沿用以前的框架 可以用于请求 使用代理方式 目前数据解析返回尚有缺憾待完善
 
 #import <Foundation/Foundation.h>
 #import "YSY_HttpRequest.h"
