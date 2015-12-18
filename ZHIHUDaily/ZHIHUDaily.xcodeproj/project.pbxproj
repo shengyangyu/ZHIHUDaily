@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6C24245F720141A72FE15714 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */; };
+		D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26741C23A9730014ED48 /* UIScrollView+YSYCategory.m */; };
+		D35C26781C23B2240014ED48 /* YSYRefreshBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26771C23B2240014ED48 /* YSYRefreshBase.m */; };
+		D35C267E1C23DFC80014ED48 /* YSYRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C267D1C23DFC80014ED48 /* YSYRefreshConst.m */; };
+		D35C26811C23EEFD0014ED48 /* YSYRefreshFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26801C23EEFD0014ED48 /* YSYRefreshFoot.m */; };
 		D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E31C1E52A900580A1E /* YSYCollectVC.m */; };
 		D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E51C1E52A900580A1E /* YSYLeftVC.m */; };
 		D36BE1EB1C1E52A900580A1E /* YSYNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E71C1E52A900580A1E /* YSYNewsVC.m */; };
@@ -27,14 +31,20 @@
 		D377D5B11C16D270000000E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B01C16D270000000E9 /* main.m */; };
 		D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B31C16D270000000E9 /* AppDelegate.m */; };
 		D377D5BC1C16D270000000E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D377D5BB1C16D270000000E9 /* Assets.xcassets */; };
-		D391FC9C1C1FEE88008E9EAA /* UIView+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D391FC9B1C1FEE88008E9EAA /* UIView+YSYCategory.m */; };
 		D391FC9F1C1FF35B008E9EAA /* NSString+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */; };
-		D391FCA21C1FF806008E9EAA /* YSYListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D391FCA11C1FF806008E9EAA /* YSYListTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		243E3377E580A4F62F55B4E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		42F38086E8FF062ECC36D0A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D35C26731C23A9730014ED48 /* UIScrollView+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YSYCategory.h"; sourceTree = "<group>"; };
+		D35C26741C23A9730014ED48 /* UIScrollView+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YSYCategory.m"; sourceTree = "<group>"; };
+		D35C26761C23B2240014ED48 /* YSYRefreshBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshBase.h; sourceTree = "<group>"; };
+		D35C26771C23B2240014ED48 /* YSYRefreshBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshBase.m; sourceTree = "<group>"; };
+		D35C267C1C23DFC80014ED48 /* YSYRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshConst.h; sourceTree = "<group>"; };
+		D35C267D1C23DFC80014ED48 /* YSYRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshConst.m; sourceTree = "<group>"; };
+		D35C267F1C23EEFD0014ED48 /* YSYRefreshFoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshFoot.h; sourceTree = "<group>"; };
+		D35C26801C23EEFD0014ED48 /* YSYRefreshFoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshFoot.m; sourceTree = "<group>"; };
 		D36BE1E21C1E52A900580A1E /* YSYCollectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCollectVC.h; sourceTree = "<group>"; };
 		D36BE1E31C1E52A900580A1E /* YSYCollectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCollectVC.m; sourceTree = "<group>"; };
 		D36BE1E41C1E52A900580A1E /* YSYLeftVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYLeftVC.h; sourceTree = "<group>"; };
@@ -75,12 +85,8 @@
 		D377D5B31C16D270000000E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D377D5BB1C16D270000000E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D377D5C01C16D270000000E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D391FC9A1C1FEE88008E9EAA /* UIView+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSYCategory.h"; sourceTree = "<group>"; };
-		D391FC9B1C1FEE88008E9EAA /* UIView+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSYCategory.m"; sourceTree = "<group>"; };
 		D391FC9D1C1FF35B008E9EAA /* NSString+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YSYCategory.h"; sourceTree = "<group>"; };
 		D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YSYCategory.m"; sourceTree = "<group>"; };
-		D391FCA01C1FF806008E9EAA /* YSYListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYListTableView.h; sourceTree = "<group>"; };
-		D391FCA11C1FF806008E9EAA /* YSYListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYListTableView.m; sourceTree = "<group>"; };
 		EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D35C266E1C23A70E0014ED48 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				D35C266F1C23A7260014ED48 /* YSYRefresh */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		D35C266F1C23A7260014ED48 /* YSYRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D35C26731C23A9730014ED48 /* UIScrollView+YSYCategory.h */,
+				D35C26741C23A9730014ED48 /* UIScrollView+YSYCategory.m */,
+				D35C267C1C23DFC80014ED48 /* YSYRefreshConst.h */,
+				D35C267D1C23DFC80014ED48 /* YSYRefreshConst.m */,
+				D35C26761C23B2240014ED48 /* YSYRefreshBase.h */,
+				D35C26771C23B2240014ED48 /* YSYRefreshBase.m */,
+				D35C267F1C23EEFD0014ED48 /* YSYRefreshFoot.h */,
+				D35C26801C23EEFD0014ED48 /* YSYRefreshFoot.m */,
+			);
+			path = YSYRefresh;
+			sourceTree = "<group>";
+		};
 		D36BE1E11C1E529600580A1E /* YSY_Left */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,8 +164,6 @@
 			children = (
 				D36BE2041C1EC5AC00580A1E /* ThemeListCell.h */,
 				D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */,
-				D391FCA01C1FF806008E9EAA /* YSYListTableView.h */,
-				D391FCA11C1FF806008E9EAA /* YSYListTableView.m */,
 				D36BE2071C1EC5CD00580A1E /* YSYThemeListVC.h */,
 				D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */,
 			);
@@ -187,8 +214,6 @@
 			children = (
 				D375C35A1C1822750040E03E /* UIColor+YSYCategory.h */,
 				D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */,
-				D391FC9A1C1FEE88008E9EAA /* UIView+YSYCategory.h */,
-				D391FC9B1C1FEE88008E9EAA /* UIView+YSYCategory.m */,
 				D391FC9D1C1FF35B008E9EAA /* NSString+YSYCategory.h */,
 				D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */,
 			);
@@ -216,6 +241,7 @@
 		D377D5AE1C16D270000000E9 /* ZHIHUDaily */ = {
 			isa = PBXGroup;
 			children = (
+				D35C266E1C23A70E0014ED48 /* ThirdParty */,
 				D375C34F1C17FC680040E03E /* YSYHeader.h */,
 				D377D5B21C16D270000000E9 /* AppDelegate.h */,
 				D377D5B31C16D270000000E9 /* AppDelegate.m */,
@@ -362,22 +388,24 @@
 				D36BE1EB1C1E52A900580A1E /* YSYNewsVC.m in Sources */,
 				D391FC9F1C1FF35B008E9EAA /* NSString+YSYCategory.m in Sources */,
 				D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */,
+				D35C26781C23B2240014ED48 /* YSYRefreshBase.m in Sources */,
 				D375C34A1C17FC060040E03E /* YSYMainVC.m in Sources */,
+				D35C26811C23EEFD0014ED48 /* YSYRefreshFoot.m in Sources */,
 				D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */,
 				D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */,
 				D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */,
 				D375C3601C1831680040E03E /* YSYRootVC.m in Sources */,
 				D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */,
 				D36BE1ED1C1E52BB00580A1E /* YSYSetVC.m in Sources */,
-				D391FC9C1C1FEE88008E9EAA /* UIView+YSYCategory.m in Sources */,
 				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
-				D391FCA21C1FF806008E9EAA /* YSYListTableView.m in Sources */,
 				D36BE2091C1EC5CD00580A1E /* YSYThemeListVC.m in Sources */,
 				D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */,
 				D36BE2061C1EC5AC00580A1E /* ThemeListCell.m in Sources */,
 				D3743F051C1AA76300A222BB /* YSY_Api.m in Sources */,
 				D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */,
+				D35C267E1C23DFC80014ED48 /* YSYRefreshConst.m in Sources */,
 				D377D5B11C16D270000000E9 /* main.m in Sources */,
+				D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */,
 				D36BE1F31C1E61E100580A1E /* ThemeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

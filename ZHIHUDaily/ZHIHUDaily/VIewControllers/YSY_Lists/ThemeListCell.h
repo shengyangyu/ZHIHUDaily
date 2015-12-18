@@ -17,9 +17,8 @@
 @property (nonatomic, assign) uint64_t type;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSValue *tFrame;
-@property (nonatomic, strong) NSValue *cFrame;
-
+// Cache
+@property (nonatomic, assign) CGFloat cellHeight;
 @end
 /**
  主题编辑者
@@ -49,7 +48,7 @@
 @property (nonatomic, copy) NSString *name;
 
 
-+ (NSURLSessionDataTask *)themesListsID:(u_int64_t)mID withBlock:(void(^)(ThemeLists *themes, NSError *error))block;
++ (NSURLSessionDataTask *)themesListsID:(u_int64_t)mID withIndex:(u_int64_t)mIndex withBlock:(void(^)(ThemeLists *themes, NSError *error))block;
 
 @end
 
@@ -66,11 +65,5 @@
 @property (nonatomic, assign) BOOL mDrawed;
 // 值
 @property (nonatomic, strong) ThemeStories *mData;
-
-- (void)setCellModel:(ThemeStories *)base;
-
-- (void)clearCell;
-
-- (void)drawCell;
 
 @end

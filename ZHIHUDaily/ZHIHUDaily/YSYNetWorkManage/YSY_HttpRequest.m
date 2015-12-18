@@ -58,6 +58,10 @@ static NSString * const YSYBaseURLString = @"http://news-at.zhihu.com/";
     __block typeof(self) _object = object;// 防止循环引用
     op = [[YSY_RequestClient sharedClient] GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
+        /*
+         //解析请求数据
+         NSDictionary *resDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+         */
         if (responseObject &&
             [_object respondsToSelector:action]) {
             // 转换

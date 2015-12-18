@@ -10,4 +10,9 @@
 
 @interface YSYThemeListVC : UIViewController
 
+/**
+ 设置不同的类型列表
+ */
+@property (nonatomic, assign) u_int64_t mType;
+
 @end

@@ -11,12 +11,12 @@
 @interface UIColor (YSYCategory)
 
 // 16进制 生成Color
-+ (UIColor *)convertHexToRGB:(NSString *)hexString;
++ (UIColor *)ysy_convertHexToRGB:(NSString *)hexString;
 // 16进制 生成Color 透明度
-+ (UIColor *)convertHexToRGB:(NSString *)hexString withAlpha:(CGFloat)alpha;
++ (UIColor *)ysy_convertHexToRGB:(NSString *)hexString withAlpha:(CGFloat)alpha;
 // 随机Color
-+ (UIColor *)randomColor;
++ (UIColor *)ysy_randomColor;
 // 生成对应Color的 Image
-+ (UIImage *)createImageWithColor:(UIColor *)color withFrame:(CGRect)frame;
++ (UIImage *)ysy_createImageWithColor:(UIColor *)color withFrame:(CGRect)frame;
 
 @end

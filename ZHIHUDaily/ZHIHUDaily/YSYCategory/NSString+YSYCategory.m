@@ -11,14 +11,14 @@
 
 @implementation NSString (YSYCategory)
 
-- (CGSize)sizeWithConstrainedToWidth:(CGFloat)width
+- (CGSize)ysy_sizeWithConstrainedToWidth:(CGFloat)width
                             fromFont:(UIFont *)font
                            lineSpace:(CGFloat)lineSpace {
     
-    return [self sizeWithConstrainedToSize:CGSizeMake(width, CGFLOAT_MAX) fromFont:font lineSpace:lineSpace];
+    return [self ysy_sizeWithConstrainedToSize:CGSizeMake(width, CGFLOAT_MAX) fromFont:font lineSpace:lineSpace];
 
 }
-- (CGSize)sizeWithConstrainedToSize:(CGSize)size
+- (CGSize)ysy_sizeWithConstrainedToSize:(CGSize)size
                            fromFont:(UIFont *)font
                           lineSpace:(CGFloat)lineSpace {
     
@@ -49,16 +49,16 @@
 }
 
 
-- (void)drawInContext:(CGContextRef)context
+- (void)ysy_drawInContext:(CGContextRef)context
              position:(CGPoint)pos
                  font:(UIFont *)font
             textColor:(UIColor *)color
                height:(CGFloat)height {
     
-    [self drawInContext:context position:pos font:font textColor:color height:height width:CGFLOAT_MAX];
+    [self ysy_drawInContext:context position:pos font:font textColor:color height:height width:CGFLOAT_MAX];
 }
 
-- (void)drawInContext:(CGContextRef)context
+- (void)ysy_drawInContext:(CGContextRef)context
              position:(CGPoint)pos
                  font:(UIFont *)font
             textColor:(UIColor *)color

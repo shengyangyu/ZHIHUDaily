@@ -13,7 +13,7 @@
 /**
  *十六进制转RGB
  */
-+ (UIColor *)convertHexToRGB:(NSString *)hexString{
++ (UIColor *)ysy_convertHexToRGB:(NSString *)hexString{
     NSString *str;
     if ([hexString hasPrefix:@"0x"] || [hexString hasPrefix:@"0X"]) {
         str=[[NSString alloc] initWithFormat:@"%@",hexString];
@@ -33,7 +33,7 @@
 /**
  *十六进制转RGB
  */
-+ (UIColor *)convertHexToRGB:(NSString *)hexString withAlpha:(CGFloat)alpha{
++ (UIColor *)ysy_convertHexToRGB:(NSString *)hexString withAlpha:(CGFloat)alpha{
     NSString *str;
     if ([hexString hasPrefix:@"0x"] || [hexString hasPrefix:@"0X"]) {
         str=[[NSString alloc] initWithFormat:@"%@",hexString];
@@ -53,7 +53,7 @@
 /*
  *随机颜色
  */
-+(UIColor *)randomColor{
++(UIColor *)ysy_randomColor{
     static BOOL	seeded=NO;
     if(!seeded){
         seeded=YES;
@@ -68,7 +68,7 @@
 /*
  *UIColor Image
  */
-+ (UIImage *)createImageWithColor:(UIColor *)color withFrame:(CGRect)frame {
++ (UIImage *)ysy_createImageWithColor:(UIColor *)color withFrame:(CGRect)frame {
     CGRect rect = frame;
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();

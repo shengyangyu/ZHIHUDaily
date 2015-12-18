@@ -43,7 +43,9 @@
 @property (nonatomic, strong) UIView *mBottomView;
 @property (nonatomic, strong) YSYCustomerBtn *mDownloadBtn;
 @property (nonatomic, strong) YSYCustomerBtn *mStyleBtn;
-
+//
+@property (nonatomic, strong) UINavigationController *mListVC;
+@property (nonatomic, strong) YSYThemeListVC *mListRootVC;
 @end
 
 @implementation YSYLeftVC
@@ -150,9 +152,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!_mListVC) {
+        self.mListRootVC = [YSYThemeListVC new];
+        self.mListVC = [[UINavigationController alloc] initWithRootViewController:self.mListRootVC];
+    }
+    ZHBaseThemes *tBase = self.themes[indexPath.row];
+    uint64_t tID = tBase.mID;
     [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
         if (finished) {
-            [self.mm_drawerController setCenterViewController:[[UINavigationController alloc] initWithRootViewController:[YSYThemeListVC new]]];
+            self.mListRootVC.mType = tID;
+            [self.mm_drawerController setCenterViewController:self.mListVC];
         }
     }];
 }
