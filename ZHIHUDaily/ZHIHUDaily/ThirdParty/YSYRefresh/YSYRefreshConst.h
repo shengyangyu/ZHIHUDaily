@@ -13,6 +13,12 @@
 #define YSYRefreshMsgSend(...) ((void (*)(void *, SEL, UIView *))objc_msgSend)(__VA_ARGS__)
 #define YSYRefreshMsgTarget(target) (__bridge void *)(target)
 
+// 状态检查
+#define YSYRefreshCheckState \
+YSYRefreshState oldState = self.mState; \
+if (mState == oldState) return; \
+[super setMState:mState];
+
 /**********常量***********/
 UIKIT_EXTERN const CGFloat YSYRefreshAnimationDuration;
 UIKIT_EXTERN const CGFloat YSYRefreshFootHeight;

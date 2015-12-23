@@ -16,7 +16,8 @@
 /**** UI Size ****/
 #define __MainScreenFrame [[UIScreen mainScreen] bounds]
 #define __MainScreen_Width  __MainScreenFrame.size.width
-#define __MainScreen_Height (__MainScreenFrame.size.height - 20)
+#define __MainScreen_Height __MainScreenFrame.size.height
+#define __MainScreen_Height_1 (__MainScreenFrame.size.height - 20)
  // 缩放比例 640为设计图尺寸
 #define __MainScreen_Scale (__MainScreen_Width/320.0)
 #define __LeftScreen_Width (225.0/320*__MainScreen_Width) // leftVC 宽度

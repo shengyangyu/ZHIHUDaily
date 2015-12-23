@@ -10,11 +10,9 @@
 #import "ThemeListCell.h"
 #import "YSYTableView.h"
 #import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import "YSYRefreshFoot.h"
 
 @interface YSYThemeListVC ()<UITableViewDelegate, UITableViewDataSource>
-
-// mIsTask
-@property (nonatomic, assign) BOOL mIsTask;
 // table
 @property (nonatomic, strong) YSYTableView *mTypeTable;
 @property (nonatomic, strong) ThemeLists *mThemes;
@@ -56,7 +54,6 @@
 
 - (NSURLSessionDataTask *)requestForIndex:(u_int64_t)index {
     
-    self.mIsTask = YES;
     return [ThemeLists themesListsID:self.mType withIndex:index withBlock:^(ThemeLists *themes, NSError *error) {
         // 成功
         if (!error) {
@@ -73,7 +70,6 @@
                     [self.mTypeTable registerClass:[ThemeListCell class] forCellReuseIdentifier:NSStringFromClass([ThemeListCell class])];
                     [self.mTypeTable reloadData];
                     // 完成任务
-                    self.mIsTask = NO;
                 });
             }
             else {
@@ -89,22 +85,23 @@
                     }
                     [self.mTypeTable insertRowsAtIndexPaths:indexs withRowAnimation:UITableViewRowAnimationNone];
                     // 完成任务
-                    self.mIsTask = NO;
                 });
             }
         }
         else {
             // 完成任务
-            self.mIsTask = NO;
         }
     }];
 }
 
 - (void)setUI {
-
+    
+    [self.mTypeTable setFrame:CGRectMake(0, 0, __MainScreen_Width, __MainScreen_Height)];
     [self.view addSubview:self.mTypeTable];
-    [self.mTypeTable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    // 加载更多
+    self.mTypeTable.ysy_foot = [YSYRefreshFoot footWithBlock:^{
+        ThemeStories *mData = [self.mThemesArray lastObject];
+        [self requestForIndex:(mData?mData.mID:-1)];
     }];
 }
 
@@ -137,23 +134,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
-
-#pragma mark -UIScrollView Delegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    // 当前没有请求任务 且滑动到底部附近
-    if(!self.mIsTask) {
-        // 滑动高度
-        CGFloat mOffset = scrollView.contentOffset.y + scrollView.bounds.size.height - scrollView.contentInset.bottom;
-        // scrollView高度
-        CGFloat tOffset = scrollView.contentSize.height;
-        if ((mOffset / tOffset) >= 0.75) {
-            ThemeStories *mData=[self.mThemesArray lastObject];
-            [self requestForIndex:(mData?mData.mID:-1)];
-        }
-    }
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -18,6 +18,8 @@ static NSString * const YSYBaseURLString = @"http://news-at.zhihu.com/";
     dispatch_once(&onceToken, ^{
         _sharedClient = [[YSY_RequestClient alloc] initWithBaseURL:[NSURL URLWithString:YSYBaseURLString]];
         _sharedClient.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        //_sharedClient.responseSerializer = [AFXMLParserResponseSerializer serializer];
+        //_sharedClient.requestSerializer = [AFHTTPRequestSerializer serializer];
         [_sharedClient.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             switch (status) {
                 case AFNetworkReachabilityStatusNotReachable:{

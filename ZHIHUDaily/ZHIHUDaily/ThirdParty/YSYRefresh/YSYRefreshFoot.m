@@ -8,6 +8,13 @@
 
 #import "YSYRefreshFoot.h"
 
+@interface YSYRefreshFoot ()
+
+@property (weak, nonatomic) UIActivityIndicatorView *mloading;
+@property (strong, nonatomic) UIView *mvv;
+
+@end
+
 @implementation YSYRefreshFoot
 
 + (instancetype)footWithBlock:(YSYRefreshBaseRefreshingBlock)block {
@@ -32,26 +39,36 @@
     self.triggerAutoRefreshPercent = 1.0;
     // 设置为默认状态
     self.autoChangeAlpha = YES;
+    // 自定义控件
+    [self customerUI];
+}
+// 控件位置
+- (void)ysyLayoutSubviews {
+    [super ysyLayoutSubviews];
+    self.mvv.frame = self.bounds;
+    self.mloading.center = CGPointMake(self.ysy_width*0.5, self.ysy_height*0.5);
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
-    
+    // 监听scrollView数据的变化
     if (newSuperview) {
-        // 监听scrollView数据的变化
         if ([self.mScrollView isKindOfClass:[UITableView class]] || [self.mScrollView isKindOfClass:[UICollectionView class]]) {
-            [self.mScrollView setYsy_reloadBlock:^(NSInteger totalCount) {
+            [self.mScrollView setYsy_reloadBlock:^(NSInteger totalDataCount) {
                 if (self.isAutoHidden) {
-                    self.hidden = (totalCount == 0);
+                    self.hidden = (totalDataCount == 0);
                 }
-                // 设置foot位置
-                if (self.hidden == NO) {
-                    self.mScrollView.ysy_insetBottom += self.ysy_height;
-                }
-                // 设置位置
-                self.ysy_y = self.mScrollView.ysy_contentHeight;
             }];
         }
+    }
+    // 设置位置
+    if (newSuperview) {
+        // 设置foot位置
+        if (self.hidden == NO) {
+            self.mScrollView.ysy_insetBottom += self.ysy_height;
+        }
+        // 设置位置
+        self.ysy_y = self.mScrollView.ysy_contentHeight;
     }
     else {
         // 被移除了
@@ -127,33 +144,55 @@
     }
 }
 
-//- (void)setState:(YSYRefreshState)state
-//{
-//    MJRefreshCheckState
-//    
-//    if (state == YSYRefreshStateRefreshing) {
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [self executeRefreshingCallback];
-//        });
-//    }
-//}
-//
-//- (void)setHidden:(BOOL)hidden
-//{
-//    BOOL lastHidden = self.isHidden;
-//    
-//    [super setHidden:hidden];
-//    
-//    if (!lastHidden && hidden) {
-//        self.state = YSYRefreshStateIdle;
-//        
-//        self.scrollView.mj_insetB -= self.mj_h;
-//    } else if (lastHidden && !hidden) {
-//        self.scrollView.mj_insetB += self.mj_h;
-//        
-//        // 设置位置
-//        self.mj_y = _scrollView.mj_contentH;
-//    }
-//}
+- (void)setMState:(YSYRefreshState)mState {
+    
+    YSYRefreshCheckState
+    
+    if (mState == YSYRefreshStateRefreshing) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self callBackMethod];
+        });
+    }
+    switch (mState) {
+        case YSYRefreshStateFree:
+            [self.mloading stopAnimating];
+            break;
+        case YSYRefreshStateRefreshing:
+            [self.mloading startAnimating];
+            break;
+        case YSYRefreshStateNoMoreData:
+            [self.mloading stopAnimating];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)setHidden:(BOOL)hidden {
+    
+    BOOL lastHidden = self.isHidden;
+    [super setHidden:hidden];
+    
+    if (!lastHidden && hidden) {
+        self.mState = YSYRefreshStateFree;
+        self.mScrollView.ysy_insetBottom -= self.ysy_height;
+    } else if (lastHidden && !hidden) {
+        self.mScrollView.ysy_insetBottom += self.ysy_height;
+        // 设置位置
+        self.ysy_y = self.mScrollView.ysy_contentHeight;
+    }
+}
+#pragma mark － 自定义控件
+- (void)customerUI {
+    // loading
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self addSubview:loading];
+    self.mloading = loading;
+    
+    UIView *vv =[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.ysy_width, self.ysy_height)];
+    vv.backgroundColor = [UIColor redColor];
+    [self addSubview:vv];
+    self.mvv = vv;
+}
 
 @end

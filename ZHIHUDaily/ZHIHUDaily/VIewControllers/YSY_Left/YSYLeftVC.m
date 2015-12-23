@@ -60,13 +60,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.view.backgroundColor = [UIColor convertHexToRGB:@"232A30"];
+    self.view.backgroundColor = [UIColor ysy_convertHexToRGB:@"232A30"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor convertHexToRGB:@"232A30"];
+    self.view.backgroundColor = [UIColor ysy_convertHexToRGB:@"232A30"];
     [self setUI];
     [ZHThemes themesWithBlock:^(ZHThemes *themes, NSError *error) {
         // 成功
@@ -81,7 +81,7 @@
 - (YSYCustomerBtn *)createSimilarButtonFontSize:(CGFloat)size {
     YSYCustomerBtn *btn = [YSYCustomerBtn buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = [UIColor clearColor];
-    [btn setTitleColor:[UIColor convertHexToRGB:@"94999f"]
+    [btn setTitleColor:[UIColor ysy_convertHexToRGB:@"94999f"]
               forState:UIControlStateNormal];
     [btn.titleLabel setFont:[UIFont systemFontOfSize:size]];
     
@@ -144,7 +144,7 @@
     if (!cell) {
         cell = [[ThemeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         cell.textLabel.font = [UIFont systemFontOfSize:__View_Scale(16.0)];
-        cell.textLabel.textColor = [UIColor convertHexToRGB:@"94999f"];
+        cell.textLabel.textColor = [UIColor ysy_convertHexToRGB:@"94999f"];
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
     [cell setCellModel:_themes[indexPath.row]];
@@ -212,7 +212,7 @@
             lab.backgroundColor = [UIColor clearColor];
             lab.font = [UIFont systemFontOfSize:__View_Scale(16.0)];
             lab.textAlignment = 0;
-            lab.textColor = [UIColor convertHexToRGB:@"94999f"];
+            lab.textColor = [UIColor ysy_convertHexToRGB:@"94999f"];
             lab.text = @"请登录";
             [self.mLoginBtn addSubview:lab];
             [lab mas_makeConstraints:^(MASConstraintMaker *make) {

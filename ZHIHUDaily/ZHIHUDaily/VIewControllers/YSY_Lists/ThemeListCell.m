@@ -100,14 +100,14 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
         label.numberOfLines = 0;
         label.font = [UIFont boldSystemFontOfSize:__View_Scale(18.0)];
-        label.textColor = [UIColor convertHexToRGB:@"383838"];
+        label.textColor = [UIColor ysy_convertHexToRGB:@"383838"];
         label.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:label];
         label;
     });
     _mLine = ({
         UIView *line = [UIView new];
-        line.backgroundColor = [UIColor convertHexToRGB:@"E8E8E8"];
+        line.backgroundColor = [UIColor ysy_convertHexToRGB:@"E8E8E8"];
         [self.contentView addSubview:line];
         line;
     });

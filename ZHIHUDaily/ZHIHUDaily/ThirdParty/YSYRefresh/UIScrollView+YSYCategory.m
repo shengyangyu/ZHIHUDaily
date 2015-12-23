@@ -201,7 +201,7 @@ static const char YSYRefreshFootKey = '\0';
     // 支持KVO
     [self willChangeValueForKey:@"ysy_foot"];
     // 既然为OBJC_ASSOCIATION_ASSIGN 为何声明的时候是strong
-    objc_setAssociatedObject(self, &YSYRefreshFootKey, ysy_foot, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &YSYRefreshFootKey, ysy_foot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:@"ysy_foot"];
 }
 

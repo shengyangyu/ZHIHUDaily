@@ -23,7 +23,7 @@
 }
 
 + (NSURLSessionDataTask *)themesWithBlock:(void(^)(ZHThemes *themes, NSError *error))block {
-    
+    //themes_Api
     return [[YSY_RequestClient sharedClient] GET:themes_Api parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         ZHThemes *themes = [ZHThemes yy_modelWithJSON:responseObject];
@@ -50,12 +50,12 @@
         return nil;
     }
     // default
-    self.contentView.backgroundColor = [UIColor convertHexToRGB:@"232A30"];
-    self.backgroundView.backgroundColor = [UIColor convertHexToRGB:@"232A30"];
+    self.contentView.backgroundColor = [UIColor ysy_convertHexToRGB:@"232A30"];
+    self.backgroundView.backgroundColor = [UIColor ysy_convertHexToRGB:@"232A30"];
     self.textLabel.backgroundColor = [UIColor clearColor];
     // select
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
-    self.selectedBackgroundView.backgroundColor = [UIColor convertHexToRGB:@"1B2228"];
+    self.selectedBackgroundView.backgroundColor = [UIColor ysy_convertHexToRGB:@"1B2228"];
     self.textLabel.highlightedTextColor = [UIColor whiteColor];
     // customer accessoryView
     self.mAccessBtn = ({

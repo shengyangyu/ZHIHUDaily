@@ -42,11 +42,11 @@
     }];
     //******UINavigationBar*****//
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor convertHexToRGB:@"00AFF5"]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor ysy_convertHexToRGB:@"00AFF5"]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:21], NSFontAttributeName, nil]];
     //******window*****//
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    //UIColor *tColor = [UIColor convertHexToRGB:@"112233"];
+    //UIColor *tColor = [UIColor ysy_convertHexToRGB:@"112233"];
     //[self.window setTintColor:tColor];
     [self.window setRootViewController:self.drawerVC];
     return YES;
