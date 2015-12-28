@@ -288,10 +288,10 @@
 		D39C0A7B1C31212E00FE71B1 /* YSY_Details */ = {
 			isa = PBXGroup;
 			children = (
-				D39C0A821C31223700FE71B1 /* View */,
-				D39C0A811C31221B00FE71B1 /* VIewController */,
-				D39C0A801C3121FF00FE71B1 /* ModelVIew */,
 				D39C0A7F1C3121EE00FE71B1 /* Model */,
+				D39C0A801C3121FF00FE71B1 /* ModelVIew */,
+				D39C0A811C31221B00FE71B1 /* VIewController */,
+				D39C0A821C31223700FE71B1 /* View */,
 			);
 			path = YSY_Details;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				D39C0A831C31226300FE71B1 /* DetailModel.h */,
 				D39C0A841C31226300FE71B1 /* DetailModel.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D39C0A801C3121FF00FE71B1 /* ModelVIew */ = {
@@ -311,7 +311,7 @@
 				D33D72591C312EC90074B07F /* DetailViewModel.h */,
 				D33D725A1C312EC90074B07F /* DetailViewModel.m */,
 			);
-			name = ModelVIew;
+			path = ModelVIew;
 			sourceTree = "<group>";
 		};
 		D39C0A811C31221B00FE71B1 /* VIewController */ = {
@@ -320,14 +320,14 @@
 				D39C0A7C1C31215300FE71B1 /* YSYThemeDetailVC.h */,
 				D39C0A7D1C31215300FE71B1 /* YSYThemeDetailVC.m */,
 			);
-			name = VIewController;
+			path = VIewController;
 			sourceTree = "<group>";
 		};
 		D39C0A821C31223700FE71B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
