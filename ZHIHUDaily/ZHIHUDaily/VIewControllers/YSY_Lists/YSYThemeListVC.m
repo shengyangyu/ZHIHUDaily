@@ -11,6 +11,7 @@
 #import "YSYTableView.h"
 #import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 #import "YSYRefreshFooter.h"
+#import "YSYThemeDetailVC.h"
 
 @interface YSYThemeListVC ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -164,6 +165,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    ThemeStories *tData = (ThemeStories *)self.mThemesArray[indexPath.row];
+    DetailViewModel *tModel = [[DetailViewModel alloc] init];
+    tModel.mModelID = tData.mID;
+    YSYThemeDetailVC *detail = [[YSYThemeDetailVC alloc] initWithModel:tModel];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

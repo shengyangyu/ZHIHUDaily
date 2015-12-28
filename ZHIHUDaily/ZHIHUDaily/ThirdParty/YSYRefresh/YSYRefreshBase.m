@@ -121,17 +121,26 @@
         [self scrollViewContentSizeDidChange:change];
         return;
     }
-    // 控件被隐藏了 就不用管被拖动相关的监听了
+    // 看不见
     if (self.hidden) {
         return;
     }
+    // offset改变 需要监听
+    if ([keyPath isEqualToString:YSYRefreshKeyPathContentOffset])  {
+            [self scrollViewContentOffsetDidChange:change];
+            return;
+    }
+    else if ([keyPath isEqualToString:YSYRefreshKeyPathPanState]) {
+        [self scrollViewPanStateDidChange:change];
+    }
+    /*
     SEL kvoSel = NSSelectorFromString(keyPath);
     if ([self respondsToSelector:kvoSel]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [self performSelector:kvoSel withObject:change];
 #pragma clang diagnostic pop
-    }
+    }*/
 }
 
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {

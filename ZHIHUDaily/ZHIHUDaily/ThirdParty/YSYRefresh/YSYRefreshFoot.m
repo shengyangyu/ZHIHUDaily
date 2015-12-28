@@ -39,6 +39,8 @@
     self.triggerAutoRefreshPercent = 1.0;
     // 设置为默认状态
     self.autoChangeAlpha = YES;
+    //
+    self.autoRefresh = YES;
     // 自定义控件
     [self customerUI];
 }

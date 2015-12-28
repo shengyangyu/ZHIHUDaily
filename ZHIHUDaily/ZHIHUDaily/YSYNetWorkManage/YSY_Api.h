@@ -32,12 +32,14 @@ UIKIT_EXTERN NSString * const beforenews_Api;
 UIKIT_EXTERN NSString * const storyextra_Api;
 // 新闻对应长评论查看 消息id 4232852
 UIKIT_EXTERN NSString * const longcomments_Api;
-//  新闻对应短评论查看
+// 新闻对应短评论查看
 UIKIT_EXTERN NSString * const shorcommentst_Api;
 // 主题日报列表查看
 UIKIT_EXTERN NSString * const themes_Api;
 // 主题日报内容查看 主题日报的id 11
 UIKIT_EXTERN NSString * const themesextra_Api;
+// 信息详情 #{id}
+UIKIT_EXTERN NSString * const story_Api;
 /******请注意！ 此 API 仍可访问，但是其内容未出现在最新的『知乎日报』 App 中****/
 // 热门消息
 UIKIT_EXTERN NSString * const newshot_Api;

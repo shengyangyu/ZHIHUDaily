@@ -10,10 +10,10 @@
 
 const CGFloat YSYRefreshAnimationDuration = 0.25;
 const CGFloat YSYRefreshFootHeight = 44.0;
-NSString *const YSYRefreshKeyPathContentOffset = @"scrollViewContentOffsetDidChange:";
-NSString *const YSYRefreshKeyPathContentSize = @"scrollViewContentSizeDidChange:";
-NSString *const YSYRefreshKeyPathContentInset = @"kContentInset";
-NSString *const YSYRefreshKeyPathPanState = @"scrollViewPanStateDidChange:";
+NSString *const YSYRefreshKeyPathContentOffset = @"contentOffset";
+NSString *const YSYRefreshKeyPathContentSize = @"contentSize";
+NSString *const YSYRefreshKeyPathContentInset = @"contentInset";
+NSString *const YSYRefreshKeyPathPanState = @"state";
 
 
 

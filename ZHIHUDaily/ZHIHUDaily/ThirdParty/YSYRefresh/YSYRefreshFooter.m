@@ -8,78 +8,76 @@
 
 #import "YSYRefreshFooter.h"
 
-@interface YSYRefreshFooter ()
-{
+@interface YSYRefreshFooter (){
+    
     CGFloat mContentHeight;
     CGFloat mScrollHeight;
     CGFloat mScrollWidth;
-    //是否正在刷新,默认是NO
-    BOOL mIsRefreshing;
-    // 是否添加了footer,默认是NO
-    BOOL mIsAddFoot;
-    // footer
+    CGFloat mFooterHeight;
+    BOOL mIsAddFoot;//是否添加了footer,默认是NO
+    BOOL mIsRefreshing;//是否正在刷新,默认是NO
+    
     UIView *mFooterView;
     UIActivityIndicatorView *mActivityView;
-    CGFloat mFooterHeight;
 }
-
-@property (nonatomic, strong) UIScrollView *mScrollView;
+@property(nonatomic,strong) UIScrollView *mScrollView;
 
 @end
 
-//static NSString *kContenOffsetKVC = @"kContenOffset";
+static NSString *kContenOffsetKVC = @"contentOffset";
 
 @implementation YSYRefreshFooter
 
 - (instancetype)initFooterWithFrame:(CGRect)frame withSuper:(UIScrollView *)mSuper {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         _mScrollView = mSuper;
-        mScrollWidth = _mScrollView.frame.size.width;
         mScrollHeight = _mScrollView.frame.size.height;
+        mScrollWidth = _mScrollView.frame.size.width;
         mFooterHeight = 35.0f;
         mIsAddFoot = NO;
         mIsRefreshing = NO;
-        mFooterView = [UIView new];
+        mFooterView = [[UIView alloc] init];
         mActivityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        [_mScrollView addObserver:self forKeyPath:@"kContenOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        [_mScrollView addObserver:self forKeyPath:kContenOffsetKVC options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     }
     return self;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
-    if (![@"kContenOffset" isEqualToString:keyPath]) {
+    if (![kContenOffsetKVC isEqualToString:keyPath]) {
         return;
     }
     mContentHeight = _mScrollView.contentSize.height;
-    // 没有添加 加一个
     if (!mIsAddFoot) {
         mIsAddFoot = YES;
-        // foot
         mFooterView.frame = CGRectMake(0, mContentHeight, mScrollWidth, mFooterHeight);
         [_mScrollView addSubview:mFooterView];
-        // Activity
-        mActivityView.center = CGPointMake(mScrollWidth/2, mFooterHeight/2);
+        mActivityView.frame = CGRectMake((mScrollWidth-mFooterHeight)/2, 0, mFooterHeight, mFooterHeight);
         [mFooterView addSubview:mActivityView];
     }
-    // 有了设置位置
-    mFooterView.frame = CGRectMake(0, mContentHeight, mScrollWidth, mFooterHeight);
-    mActivityView.center = CGPointMake(mScrollWidth/2, mFooterHeight/2);
+    
+    mFooterView.frame=CGRectMake(0, mContentHeight, mScrollWidth, mFooterHeight);
+    mActivityView.frame=CGRectMake((mScrollWidth-mFooterHeight)/2, 0, mFooterHeight, mFooterHeight);
+    int currentPostion = _mScrollView.contentOffset.y;
     // 进入刷新状态
-    NSInteger cPostion = _mScrollView.contentOffset.y;
-    if ((cPostion > (mContentHeight - mScrollHeight)) &&(mContentHeight > mScrollHeight)) {
+    if (!mIsRefreshing &&
+        (currentPostion > (mContentHeight-mScrollHeight*2)) &&
+        (mContentHeight > mScrollHeight)) {
         [self beginRefreshing];
     }
 }
 
+/**
+ *  开始刷新操作  如果正在刷新则不做操作
+ */
 - (void)beginRefreshing {
     if (!mIsRefreshing) {
+        NSLog(@"beginRefreshing");
         mIsRefreshing = YES;
         [mActivityView startAnimating];
-        // 设置刷新状态scrollView的位置
+        // 设置刷新状态_scrollView的位置
         [UIView animateWithDuration:0.25 animations:^{
             _mScrollView.contentInset = UIEdgeInsetsMake(0, 0, mFooterHeight, 0);
         }];
@@ -88,117 +86,16 @@
     }
 }
 
+/**
+ *  关闭刷新操作  请加在UIScrollView数据刷新后，如[tableView reloadData];
+ */
 - (void)endRefreshing {
-    mIsRefreshing = NO;
+    NSLog(@"endRefreshing");
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.25 animations:^{
             [mActivityView stopAnimating];
-            _mScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-            mFooterView.frame = CGRectMake(0, mContentHeight, mScrollWidth, mFooterHeight);
-        }];
-    });
-}
-
-
--(void)endRefreshMehod {
-    mIsRefreshing = NO;
-    
-}
-- (void)dealloc {
-    [_mScrollView removeObserver:self forKeyPath:@"kContenOffset"];
-}
-
-@end
-/*
-#import "YSYRefreshFooter.h"
-
-@interface YSYRefreshFooter (){
-    
-    float contentHeight;
-    float scrollFrameHeight;
-    float footerHeight;
-    float scrollWidth;
-    BOOL isAdd;//是否添加了footer,默认是NO
-    BOOL isRefresh;//是否正在刷新,默认是NO
-    
-    UIView *footerView;
-    UIActivityIndicatorView *activityView;
-}
-@property(nonatomic,strong) UIScrollView *scrollView;
-
-@end
-
-@implementation YSYRefreshFooter
-
-- (instancetype)initFooterWithFrame:(CGRect)frame withSuper:(UIScrollView *)mSuper {
-    self = [super init];
-    if (self) {
-        _scrollView = mSuper;
-        scrollWidth=_scrollView.frame.size.width;
-        footerHeight=35;
-        scrollFrameHeight=_scrollView.frame.size.height;
-        isAdd=NO;
-        isRefresh=NO;
-        footerView=[[UIView alloc] init];
-        activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        [_scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-    }
-    return self;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (![@"contentOffset" isEqualToString:keyPath])
-        return;
-    contentHeight=_scrollView.contentSize.height;
-    if (!isAdd) {
-        isAdd=YES;
-        footerView.frame=CGRectMake(0, contentHeight, scrollWidth, footerHeight);
-        [_scrollView addSubview:footerView];
-        activityView.frame=CGRectMake((scrollWidth-footerHeight)/2, 0, footerHeight, footerHeight);
-        [footerView addSubview:activityView];
-    }
-    
-    footerView.frame=CGRectMake(0, contentHeight, scrollWidth, footerHeight);
-    activityView.frame=CGRectMake((scrollWidth-footerHeight)/2, 0, footerHeight, footerHeight);
-    int currentPostion = _scrollView.contentOffset.y;
-    // 进入刷新状态
-    if (!isRefresh &&
-        (currentPostion > (contentHeight-scrollFrameHeight*2)) &&
-        (contentHeight > scrollFrameHeight)) {
-        [self beginRefreshing];
-    }
-}
-
-/**
- *  开始刷新操作  如果正在刷新则不做操作
- *//*
-- (void)beginRefreshing
-{
-    if (!isRefresh) {
-        NSLog(@"beginRefreshing");
-        isRefresh=YES;
-        [activityView startAnimating];
-        //        设置刷新状态_scrollView的位置
-        [UIView animateWithDuration:0.3 animations:^{
-            _scrollView.contentInset=UIEdgeInsetsMake(0, 0, footerHeight, 0);
-        }];
-        //        block回调
-        _beginBlock();
-    }
-}
-*/
-/**
- *  关闭刷新操作  请加在UIScrollView数据刷新后，如[tableView reloadData];
- *//*
-- (void)endRefreshing
-{
-    NSLog(@"endRefreshing");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.3 animations:^{
-            [activityView stopAnimating];
-            _scrollView.contentInset=UIEdgeInsetsMake(0, 0, 0, 0);
-            footerView.frame=CGRectMake(0, contentHeight, [[UIScreen mainScreen] bounds].size.width, footerHeight);
+            _mScrollView.contentInset = UIEdgeInsetsMake(0,0,0,0);
+            mFooterView.frame = CGRectMake(0, mContentHeight, [[UIScreen mainScreen] bounds].size.width, mFooterHeight);
         } completion:^(BOOL finished) {
             if (finished) {
                 //isRefresh=NO;
@@ -207,11 +104,12 @@
     });
 }
 
-
-
-- (void)dealloc
-{
-    [_scrollView removeObserver:self forKeyPath:@"contentOffset"];
+- (void)endRefreshMehod {
+    mIsRefreshing = NO;
 }
 
-@end*/
+- (void)dealloc {
+    [_mScrollView removeObserver:self forKeyPath:kContenOffsetKVC];
+}
+
+@end
