@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#ifndef UIColorHex
+#define UIColorHex(_hex_)   [UIColor ysy_convertHexToRGB:((__bridge NSString *)CFSTR(#_hex_))]
+#endif
+
 @interface UIColor (YSYCategory)
 
 // 16进制 生成Color

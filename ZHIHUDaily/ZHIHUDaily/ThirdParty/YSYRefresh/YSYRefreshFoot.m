@@ -70,7 +70,7 @@
             self.mScrollView.ysy_insetBottom += self.ysy_height;
         }
         // 设置位置
-        self.ysy_y = self.mScrollView.ysy_contentHeight;
+        self.ysy_top = self.mScrollView.ysy_contentHeight;
     }
     else {
         // 被移除了
@@ -93,7 +93,7 @@
 - (void)scrollViewContentSizeDidChange:(NSDictionary *)change {
     [super scrollViewContentSizeDidChange:change];
     // 设置位置
-    self.ysy_y = self.mScrollView.ysy_contentHeight;
+    self.ysy_top = self.mScrollView.ysy_contentHeight;
 }
 
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
@@ -103,7 +103,7 @@
     // content 要有值 显示foot
     if (YSYRefreshStateFree != self.mState ||
         !self.autoRefresh ||
-        self.ysy_y == 0) {
+        self.ysy_top == 0) {
         return;
     }
     // 内容超过ScrollView frame height
@@ -181,7 +181,7 @@
     } else if (lastHidden && !hidden) {
         self.mScrollView.ysy_insetBottom += self.ysy_height;
         // 设置位置
-        self.ysy_y = self.mScrollView.ysy_contentHeight;
+        self.ysy_top = self.mScrollView.ysy_contentHeight;
     }
 }
 #pragma mark － 自定义控件

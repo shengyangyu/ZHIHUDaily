@@ -29,8 +29,8 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
-  - UITableView+FDTemplateLayoutCell (1.4.beta)
   - YYModel (0.9.0)
+  - YYText (0.9.13)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -38,8 +38,8 @@ DEPENDENCIES:
   - LTNavigationBar (~> 2.1)
   - Masonry (~> 0.6)
   - MMDrawerController (~> 0.5.7)
-  - UITableView+FDTemplateLayoutCell (= 1.4.beta)
   - YYModel (~> 0.9)
+  - YYText (~> 0.9)
 
 SPEC CHECKSUMS:
   AFNetworking: 932ff751f9d6fb1dad0b3af58b7e3ffba0a4e7fd
@@ -47,7 +47,7 @@ SPEC CHECKSUMS:
   LTNavigationBar: 8d2373e61ac08c16b6235c0450051541941f1fec
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
-  UITableView+FDTemplateLayoutCell: 9d20bf0518f3c01e42ae614243b97f1161063d27
   YYModel: e6725042af0ebd67804f7a2246db1f264b333fc1
+  YYText: e4895163da8c6f1b405c3fbf65a6c781596a5d27
 
 COCOAPODS: 0.39.0

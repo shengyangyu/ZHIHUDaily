@@ -70,7 +70,7 @@
         // 等宽
         self.ysy_width = newSuperview.ysy_width;
         // 起点为0
-        self.ysy_x = 0;
+        self.ysy_left = 0;
         // 获取父视图
         _mScrollView = (UIScrollView *)newSuperview;
         // 设置垂直弹簧效果

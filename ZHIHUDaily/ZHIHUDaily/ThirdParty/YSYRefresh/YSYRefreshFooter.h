@@ -18,6 +18,5 @@ typedef void (^YSYBeginRefreshBlock)(void);
 - (instancetype)initFooterWithFrame:(CGRect)frame withSuper:(UIScrollView *)mSuper;
 -(void)beginRefreshing;
 -(void)endRefreshing;
--(void)endRefreshMehod;
 
 @end

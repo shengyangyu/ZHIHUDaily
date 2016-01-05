@@ -34,7 +34,7 @@ static NSString *kContenOffsetKVC = @"contentOffset";
         _mScrollView = mSuper;
         mScrollHeight = _mScrollView.frame.size.height;
         mScrollWidth = _mScrollView.frame.size.width;
-        mFooterHeight = 35.0f;
+        mFooterHeight = frame.size.height;
         mIsAddFoot = NO;
         mIsRefreshing = NO;
         mFooterView = [[UIView alloc] init];
@@ -58,8 +58,8 @@ static NSString *kContenOffsetKVC = @"contentOffset";
         [mFooterView addSubview:mActivityView];
     }
     
-    mFooterView.frame=CGRectMake(0, mContentHeight, mScrollWidth, mFooterHeight);
-    mActivityView.frame=CGRectMake((mScrollWidth-mFooterHeight)/2, 0, mFooterHeight, mFooterHeight);
+    mFooterView.frame = CGRectMake(0, mContentHeight, mScrollWidth, mFooterHeight);
+    mActivityView.frame = CGRectMake((mScrollWidth-mFooterHeight)/2, 0, mFooterHeight, mFooterHeight);
     int currentPostion = _mScrollView.contentOffset.y;
     // 进入刷新状态
     if (!mIsRefreshing &&
@@ -76,11 +76,13 @@ static NSString *kContenOffsetKVC = @"contentOffset";
     if (!mIsRefreshing) {
         NSLog(@"beginRefreshing");
         mIsRefreshing = YES;
-        [mActivityView startAnimating];
-        // 设置刷新状态_scrollView的位置
-        [UIView animateWithDuration:0.25 animations:^{
-            _mScrollView.contentInset = UIEdgeInsetsMake(0, 0, mFooterHeight, 0);
-        }];
+        if (mFooterHeight > 1.0f) {
+            [mActivityView startAnimating];
+            // 设置刷新状态_scrollView的位置
+            [UIView animateWithDuration:0.25 animations:^{
+                _mScrollView.contentInset = UIEdgeInsetsMake(0, 0, mFooterHeight, 0);
+            }];
+        }
         // block回调
         _beginBlock();
     }
@@ -91,21 +93,22 @@ static NSString *kContenOffsetKVC = @"contentOffset";
  */
 - (void)endRefreshing {
     NSLog(@"endRefreshing");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.25 animations:^{
-            [mActivityView stopAnimating];
-            _mScrollView.contentInset = UIEdgeInsetsMake(0,0,0,0);
-            mFooterView.frame = CGRectMake(0, mContentHeight, [[UIScreen mainScreen] bounds].size.width, mFooterHeight);
-        } completion:^(BOOL finished) {
-            if (finished) {
-                //isRefresh=NO;
-            }
-        }];
-    });
-}
-
-- (void)endRefreshMehod {
-    mIsRefreshing = NO;
+    if (mFooterHeight > 1.0f) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.25 animations:^{
+                [mActivityView stopAnimating];
+                _mScrollView.contentInset = UIEdgeInsetsMake(0,0,0,0);
+                mFooterView.frame = CGRectMake(0, mContentHeight, [[UIScreen mainScreen] bounds].size.width, mFooterHeight);
+            } completion:^(BOOL finished) {
+                if (finished) {
+                    mIsRefreshing = NO;
+                }
+            }];
+        });
+    }
+    else {
+        mIsRefreshing = NO;
+    }
 }
 
 - (void)dealloc {

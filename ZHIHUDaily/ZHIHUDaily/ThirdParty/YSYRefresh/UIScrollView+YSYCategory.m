@@ -11,74 +11,7 @@
 #import "YSYRefreshFoot.h"
 
 
-@implementation UIView (YSYCategory)
 
-- (CGFloat)ysy_x{
-    return self.frame.origin.x;
-}
-
-- (CGFloat)ysy_y{
-    return self.frame.origin.y;
-}
-
-- (CGFloat)ysy_width{
-    return self.frame.size.width;
-}
-
-- (CGFloat)ysy_height{
-    return self.frame.size.height;
-}
-
-- (void)setYsy_x:(CGFloat)x{
-    CGRect frame = self.frame;
-    frame.origin.x = x;
-    self.frame = frame;
-}
-
-- (void)setYsy_y:(CGFloat)y{
-    CGRect frame = self.frame;
-    frame.origin.y = y;
-    self.frame = frame;
-}
-
-- (void)setYsy_width:(CGFloat)w{
-    CGRect frame = self.frame;
-    frame.size.width = w;
-    self.frame = frame;
-}
-
-- (void)setYsy_height:(CGFloat)h{
-    CGRect frame = self.frame;
-    frame.size.height = h;
-    self.frame = frame;
-}
-
-- (void)setYsy_origin:(CGPoint)mj_origin
-{
-    CGRect frame = self.frame;
-    frame.origin = mj_origin;
-    self.frame = frame;
-}
-
-- (CGPoint)ysy_origin
-{
-    return self.frame.origin;
-}
-
-- (void)setYsy_size:(CGSize)mj_size
-{
-    CGRect frame = self.frame;
-    frame.size = mj_size;
-    self.frame = frame;
-}
-
-- (CGSize)ysy_size
-{
-    return self.frame.size;
-}
-
-
-@end
 
 @implementation UIScrollView (YSYCategory)
 /**

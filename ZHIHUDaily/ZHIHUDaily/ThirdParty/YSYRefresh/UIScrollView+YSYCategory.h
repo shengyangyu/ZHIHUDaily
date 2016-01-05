@@ -9,16 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YSYRefreshConst.h"
 
-@interface UIView (YSYCategory)
 
-@property (assign, nonatomic) CGFloat ysy_x;
-@property (assign, nonatomic) CGFloat ysy_y;
-@property (assign, nonatomic) CGFloat ysy_width;
-@property (assign, nonatomic) CGFloat ysy_height;
-@property (assign, nonatomic) CGSize ysy_size;
-@property (assign, nonatomic) CGPoint ysy_origin;
-
-@end
 
 @interface UIScrollView (YSYCategory)
 

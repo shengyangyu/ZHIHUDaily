@@ -7,8 +7,6 @@
 //  自定义通用请求
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking/AFNetworking.h>
-#import <YYModel/YYModel.h>
 #import "YSY_Api.h"
 
 #define SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING(code)                    \

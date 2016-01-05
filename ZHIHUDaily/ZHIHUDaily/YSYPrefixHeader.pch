@@ -9,8 +9,14 @@
 #ifndef YSYPrefixHeader_pch
 #define YSYPrefixHeader_pch
 
-#import "UIColor+YSYCategory.h"
 #import "YSYHeader.h"
+#import "YSYCGUtilities.h"
+#import "UIColor+YSYCategory.h"
+#import "UIView+YSYCategory.h"
+#import "UIImage+YSYCategory.h"
+#import "CALayer+YSYCategory.h"
+#import "YSYGestureRecognizer.h"
+#import "YSYControl.h"
 
 
 #endif /* YSYPrefixHeader_pch */

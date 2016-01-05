@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6C24245F720141A72FE15714 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */; };
 		D33D725B1C312EC90074B07F /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D33D725A1C312EC90074B07F /* DetailViewModel.m */; };
+		D34F95821C3BA91500D05482 /* UIImage+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95811C3BA91500D05482 /* UIImage+YSYCategory.m */; };
+		D34F95851C3BB05900D05482 /* CALayer+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95841C3BB05900D05482 /* CALayer+YSYCategory.m */; };
+		D34F95881C3BB1A500D05482 /* YSYCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95871C3BB1A500D05482 /* YSYCGUtilities.m */; };
+		D34F958B1C3BC0DC00D05482 /* YSYControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F958A1C3BC0DC00D05482 /* YSYControl.m */; };
+		D34F95901C3BC18600D05482 /* YSYGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F958F1C3BC18600D05482 /* YSYGestureRecognizer.m */; };
 		D35B7B0B1C2CDFB7003F5901 /* YSYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35B7B0A1C2CDFB7003F5901 /* YSYWebViewController.m */; };
 		D35B7B0E1C2D0E55003F5901 /* YSYRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D35B7B0D1C2D0E55003F5901 /* YSYRefreshFooter.m */; };
 		D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26741C23A9730014ED48 /* UIScrollView+YSYCategory.m */; };
@@ -34,6 +39,9 @@
 		D377D5B11C16D270000000E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B01C16D270000000E9 /* main.m */; };
 		D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D377D5B31C16D270000000E9 /* AppDelegate.m */; };
 		D377D5BC1C16D270000000E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D377D5BB1C16D270000000E9 /* Assets.xcassets */; };
+		D384519C1C3A0A4500517BC0 /* UIView+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D384519B1C3A0A4500517BC0 /* UIView+YSYCategory.m */; };
+		D38451A31C3A0B0100517BC0 /* ThemeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D38451A21C3A0B0100517BC0 /* ThemeListModel.m */; };
+		D38451A61C3A141000517BC0 /* ThemeListLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D38451A51C3A141000517BC0 /* ThemeListLayout.m */; };
 		D391FC9F1C1FF35B008E9EAA /* NSString+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */; };
 		D39C0A7E1C31215300FE71B1 /* YSYThemeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D39C0A7D1C31215300FE71B1 /* YSYThemeDetailVC.m */; };
 		D39C0A851C31226300FE71B1 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D39C0A841C31226300FE71B1 /* DetailModel.m */; };
@@ -44,6 +52,16 @@
 		42F38086E8FF062ECC36D0A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D33D72591C312EC90074B07F /* DetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewModel.h; sourceTree = "<group>"; };
 		D33D725A1C312EC90074B07F /* DetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewModel.m; sourceTree = "<group>"; };
+		D34F95801C3BA91500D05482 /* UIImage+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YSYCategory.h"; sourceTree = "<group>"; };
+		D34F95811C3BA91500D05482 /* UIImage+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YSYCategory.m"; sourceTree = "<group>"; };
+		D34F95831C3BB05900D05482 /* CALayer+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+YSYCategory.h"; sourceTree = "<group>"; };
+		D34F95841C3BB05900D05482 /* CALayer+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+YSYCategory.m"; sourceTree = "<group>"; };
+		D34F95861C3BB1A500D05482 /* YSYCGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCGUtilities.h; sourceTree = "<group>"; };
+		D34F95871C3BB1A500D05482 /* YSYCGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCGUtilities.m; sourceTree = "<group>"; };
+		D34F95891C3BC0DC00D05482 /* YSYControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYControl.h; sourceTree = "<group>"; };
+		D34F958A1C3BC0DC00D05482 /* YSYControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYControl.m; sourceTree = "<group>"; };
+		D34F958E1C3BC18600D05482 /* YSYGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYGestureRecognizer.h; sourceTree = "<group>"; };
+		D34F958F1C3BC18600D05482 /* YSYGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYGestureRecognizer.m; sourceTree = "<group>"; };
 		D35B7B091C2CDFB7003F5901 /* YSYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYWebViewController.h; sourceTree = "<group>"; };
 		D35B7B0A1C2CDFB7003F5901 /* YSYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYWebViewController.m; sourceTree = "<group>"; };
 		D35B7B0C1C2D0E55003F5901 /* YSYRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshFooter.h; sourceTree = "<group>"; };
@@ -96,6 +114,12 @@
 		D377D5B31C16D270000000E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D377D5BB1C16D270000000E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D377D5C01C16D270000000E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D384519A1C3A0A4500517BC0 /* UIView+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSYCategory.h"; sourceTree = "<group>"; };
+		D384519B1C3A0A4500517BC0 /* UIView+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSYCategory.m"; sourceTree = "<group>"; };
+		D38451A11C3A0B0100517BC0 /* ThemeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeListModel.h; sourceTree = "<group>"; };
+		D38451A21C3A0B0100517BC0 /* ThemeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeListModel.m; sourceTree = "<group>"; };
+		D38451A41C3A141000517BC0 /* ThemeListLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeListLayout.h; sourceTree = "<group>"; };
+		D38451A51C3A141000517BC0 /* ThemeListLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeListLayout.m; sourceTree = "<group>"; };
 		D391FC9D1C1FF35B008E9EAA /* NSString+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YSYCategory.h"; sourceTree = "<group>"; };
 		D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YSYCategory.m"; sourceTree = "<group>"; };
 		D39C0A7C1C31215300FE71B1 /* YSYThemeDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYThemeDetailVC.h; sourceTree = "<group>"; };
@@ -132,6 +156,32 @@
 				EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D34F958C1C3BC12D00D05482 /* YSY_Main */ = {
+			isa = PBXGroup;
+			children = (
+				D375C3481C17FC060040E03E /* YSYMainVC.h */,
+				D375C3491C17FC060040E03E /* YSYMainVC.m */,
+				D375C35E1C1831680040E03E /* YSYRootVC.h */,
+				D375C35F1C1831680040E03E /* YSYRootVC.m */,
+				D35B7B091C2CDFB7003F5901 /* YSYWebViewController.h */,
+				D35B7B0A1C2CDFB7003F5901 /* YSYWebViewController.m */,
+			);
+			path = YSY_Main;
+			sourceTree = "<group>";
+		};
+		D34F958D1C3BC13C00D05482 /* YSYUtility */ = {
+			isa = PBXGroup;
+			children = (
+				D34F95891C3BC0DC00D05482 /* YSYControl.h */,
+				D34F958A1C3BC0DC00D05482 /* YSYControl.m */,
+				D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */,
+				D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */,
+				D34F958E1C3BC18600D05482 /* YSYGestureRecognizer.h */,
+				D34F958F1C3BC18600D05482 /* YSYGestureRecognizer.m */,
+			);
+			path = YSYUtility;
 			sourceTree = "<group>";
 		};
 		D35C266E1C23A70E0014ED48 /* ThirdParty */ = {
@@ -179,10 +229,10 @@
 		D36BE1FD1C1EC53600580A1E /* YSY_Lists */ = {
 			isa = PBXGroup;
 			children = (
-				D36BE2041C1EC5AC00580A1E /* ThemeListCell.h */,
-				D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */,
-				D36BE2071C1EC5CD00580A1E /* YSYThemeListVC.h */,
-				D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */,
+				D384519D1C3A0AB200517BC0 /* Model */,
+				D384519E1C3A0ABA00517BC0 /* ModelVIew */,
+				D38451A01C3A0AC900517BC0 /* VIewController */,
+				D384519F1C3A0AC200517BC0 /* View */,
 			);
 			path = YSY_Lists;
 			sourceTree = "<group>";
@@ -190,8 +240,6 @@
 		D3743EF51C1A5F5100A222BB /* YSYSubClass */ = {
 			isa = PBXGroup;
 			children = (
-				D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */,
-				D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */,
 				D36BE1F41C1E641400580A1E /* YSYTableView.h */,
 				D36BE1F51C1E641400580A1E /* YSYTableView.m */,
 				D36BE1F71C1E642200580A1E /* YSYTableViewCell.h */,
@@ -219,12 +267,7 @@
 				D39C0A7B1C31212E00FE71B1 /* YSY_Details */,
 				D36BE1E11C1E529600580A1E /* YSY_Left */,
 				D36BE1FD1C1EC53600580A1E /* YSY_Lists */,
-				D375C3481C17FC060040E03E /* YSYMainVC.h */,
-				D375C3491C17FC060040E03E /* YSYMainVC.m */,
-				D375C35E1C1831680040E03E /* YSYRootVC.h */,
-				D375C35F1C1831680040E03E /* YSYRootVC.m */,
-				D35B7B091C2CDFB7003F5901 /* YSYWebViewController.h */,
-				D35B7B0A1C2CDFB7003F5901 /* YSYWebViewController.m */,
+				D34F958C1C3BC12D00D05482 /* YSY_Main */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -232,10 +275,18 @@
 		D375C3591C1822250040E03E /* YSYCategory */ = {
 			isa = PBXGroup;
 			children = (
+				D34F95831C3BB05900D05482 /* CALayer+YSYCategory.h */,
+				D34F95841C3BB05900D05482 /* CALayer+YSYCategory.m */,
 				D391FC9D1C1FF35B008E9EAA /* NSString+YSYCategory.h */,
 				D391FC9E1C1FF35B008E9EAA /* NSString+YSYCategory.m */,
 				D375C35A1C1822750040E03E /* UIColor+YSYCategory.h */,
 				D375C35B1C1822750040E03E /* UIColor+YSYCategory.m */,
+				D34F95801C3BA91500D05482 /* UIImage+YSYCategory.h */,
+				D34F95811C3BA91500D05482 /* UIImage+YSYCategory.m */,
+				D384519A1C3A0A4500517BC0 /* UIView+YSYCategory.h */,
+				D384519B1C3A0A4500517BC0 /* UIView+YSYCategory.m */,
+				D34F95861C3BB1A500D05482 /* YSYCGUtilities.h */,
+				D34F95871C3BB1A500D05482 /* YSYCGUtilities.m */,
 			);
 			path = YSYCategory;
 			sourceTree = "<group>";
@@ -267,6 +318,7 @@
 				D375C3591C1822250040E03E /* YSYCategory */,
 				D3743EF91C1A9DE500A222BB /* YSYNetWorkManage */,
 				D3743EF51C1A5F5100A222BB /* YSYSubClass */,
+				D34F958D1C3BC13C00D05482 /* YSYUtility */,
 				D377D5B21C16D270000000E9 /* AppDelegate.h */,
 				D377D5B31C16D270000000E9 /* AppDelegate.m */,
 				D377D5BB1C16D270000000E9 /* Assets.xcassets */,
@@ -283,6 +335,42 @@
 				D377D5B01C16D270000000E9 /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D384519D1C3A0AB200517BC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D38451A11C3A0B0100517BC0 /* ThemeListModel.h */,
+				D38451A21C3A0B0100517BC0 /* ThemeListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D384519E1C3A0ABA00517BC0 /* ModelVIew */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelVIew;
+			sourceTree = "<group>";
+		};
+		D384519F1C3A0AC200517BC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D36BE2041C1EC5AC00580A1E /* ThemeListCell.h */,
+				D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */,
+				D38451A41C3A141000517BC0 /* ThemeListLayout.h */,
+				D38451A51C3A141000517BC0 /* ThemeListLayout.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D38451A01C3A0AC900517BC0 /* VIewController */ = {
+			isa = PBXGroup;
+			children = (
+				D36BE2071C1EC5CD00580A1E /* YSYThemeListVC.h */,
+				D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */,
+			);
+			path = VIewController;
 			sourceTree = "<group>";
 		};
 		D39C0A7B1C31212E00FE71B1 /* YSY_Details */ = {
@@ -454,29 +542,37 @@
 				D391FC9F1C1FF35B008E9EAA /* NSString+YSYCategory.m in Sources */,
 				D33D725B1C312EC90074B07F /* DetailViewModel.m in Sources */,
 				D35B7B0B1C2CDFB7003F5901 /* YSYWebViewController.m in Sources */,
+				D34F95901C3BC18600D05482 /* YSYGestureRecognizer.m in Sources */,
 				D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */,
 				D35C26781C23B2240014ED48 /* YSYRefreshBase.m in Sources */,
 				D375C34A1C17FC060040E03E /* YSYMainVC.m in Sources */,
 				D39C0A7E1C31215300FE71B1 /* YSYThemeDetailVC.m in Sources */,
 				D35C26811C23EEFD0014ED48 /* YSYRefreshFoot.m in Sources */,
+				D34F95881C3BB1A500D05482 /* YSYCGUtilities.m in Sources */,
 				D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */,
 				D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */,
 				D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */,
+				D38451A31C3A0B0100517BC0 /* ThemeListModel.m in Sources */,
+				D34F95851C3BB05900D05482 /* CALayer+YSYCategory.m in Sources */,
 				D35B7B0E1C2D0E55003F5901 /* YSYRefreshFooter.m in Sources */,
 				D375C3601C1831680040E03E /* YSYRootVC.m in Sources */,
 				D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */,
 				D36BE1ED1C1E52BB00580A1E /* YSYSetVC.m in Sources */,
 				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
 				D39C0A851C31226300FE71B1 /* DetailModel.m in Sources */,
+				D34F958B1C3BC0DC00D05482 /* YSYControl.m in Sources */,
 				D36BE2091C1EC5CD00580A1E /* YSYThemeListVC.m in Sources */,
 				D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */,
+				D38451A61C3A141000517BC0 /* ThemeListLayout.m in Sources */,
 				D36BE2061C1EC5AC00580A1E /* ThemeListCell.m in Sources */,
 				D3743F051C1AA76300A222BB /* YSY_Api.m in Sources */,
 				D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */,
 				D35C267E1C23DFC80014ED48 /* YSYRefreshConst.m in Sources */,
+				D384519C1C3A0A4500517BC0 /* UIView+YSYCategory.m in Sources */,
 				D377D5B11C16D270000000E9 /* main.m in Sources */,
 				D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */,
 				D36BE1F31C1E61E100580A1E /* ThemeCell.m in Sources */,
+				D34F95821C3BA91500D05482 /* UIImage+YSYCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
