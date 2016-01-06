@@ -47,7 +47,8 @@ typedef NS_ENUM(NSUInteger, ThemeListCellType) {
 @property (nonatomic, assign) CGFloat marginBottom; //下边留白
 // 总高度
 @property (nonatomic, assign) CGFloat height;
-
+// 图片 size
+@property (nonatomic, assign) CGSize picSize;
 
 @end
 

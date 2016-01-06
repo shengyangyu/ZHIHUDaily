@@ -13,6 +13,7 @@
 #import <Masonry/Masonry.h>
 #import <YYText/YYText.h>
 #import <YYModel/YYModel.h>
+#import <YYWebImage/YYWebImage.h>
 #import <AFNetworking/AFNetworking.h>
 #import "YSY_NetWorkManage.h"
 
@@ -95,6 +96,12 @@ YY_EXTERN_C_BEGIN
 #define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
 #endif
 #endif
+#endif
+
+#ifndef YYSYNTH_DUMMY_CLASS
+#define YYSYNTH_DUMMY_CLASS(_name_) \
+@interface YYSYNTH_DUMMY_CLASS_ ## _name_ : NSObject @end \
+@implementation YYSYNTH_DUMMY_CLASS_ ## _name_ @end
 #endif
 
 YY_EXTERN_C_END

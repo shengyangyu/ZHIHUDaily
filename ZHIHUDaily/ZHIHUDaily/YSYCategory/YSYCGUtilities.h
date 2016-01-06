@@ -20,7 +20,11 @@ CGSize YYScreenSize();
 static inline CGFloat CGFloatFromPixel(CGFloat value) {
     return value / YYScreenScale();
 }
-
+/// round point value for pixel-aligned
+static inline CGFloat CGFloatPixelRound(CGFloat value) {
+    CGFloat scale = YYScreenScale();
+    return round(value * scale) / scale;
+}
 
 
 // main screen's scale

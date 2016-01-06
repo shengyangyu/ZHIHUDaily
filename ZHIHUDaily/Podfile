@@ -1,6 +1,7 @@
 platform :ios, '7.0'
 pod 'YYModel', '~> 0.9'
 pod 'YYText', '~> 0.9'
+pod 'YYWebImage', '~> 0.9'
 pod 'LTNavigationBar', '~> 2.1'
 pod 'FDFullscreenPopGesture', '1.1'
 pod 'MMDrawerController', '~> 0.5.7'

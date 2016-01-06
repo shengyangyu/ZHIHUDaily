@@ -40,7 +40,10 @@
     
     if (_stories.images && _stories.images.count != 0) {
         _cellType = ThemeListCellTypeImage;
+        //_picSize = CGSizeZero;
+        _picSize = CGSizeMake(TLCellImageWidth, TLCellImageHeight);
     }
+    
     LTTextLinePositionModifier *modifier = [LTTextLinePositionModifier new];
     modifier.font = [UIFont fontWithName:@"Heiti SC" size:TLCellFontSize];
     modifier.paddingTop = TLCellTextPadding;

@@ -31,6 +31,7 @@ PODS:
     - MMDrawerController/Core
   - YYModel (0.9.0)
   - YYText (0.9.13)
+  - YYWebImage (0.9.11)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - MMDrawerController (~> 0.5.7)
   - YYModel (~> 0.9)
   - YYText (~> 0.9)
+  - YYWebImage (~> 0.9)
 
 SPEC CHECKSUMS:
   AFNetworking: 932ff751f9d6fb1dad0b3af58b7e3ffba0a4e7fd
@@ -49,5 +51,6 @@ SPEC CHECKSUMS:
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
   YYModel: e6725042af0ebd67804f7a2246db1f264b333fc1
   YYText: e4895163da8c6f1b405c3fbf65a6c781596a5d27
+  YYWebImage: a65b28461dc63d3b84de7c06ea0fbc4d46cdcd16
 
 COCOAPODS: 0.39.0
