@@ -14,7 +14,6 @@
 		D34F95881C3BB1A500D05482 /* YSYCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95871C3BB1A500D05482 /* YSYCGUtilities.m */; };
 		D34F958B1C3BC0DC00D05482 /* YSYControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F958A1C3BC0DC00D05482 /* YSYControl.m */; };
 		D34F95901C3BC18600D05482 /* YSYGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F958F1C3BC18600D05482 /* YSYGestureRecognizer.m */; };
-		D35B7B0B1C2CDFB7003F5901 /* YSYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35B7B0A1C2CDFB7003F5901 /* YSYWebViewController.m */; };
 		D35B7B0E1C2D0E55003F5901 /* YSYRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D35B7B0D1C2D0E55003F5901 /* YSYRefreshFooter.m */; };
 		D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26741C23A9730014ED48 /* UIScrollView+YSYCategory.m */; };
 		D35C26781C23B2240014ED48 /* YSYRefreshBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26771C23B2240014ED48 /* YSYRefreshBase.m */; };
@@ -62,8 +61,6 @@
 		D34F958A1C3BC0DC00D05482 /* YSYControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYControl.m; sourceTree = "<group>"; };
 		D34F958E1C3BC18600D05482 /* YSYGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYGestureRecognizer.h; sourceTree = "<group>"; };
 		D34F958F1C3BC18600D05482 /* YSYGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYGestureRecognizer.m; sourceTree = "<group>"; };
-		D35B7B091C2CDFB7003F5901 /* YSYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYWebViewController.h; sourceTree = "<group>"; };
-		D35B7B0A1C2CDFB7003F5901 /* YSYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYWebViewController.m; sourceTree = "<group>"; };
 		D35B7B0C1C2D0E55003F5901 /* YSYRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshFooter.h; sourceTree = "<group>"; };
 		D35B7B0D1C2D0E55003F5901 /* YSYRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshFooter.m; sourceTree = "<group>"; };
 		D35C26731C23A9730014ED48 /* UIScrollView+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YSYCategory.h"; sourceTree = "<group>"; };
@@ -161,12 +158,10 @@
 		D34F958C1C3BC12D00D05482 /* YSY_Main */ = {
 			isa = PBXGroup;
 			children = (
-				D375C3481C17FC060040E03E /* YSYMainVC.h */,
-				D375C3491C17FC060040E03E /* YSYMainVC.m */,
-				D375C35E1C1831680040E03E /* YSYRootVC.h */,
-				D375C35F1C1831680040E03E /* YSYRootVC.m */,
-				D35B7B091C2CDFB7003F5901 /* YSYWebViewController.h */,
-				D35B7B0A1C2CDFB7003F5901 /* YSYWebViewController.m */,
+				D3909E9D1C44FE1100C929EB /* Model */,
+				D3909EA01C44FE2E00C929EB /* ModelVIew */,
+				D3909E9C1C44FE0700C929EB /* VIewController */,
+				D3909E9E1C44FE1900C929EB /* View */,
 			);
 			path = YSY_Main;
 			sourceTree = "<group>";
@@ -319,8 +314,6 @@
 				D3743EF91C1A9DE500A222BB /* YSYNetWorkManage */,
 				D3743EF51C1A5F5100A222BB /* YSYSubClass */,
 				D34F958D1C3BC13C00D05482 /* YSYUtility */,
-				D377D5B21C16D270000000E9 /* AppDelegate.h */,
-				D377D5B31C16D270000000E9 /* AppDelegate.m */,
 				D377D5BB1C16D270000000E9 /* Assets.xcassets */,
 				D377D5C01C16D270000000E9 /* Info.plist */,
 				D375C34F1C17FC680040E03E /* YSYHeader.h */,
@@ -373,6 +366,36 @@
 			path = VIewController;
 			sourceTree = "<group>";
 		};
+		D3909E9C1C44FE0700C929EB /* VIewController */ = {
+			isa = PBXGroup;
+			children = (
+				D375C3481C17FC060040E03E /* YSYMainVC.h */,
+				D375C3491C17FC060040E03E /* YSYMainVC.m */,
+			);
+			path = VIewController;
+			sourceTree = "<group>";
+		};
+		D3909E9D1C44FE1100C929EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3909E9E1C44FE1900C929EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3909EA01C44FE2E00C929EB /* ModelVIew */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelVIew;
+			sourceTree = "<group>";
+		};
 		D39C0A7B1C31212E00FE71B1 /* YSY_Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +403,10 @@
 				D39C0A801C3121FF00FE71B1 /* ModelVIew */,
 				D39C0A811C31221B00FE71B1 /* VIewController */,
 				D39C0A821C31223700FE71B1 /* View */,
+				D377D5B21C16D270000000E9 /* AppDelegate.h */,
+				D377D5B31C16D270000000E9 /* AppDelegate.m */,
+				D375C35E1C1831680040E03E /* YSYRootVC.h */,
+				D375C35F1C1831680040E03E /* YSYRootVC.m */,
 			);
 			path = YSY_Details;
 			sourceTree = "<group>";
@@ -541,7 +568,6 @@
 				D36BE1EB1C1E52A900580A1E /* YSYNewsVC.m in Sources */,
 				D391FC9F1C1FF35B008E9EAA /* NSString+YSYCategory.m in Sources */,
 				D33D725B1C312EC90074B07F /* DetailViewModel.m in Sources */,
-				D35B7B0B1C2CDFB7003F5901 /* YSYWebViewController.m in Sources */,
 				D34F95901C3BC18600D05482 /* YSYGestureRecognizer.m in Sources */,
 				D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */,
 				D35C26781C23B2240014ED48 /* YSYRefreshBase.m in Sources */,
@@ -665,12 +691,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: FANGLIN ZHANG (6K7AZU8S65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: FANGLIN ZHANG (6K7AZU8S65)";
 				GCC_PREFIX_HEADER = ZHIHUDaily/YSYPrefixHeader.pch;
 				INFOPLIST_FILE = ZHIHUDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ule.ZHIHUDaily;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apule.ZHIHUDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "21b16e44-8585-4a7e-a172-0dbb27fc1c7c";
 			};
 			name = Debug;
 		};
@@ -684,8 +713,9 @@
 				INFOPLIST_FILE = ZHIHUDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ule.ZHIHUDaily;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apule.ZHIHUDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "21b16e44-8585-4a7e-a172-0dbb27fc1c7c";
 			};
 			name = Release;
 		};

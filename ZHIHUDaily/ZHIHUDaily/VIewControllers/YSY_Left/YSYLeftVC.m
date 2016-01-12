@@ -71,7 +71,14 @@
     [ZHThemes themesWithBlock:^(ZHThemes *themes, NSError *error) {
         // 成功
         if (!error) {
-            _themes = [NSArray arrayWithArray:themes.others];
+            // 顶上首页
+            ZHBaseThemes *tBase = [[ZHBaseThemes alloc] init];
+            tBase.name = @"首页";
+            // 集合
+            NSMutableArray *tArray = [NSMutableArray new];
+            [tArray addObject:tBase];
+            [tArray addObjectsFromArray:themes.others];
+            _themes = [NSArray arrayWithArray:tArray];
             [_mTypeTable reloadData];
         }
     }];
@@ -104,10 +111,10 @@
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-#pragma mark －状态栏颜色 白色
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
+//#pragma mark －状态栏颜色 白色
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleLightContent;
+//}
 
 #pragma mark -点击事件
 - (void)loginAction:(UIButton *)sender {
@@ -152,18 +159,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!_mListVC) {
-        self.mListRootVC = [YSYThemeListVC new];
-        self.mListVC = [[UINavigationController alloc] initWithRootViewController:self.mListRootVC];
-    }
+    
     ZHBaseThemes *tBase = self.themes[indexPath.row];
-    uint64_t tID = tBase.mID;
-    [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
-        if (finished) {
-            self.mListRootVC.mType = tID;
-            [self.mm_drawerController setCenterViewController:self.mListVC];
+    if (tBase && [tBase.name isEqualToString:@"首页"]) {
+        YSYRootVC *tRoot = (YSYRootVC *)self.mm_drawerController;
+        [tRoot setCenterViewController:tRoot.mRoot withCloseAnimation:YES completion:nil];
+    }
+    else {
+        if (!_mListVC) {
+            self.mListRootVC = [YSYThemeListVC new];
+            self.mListVC = [[UINavigationController alloc] initWithRootViewController:self.mListRootVC];
         }
-    }];
+        self.mListRootVC.mType = tBase.mID;
+        [self.mm_drawerController setCenterViewController:self.mListVC withCloseAnimation:YES completion:nil];
+    }
 }
 
 #pragma mark -set UI

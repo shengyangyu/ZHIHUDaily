@@ -31,22 +31,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     [self setUI];
 }
 
+#pragma mark - pop
+- (BOOL)fd_prefersNavigationBarHidden {
+    return YES;
+}
+
 - (void)setUI {
-    _mShowWeb = [[UIWebView alloc]init];
-    _mShowWeb.delegate = self;
-    _mShowWeb.userInteractionEnabled = YES;
-    _mShowWeb.scalesPageToFit = YES;
-    _mShowWeb.backgroundColor = [UIColor ysy_convertHexToRGB:@"e6e6e6"];
-    [self.view addSubview:_mShowWeb];
-    [_mShowWeb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view).with.offset(0);
-        make.bottom.mas_equalTo(self.view).with.offset(0);
-        make.left.mas_equalTo(self.view).with.offset(0);
-        make.right.mas_equalTo(self.view).with.offset(0);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.mShowWeb];
+    [self.mShowWeb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view).with.insets(UIEdgeInsetsMake(20, 0, 0, 0));
     }];
 }
 #pragma mark - KVO
@@ -65,9 +64,23 @@
     }
 }
 
+#pragma mark - getter setter
+- (UIWebView *)mShowWeb {
+    if (!_mShowWeb) {
+        _mShowWeb = [[UIWebView alloc]init];
+        _mShowWeb.delegate = self;
+        _mShowWeb.userInteractionEnabled = YES;
+        _mShowWeb.scalesPageToFit = YES;
+        _mShowWeb.opaque = NO;
+        _mShowWeb.backgroundColor = [UIColor ysy_convertHexToRGB:@"e6e6e6"];
+    }
+    return _mShowWeb;
+}
+
 #pragma mark - dealloc
 - (void)dealloc {
     [_mModel removeObserver:self forKeyPath:@"mDetailModel"];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 
@@ -75,4 +88,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 @end

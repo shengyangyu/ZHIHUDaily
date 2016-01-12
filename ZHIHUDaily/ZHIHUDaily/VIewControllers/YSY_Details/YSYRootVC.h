@@ -12,4 +12,6 @@
 
 @interface YSYRootVC : MMDrawerController
 
+@property (nonatomic, strong) UINavigationController *mRoot;
+
 @end

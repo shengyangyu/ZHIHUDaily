@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "YSYRootVC.h"
-#import "YSYLeftVC.h"
-#import "YSYMainVC.h"
 
 @interface AppDelegate ()
 
@@ -21,33 +19,14 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //******MMDrawerController*****//
-    YSYLeftVC *left = [[YSYLeftVC alloc] init];
-    YSYMainVC *main = [[YSYMainVC alloc] init];
-    UINavigationController *nav_m = [[UINavigationController alloc] initWithRootViewController:main];
-    [left setCenterVCs:nav_m];
-    self.drawerVC = [[YSYRootVC alloc]
-                     initWithCenterViewController:nav_m
-                     leftDrawerViewController:left];
-    [self.drawerVC setMaximumLeftDrawerWidth:__LeftScreen_Width];
-    [self.drawerVC setShowsShadow:NO];
-    [self.drawerVC setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [self.drawerVC setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    [self.drawerVC setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-        MMDrawerControllerDrawerVisualStateBlock block;
-        block = [MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:2.0];
-        if(block){
-            block(drawerController, drawerSide, percentVisible);
-        }
-    }];
+    
     //******UINavigationBar*****//
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor ysy_convertHexToRGB:@"00AFF5"]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:21], NSFontAttributeName, nil]];
     //******window*****//
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    //UIColor *tColor = [UIColor ysy_convertHexToRGB:@"112233"];
-    //[self.window setTintColor:tColor];
+    self.drawerVC = [[YSYRootVC alloc] init];
     [self.window setRootViewController:self.drawerVC];
     return YES;
 }

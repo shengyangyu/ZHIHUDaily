@@ -27,15 +27,12 @@
     
     
 }
-
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleLightContent;
+//}
 - (void)jump:(UIButton *)sender {
     YSYMainVC *main = [[YSYMainVC alloc] init];
     [self.navigationController pushViewController:main animated:YES];
-}
-
-#pragma mark －状态栏颜色 白色
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {

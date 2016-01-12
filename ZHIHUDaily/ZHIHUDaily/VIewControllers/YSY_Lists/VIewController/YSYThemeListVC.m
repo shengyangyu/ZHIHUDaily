@@ -52,6 +52,11 @@
      */
 }
 
+
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleLightContent;
+//}
+
 - (void)setMType:(u_int64_t)mType {
     _mType = mType;
     [self requestForIndex:-1];
