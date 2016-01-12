@@ -111,11 +111,6 @@
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-//#pragma mark －状态栏颜色 白色
-//- (UIStatusBarStyle)preferredStatusBarStyle {
-//    return UIStatusBarStyleLightContent;
-//}
-
 #pragma mark -点击事件
 - (void)loginAction:(UIButton *)sender {
     NSLog(@"login");

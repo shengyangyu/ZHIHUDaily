@@ -16,6 +16,7 @@
 #import <YYWebImage/YYWebImage.h>
 #import <AFNetworking/AFNetworking.h>
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
+#import <LTNavigationBar/UINavigationBar+Awesome.h>
 #import "YSY_NetWorkManage.h"
 
 /**** UI Size ****/
