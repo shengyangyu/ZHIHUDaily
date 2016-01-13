@@ -35,7 +35,7 @@
     [self setUI];
 }
 
-#pragma mark - pop
+#pragma mark - Hidden
 - (BOOL)fd_prefersNavigationBarHidden {
     return YES;
 }

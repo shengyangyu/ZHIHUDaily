@@ -14,6 +14,7 @@
 
 @property (nonatomic, assign) uint64_t mID;
 @property (nonatomic, assign) uint64_t type;
+@property (nonatomic, assign) uint64_t ga_prefix;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, copy) NSString *title;
 

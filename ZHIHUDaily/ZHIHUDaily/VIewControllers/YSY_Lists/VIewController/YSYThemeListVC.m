@@ -113,8 +113,6 @@
     [self.mTypeTable registerClass:[ThemeListCell class] forCellReuseIdentifier:NSStringFromClass([ThemeListCell class])];
     // 加载更多
     mFoot = [[YSYRefreshFooter alloc] initFooterWithFrame:CGRectZero withSuper:self.mTypeTable];
-    //CGRectMake(0, 0, __MainScreen_Width, 44.0)
-    //typeof(mFoot) __weak weakFoot = mFoot;
     typeof(self) __weak weakSelf = self;
     mFoot.beginBlock = ^(){
         // 后台执行

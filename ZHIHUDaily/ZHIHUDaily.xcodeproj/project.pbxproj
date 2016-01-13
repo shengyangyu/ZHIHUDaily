@@ -19,6 +19,9 @@
 		D35C26781C23B2240014ED48 /* YSYRefreshBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26771C23B2240014ED48 /* YSYRefreshBase.m */; };
 		D35C267E1C23DFC80014ED48 /* YSYRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C267D1C23DFC80014ED48 /* YSYRefreshConst.m */; };
 		D35C26811C23EEFD0014ED48 /* YSYRefreshFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26801C23EEFD0014ED48 /* YSYRefreshFoot.m */; };
+		D3650F721C4659EB00E6510C /* YSYRollHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3650F711C4659EB00E6510C /* YSYRollHeadView.m */; };
+		D3650F751C465AC300E6510C /* YSYNavigationVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D3650F741C465AC300E6510C /* YSYNavigationVIew.m */; };
+		D3650F781C465ADC00E6510C /* ThemeMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3650F771C465ADC00E6510C /* ThemeMainModel.m */; };
 		D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E31C1E52A900580A1E /* YSYCollectVC.m */; };
 		D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E51C1E52A900580A1E /* YSYLeftVC.m */; };
 		D36BE1EB1C1E52A900580A1E /* YSYNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1E71C1E52A900580A1E /* YSYNewsVC.m */; };
@@ -71,6 +74,12 @@
 		D35C267D1C23DFC80014ED48 /* YSYRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshConst.m; sourceTree = "<group>"; };
 		D35C267F1C23EEFD0014ED48 /* YSYRefreshFoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshFoot.h; sourceTree = "<group>"; };
 		D35C26801C23EEFD0014ED48 /* YSYRefreshFoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshFoot.m; sourceTree = "<group>"; };
+		D3650F701C4659EB00E6510C /* YSYRollHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRollHeadView.h; sourceTree = "<group>"; };
+		D3650F711C4659EB00E6510C /* YSYRollHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRollHeadView.m; sourceTree = "<group>"; };
+		D3650F731C465AC300E6510C /* YSYNavigationVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYNavigationVIew.h; sourceTree = "<group>"; };
+		D3650F741C465AC300E6510C /* YSYNavigationVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYNavigationVIew.m; sourceTree = "<group>"; };
+		D3650F761C465ADC00E6510C /* ThemeMainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeMainModel.h; sourceTree = "<group>"; };
+		D3650F771C465ADC00E6510C /* ThemeMainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeMainModel.m; sourceTree = "<group>"; };
 		D36BE1E21C1E52A900580A1E /* YSYCollectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCollectVC.h; sourceTree = "<group>"; };
 		D36BE1E31C1E52A900580A1E /* YSYCollectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCollectVC.m; sourceTree = "<group>"; };
 		D36BE1E41C1E52A900580A1E /* YSYLeftVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYLeftVC.h; sourceTree = "<group>"; };
@@ -263,6 +272,10 @@
 				D36BE1E11C1E529600580A1E /* YSY_Left */,
 				D36BE1FD1C1EC53600580A1E /* YSY_Lists */,
 				D34F958C1C3BC12D00D05482 /* YSY_Main */,
+				D377D5B21C16D270000000E9 /* AppDelegate.h */,
+				D377D5B31C16D270000000E9 /* AppDelegate.m */,
+				D375C35E1C1831680040E03E /* YSYRootVC.h */,
+				D375C35F1C1831680040E03E /* YSYRootVC.m */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -378,6 +391,8 @@
 		D3909E9D1C44FE1100C929EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3650F761C465ADC00E6510C /* ThemeMainModel.h */,
+				D3650F771C465ADC00E6510C /* ThemeMainModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,6 +400,10 @@
 		D3909E9E1C44FE1900C929EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3650F731C465AC300E6510C /* YSYNavigationVIew.h */,
+				D3650F741C465AC300E6510C /* YSYNavigationVIew.m */,
+				D3650F701C4659EB00E6510C /* YSYRollHeadView.h */,
+				D3650F711C4659EB00E6510C /* YSYRollHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -403,10 +422,6 @@
 				D39C0A801C3121FF00FE71B1 /* ModelVIew */,
 				D39C0A811C31221B00FE71B1 /* VIewController */,
 				D39C0A821C31223700FE71B1 /* View */,
-				D377D5B21C16D270000000E9 /* AppDelegate.h */,
-				D377D5B31C16D270000000E9 /* AppDelegate.m */,
-				D375C35E1C1831680040E03E /* YSYRootVC.h */,
-				D375C35F1C1831680040E03E /* YSYRootVC.m */,
 			);
 			path = YSY_Details;
 			sourceTree = "<group>";
@@ -579,11 +594,14 @@
 				D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */,
 				D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */,
 				D38451A31C3A0B0100517BC0 /* ThemeListModel.m in Sources */,
+				D3650F721C4659EB00E6510C /* YSYRollHeadView.m in Sources */,
 				D34F95851C3BB05900D05482 /* CALayer+YSYCategory.m in Sources */,
 				D35B7B0E1C2D0E55003F5901 /* YSYRefreshFooter.m in Sources */,
 				D375C3601C1831680040E03E /* YSYRootVC.m in Sources */,
 				D36BE1F61C1E641400580A1E /* YSYTableView.m in Sources */,
 				D36BE1ED1C1E52BB00580A1E /* YSYSetVC.m in Sources */,
+				D3650F751C465AC300E6510C /* YSYNavigationVIew.m in Sources */,
+				D3650F781C465ADC00E6510C /* ThemeMainModel.m in Sources */,
 				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
 				D39C0A851C31226300FE71B1 /* DetailModel.m in Sources */,
 				D34F958B1C3BC0DC00D05482 /* YSYControl.m in Sources */,

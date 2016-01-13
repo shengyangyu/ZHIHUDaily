@@ -24,6 +24,8 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor ysy_convertHexToRGB:@"00AFF5"]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:21], NSFontAttributeName, nil]];
+    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+
     //******window*****//
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.drawerVC = [[YSYRootVC alloc] init];

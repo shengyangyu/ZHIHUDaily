@@ -21,8 +21,10 @@ UIKIT_EXTERN NSString * const kServiceUrl;
 UIKIT_EXTERN NSString * const startImage_Api;
 // 版本查询 当前版本 2.3.0
 UIKIT_EXTERN NSString * const version_Api;
-// 最新消息
-UIKIT_EXTERN NSString * const latest_Api;
+// 最新消息 首页
+UIKIT_EXTERN NSString * const h_latest_Api;
+// 往日消息 首页
+UIKIT_EXTERN NSString * const h_before_Api;
 // 离线下载 消息id 3892357
 UIKIT_EXTERN NSString * const downloadnews_Api;
 // 过往消息 日期 20131119
