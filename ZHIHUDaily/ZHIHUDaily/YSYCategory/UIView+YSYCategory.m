@@ -10,6 +10,14 @@
 
 @implementation UIView (YSYCategory)
 
+- (CGFloat)ysy_centerX{
+    return self.center.x;
+}
+
+- (CGFloat)ysy_centerY{
+    return self.center.y;
+}
+
 - (CGFloat)ysy_left{
     return self.frame.origin.x;
 }
@@ -31,6 +39,15 @@
 
 - (CGFloat)ysy_height{
     return self.frame.size.height;
+}
+
+- (void)setYsy_centerX:(CGFloat)centerX {
+    
+    self.center = CGPointMake(centerX, self.center.y);
+}
+- (void)setYsy_centerY:(CGFloat)centerY {
+    
+    self.center = CGPointMake(self.center.x, centerY);
 }
 
 - (void)setYsy_left:(CGFloat)left{

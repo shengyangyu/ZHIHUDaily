@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6C24245F720141A72FE15714 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5134FBFCDC3DC9B2D5AB36 /* libPods.a */; };
 		D33D725B1C312EC90074B07F /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D33D725A1C312EC90074B07F /* DetailViewModel.m */; };
+		D347576C1C477AC7003230FB /* YSYSectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D347576B1C477AC7003230FB /* YSYSectionHeadView.m */; };
+		D347576F1C477F55003230FB /* UIDevice+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D347576E1C477F55003230FB /* UIDevice+YSYCategory.m */; };
+		D34757721C479DDD003230FB /* NSTimer+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D34757711C479DDD003230FB /* NSTimer+YSYCategory.m */; };
 		D34F95821C3BA91500D05482 /* UIImage+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95811C3BA91500D05482 /* UIImage+YSYCategory.m */; };
 		D34F95851C3BB05900D05482 /* CALayer+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95841C3BB05900D05482 /* CALayer+YSYCategory.m */; };
 		D34F95881C3BB1A500D05482 /* YSYCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95871C3BB1A500D05482 /* YSYCGUtilities.m */; };
@@ -54,6 +57,12 @@
 		42F38086E8FF062ECC36D0A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D33D72591C312EC90074B07F /* DetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewModel.h; sourceTree = "<group>"; };
 		D33D725A1C312EC90074B07F /* DetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewModel.m; sourceTree = "<group>"; };
+		D347576A1C477AC7003230FB /* YSYSectionHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYSectionHeadView.h; sourceTree = "<group>"; };
+		D347576B1C477AC7003230FB /* YSYSectionHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYSectionHeadView.m; sourceTree = "<group>"; };
+		D347576D1C477F55003230FB /* UIDevice+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+YSYCategory.h"; sourceTree = "<group>"; };
+		D347576E1C477F55003230FB /* UIDevice+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+YSYCategory.m"; sourceTree = "<group>"; };
+		D34757701C479DDD003230FB /* NSTimer+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+YSYCategory.h"; sourceTree = "<group>"; };
+		D34757711C479DDD003230FB /* NSTimer+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+YSYCategory.m"; sourceTree = "<group>"; };
 		D34F95801C3BA91500D05482 /* UIImage+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YSYCategory.h"; sourceTree = "<group>"; };
 		D34F95811C3BA91500D05482 /* UIImage+YSYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YSYCategory.m"; sourceTree = "<group>"; };
 		D34F95831C3BB05900D05482 /* CALayer+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+YSYCategory.h"; sourceTree = "<group>"; };
@@ -293,6 +302,10 @@
 				D34F95811C3BA91500D05482 /* UIImage+YSYCategory.m */,
 				D384519A1C3A0A4500517BC0 /* UIView+YSYCategory.h */,
 				D384519B1C3A0A4500517BC0 /* UIView+YSYCategory.m */,
+				D347576D1C477F55003230FB /* UIDevice+YSYCategory.h */,
+				D347576E1C477F55003230FB /* UIDevice+YSYCategory.m */,
+				D34757701C479DDD003230FB /* NSTimer+YSYCategory.h */,
+				D34757711C479DDD003230FB /* NSTimer+YSYCategory.m */,
 				D34F95861C3BB1A500D05482 /* YSYCGUtilities.h */,
 				D34F95871C3BB1A500D05482 /* YSYCGUtilities.m */,
 			);
@@ -404,6 +417,8 @@
 				D3650F741C465AC300E6510C /* YSYNavigationVIew.m */,
 				D3650F701C4659EB00E6510C /* YSYRollHeadView.h */,
 				D3650F711C4659EB00E6510C /* YSYRollHeadView.m */,
+				D347576A1C477AC7003230FB /* YSYSectionHeadView.h */,
+				D347576B1C477AC7003230FB /* YSYSectionHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,6 +607,8 @@
 				D34F95881C3BB1A500D05482 /* YSYCGUtilities.m in Sources */,
 				D36BE1EA1C1E52A900580A1E /* YSYLeftVC.m in Sources */,
 				D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */,
+				D34757721C479DDD003230FB /* NSTimer+YSYCategory.m in Sources */,
+				D347576F1C477F55003230FB /* UIDevice+YSYCategory.m in Sources */,
 				D377D5B41C16D270000000E9 /* AppDelegate.m in Sources */,
 				D38451A31C3A0B0100517BC0 /* ThemeListModel.m in Sources */,
 				D3650F721C4659EB00E6510C /* YSYRollHeadView.m in Sources */,
@@ -616,6 +633,7 @@
 				D377D5B11C16D270000000E9 /* main.m in Sources */,
 				D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */,
 				D36BE1F31C1E61E100580A1E /* ThemeCell.m in Sources */,
+				D347576C1C477AC7003230FB /* YSYSectionHeadView.m in Sources */,
 				D34F95821C3BA91500D05482 /* UIImage+YSYCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

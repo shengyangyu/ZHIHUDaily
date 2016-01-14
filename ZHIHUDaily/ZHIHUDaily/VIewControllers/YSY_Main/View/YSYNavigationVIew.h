@@ -10,5 +10,7 @@
 
 @interface YSYNavigationView : UIView
 
+@property (nonatomic, strong) UILabel *title;
+@property (nonatomic, strong) UIView *backgroundView;
 
 @end

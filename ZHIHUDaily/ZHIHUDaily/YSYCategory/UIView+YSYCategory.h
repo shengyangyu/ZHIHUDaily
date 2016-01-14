@@ -10,6 +10,8 @@
 
 @interface UIView (YSYCategory)
 
+@property (assign, nonatomic) CGFloat ysy_centerX;
+@property (assign, nonatomic) CGFloat ysy_centerY;
 @property (assign, nonatomic) CGFloat ysy_left;
 @property (assign, nonatomic) CGFloat ysy_top;
 @property (assign, nonatomic) CGFloat ysy_right;
