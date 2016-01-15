@@ -19,14 +19,12 @@ static CGFloat kTimerDuration = 5.0f;
 @property (nonatomic, strong) UIImageView *mImageView;
 @property (nonatomic, assign, getter=isObserve) BOOL observe;
 @property (nonatomic, strong) UIScrollView *mScrollView;
-@property (nonatomic, strong) ThemeStories *mModel;
 
 @end
 
 @implementation YSYRollUnitView
 
-- (instancetype)initWithFrame:(CGRect)frame
-                        model:(ThemeStories *)model {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.mImageView];
@@ -36,8 +34,8 @@ static CGFloat kTimerDuration = 5.0f;
 
 + (instancetype)attchToSuperView:(UIView *)sView observeScorllView:(UIScrollView *)oView {
     
-    YSYRollUnitView *tView = [[YSYRollUnitView alloc] initWithFrame:sView.bounds model:nil];
-    if (self) {
+    YSYRollUnitView *tView = [[YSYRollUnitView alloc] initWithFrame:sView.bounds];
+    if (tView) {
         tView.observe = YES;
         [sView addSubview:tView];
         tView.mScrollView = oView;
@@ -48,6 +46,37 @@ static CGFloat kTimerDuration = 5.0f;
 
     }
     return tView;
+}
+
+- (void)setMModel:(ThemeStories *)mModel {
+    _mModel = mModel;
+    //self.titleLabel.text = storyModel.title;
+    //[self.mImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"Field_Mask_Bg"]];
+    //
+    //self.mImageView.ysy_frame = (CGRect){.origin = origin, .size = _layout.picSize};
+    self.mImageView.hidden = NO;
+    [self.mImageView.layer removeAnimationForKey:@"contents"];
+    @weakify(self);
+    [self.mImageView.layer yy_setImageWithURL:[NSURL URLWithString:mModel.images[0]] placeholder:nil options:YYWebImageOptionAvoidSetImage completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
+        @strongify(self);
+        if (!self.mImageView) {
+            return ;
+        }
+        if (image && stage == YYWebImageStageFinished) {
+            // 宽图把左右两边裁掉
+            self.mImageView.contentMode = UIViewContentModeScaleAspectFill;
+            self.mImageView.layer.contentsRect = CGRectMake(0, 0, 1, 1);
+            self.mImageView.image = image;
+            if (from != YYWebImageFromMemoryCacheFast) {
+                CATransition *transition = [CATransition animation];
+                transition.duration = 0.15;
+                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+                transition.type = kCATransitionFade;
+                [self.mImageView.layer addAnimation:transition forKey:@"contents"];
+            }
+        }
+    }];
+    
 }
 
 - (UIImageView *)mImageView {
@@ -125,7 +154,7 @@ static CGFloat kTimerDuration = 5.0f;
 }
 
 #pragma mark setter getter
-- (UIScrollView *)mScrollView {
+/*- (UIScrollView *)mScrollView {
     if (_mScrollView) {
         _mScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         _mScrollView.autoresizingMask = 0xFF;
@@ -136,7 +165,7 @@ static CGFloat kTimerDuration = 5.0f;
         _mScrollView.pagingEnabled = YES;
     }
     return _mScrollView;
-}
+}*/
 
 - (UIPageControl *)mPageControl {
     if (!_mPageControl) {
@@ -267,7 +296,7 @@ static CGFloat kTimerDuration = 5.0f;
     
     YSYRollHeadView *tHead = [[YSYRollHeadView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, 0)];
     tHead.mScrollView = oView;
-    [oView addObserver:oView
+    [oView addObserver:tHead
             forKeyPath:@"contentOffset"
                options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
                context:nil];
@@ -278,16 +307,17 @@ static CGFloat kTimerDuration = 5.0f;
     
     _dataArrays = dataArrays;
     __weak typeof(self) weakSelf = self;
-//    self.getContentViewBlock = ^UIView *(NSInteger pageIndex) {
-//        return [[TopView alloc] initWithFrame:weakSelf.frame storyModel:topStories[pageIndex]];
-//    };
-    
-//    self.mCount = ^NSInteger(void) {
-//        return dataArrays.count;
-//    };
-    //    self.touchActionBlock = ^(NSInteger pageIndex) {
-//        weakSelf.topViewBlock(dataArrays[pageIndex]);
-//    };
+    self.getContentViewBlock = ^UIView *(NSInteger pageIndex) {
+        YSYRollUnitView *vv = [[YSYRollUnitView alloc] initWithFrame:weakSelf.frame];
+        vv.mModel = weakSelf.dataArrays[pageIndex];
+        return vv;
+    };
+    self.totalCountBlock = ^NSInteger(void) {
+        return dataArrays.count;
+    };
+    self.touchActionBlock = ^(NSInteger pageIndex) {
+        //weakSelf.topViewBlock(dataArrays[pageIndex]);
+    };
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

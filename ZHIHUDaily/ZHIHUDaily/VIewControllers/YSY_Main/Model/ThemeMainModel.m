@@ -8,6 +8,15 @@
 
 #import "ThemeMainModel.h"
 
+@implementation ThemeMainStories
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{ @"mID":@"id"};
+}
+
+
+@end
+
 @implementation ThemeMainModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
@@ -16,7 +25,7 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{ @"stories":ThemeStories.class ,
-              @"top_stories":ThemeStories.class };
+              @"top_stories":ThemeMainStories.class };
 }
 
 + (NSURLSessionDataTask *)themesLateWithBlock:(void(^)(ThemeMainModel *themes, NSError *error))block {

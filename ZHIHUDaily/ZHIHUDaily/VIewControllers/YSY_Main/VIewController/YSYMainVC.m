@@ -14,6 +14,7 @@
 #import "ThemeMainModel.h"
 #import "YSYNavigationView.h"
 #import "YSYSectionHeadView.h"
+#import "YSYAutoRollHeadView.h"
 
 #define NAVBAR_CHANGE_POINT 50
 
@@ -30,6 +31,8 @@
 @property (nonatomic, strong) NSMutableArray *mLayouts;
 @property (nonatomic, strong) NSMutableArray *mDates;
 @property (nonatomic, copy) NSString *mDate;
+// top head
+@property (nonatomic, strong) YSYAutoRollHeadView *mTopHead;
 
 @end
 
@@ -57,8 +60,8 @@
 }
 
 - (void)setUI {
-    //self.automaticallyAdjustsScrollViewInsets = NO;
     // 列表
+    self.mTypeTable.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, (kRollHeadViewHeight-_mNaviHeight-kMaxRollHeight/2))];
     [self.view addSubview:self.mTypeTable];
     // 给一个标识符，告诉tableView要创建哪个类
     [self.mTypeTable registerClass:[ThemeListCell class] forCellReuseIdentifier:NSStringFromClass([ThemeListCell class])];
@@ -74,6 +77,8 @@
             [strongSelf requestForIndex:(1)];
         });
     };
+    // 顶部循环滚动
+    [self.view addSubview:self.mTopHead];
     // 透明
     [self.view addSubview:self.naviView];
 }
@@ -106,6 +111,10 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     // reload
                     [self.mTypeTable reloadData];
+                    // 顶部
+                    if (themes.top_stories.count) {
+                        self.mTopHead.dataArrays = [NSArray arrayWithArray:themes.top_stories];
+                    }
                 });
             });
         }];
@@ -259,8 +268,15 @@
     return _mNaviView;
 }
 
+- (YSYAutoRollHeadView *)mTopHead {
+    if (!_mTopHead) {
+        _mTopHead = [[YSYAutoRollHeadView alloc] initWithFrame:CGRectMake(0, -kMaxRollHeight/2, __MainScreen_Width, kRollHeadViewHeight) observeView:self.mTypeTable];
+    }
+    return _mTopHead;
+}
 
 
+#pragma mark -
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

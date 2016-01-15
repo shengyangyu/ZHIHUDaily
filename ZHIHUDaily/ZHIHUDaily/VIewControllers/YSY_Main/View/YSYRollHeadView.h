@@ -13,7 +13,11 @@ typedef void(^YSYRollHeadViewBlock)(id data);
 /**
  * 显示单元视图
  */
+@class ThemeStories;
 @interface YSYRollUnitView : UIView
+
+
+@property (nonatomic, strong) ThemeStories *mModel;
 
 + (instancetype)attchToSuperView:(UIView *)sView observeScorllView:(UIScrollView *)oView;
 

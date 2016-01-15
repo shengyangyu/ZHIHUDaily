@@ -17,6 +17,7 @@
 		D34F95881C3BB1A500D05482 /* YSYCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F95871C3BB1A500D05482 /* YSYCGUtilities.m */; };
 		D34F958B1C3BC0DC00D05482 /* YSYControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F958A1C3BC0DC00D05482 /* YSYControl.m */; };
 		D34F95901C3BC18600D05482 /* YSYGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F958F1C3BC18600D05482 /* YSYGestureRecognizer.m */; };
+		D35396091C48DF2700B48F5B /* YSYAutoRollHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D35396081C48DF2700B48F5B /* YSYAutoRollHeadView.m */; };
 		D35B7B0E1C2D0E55003F5901 /* YSYRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D35B7B0D1C2D0E55003F5901 /* YSYRefreshFooter.m */; };
 		D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26741C23A9730014ED48 /* UIScrollView+YSYCategory.m */; };
 		D35C26781C23B2240014ED48 /* YSYRefreshBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D35C26771C23B2240014ED48 /* YSYRefreshBase.m */; };
@@ -73,6 +74,8 @@
 		D34F958A1C3BC0DC00D05482 /* YSYControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYControl.m; sourceTree = "<group>"; };
 		D34F958E1C3BC18600D05482 /* YSYGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYGestureRecognizer.h; sourceTree = "<group>"; };
 		D34F958F1C3BC18600D05482 /* YSYGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYGestureRecognizer.m; sourceTree = "<group>"; };
+		D35396071C48DF2700B48F5B /* YSYAutoRollHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYAutoRollHeadView.h; sourceTree = "<group>"; };
+		D35396081C48DF2700B48F5B /* YSYAutoRollHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYAutoRollHeadView.m; sourceTree = "<group>"; };
 		D35B7B0C1C2D0E55003F5901 /* YSYRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshFooter.h; sourceTree = "<group>"; };
 		D35B7B0D1C2D0E55003F5901 /* YSYRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshFooter.m; sourceTree = "<group>"; };
 		D35C26731C23A9730014ED48 /* UIScrollView+YSYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YSYCategory.h"; sourceTree = "<group>"; };
@@ -419,6 +422,8 @@
 				D3650F711C4659EB00E6510C /* YSYRollHeadView.m */,
 				D347576A1C477AC7003230FB /* YSYSectionHeadView.h */,
 				D347576B1C477AC7003230FB /* YSYSectionHeadView.m */,
+				D35396071C48DF2700B48F5B /* YSYAutoRollHeadView.h */,
+				D35396081C48DF2700B48F5B /* YSYAutoRollHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 				D36BE1E91C1E52A900580A1E /* YSYCollectVC.m in Sources */,
 				D35C267E1C23DFC80014ED48 /* YSYRefreshConst.m in Sources */,
 				D384519C1C3A0A4500517BC0 /* UIView+YSYCategory.m in Sources */,
+				D35396091C48DF2700B48F5B /* YSYAutoRollHeadView.m in Sources */,
 				D377D5B11C16D270000000E9 /* main.m in Sources */,
 				D35C26751C23A9730014ED48 /* UIScrollView+YSYCategory.m in Sources */,
 				D36BE1F31C1E61E100580A1E /* ThemeCell.m in Sources */,

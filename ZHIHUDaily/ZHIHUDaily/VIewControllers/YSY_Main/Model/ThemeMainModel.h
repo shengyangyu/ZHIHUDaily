@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "ThemeListModel.h"
+/**
+ 主题详情
+ */
+@interface ThemeMainStories : NSObject
+
+@property (nonatomic, assign) uint64_t mID;
+@property (nonatomic, assign) uint64_t type;
+@property (nonatomic, assign) uint64_t ga_prefix;
+@property (nonatomic, copy) NSString *image;
+@property (nonatomic, copy) NSString *title;
+
+@end
 
 @interface ThemeMainModel : NSObject
 
