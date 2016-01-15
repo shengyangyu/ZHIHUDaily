@@ -139,7 +139,7 @@
         _imageView.hidden = YES;
     } else {
         CGPoint origin = {0};
-        origin.x = _textLabel.ysy_right;
+        origin.x = __MainScreen_Width-_layout.picSize.width-TLCellHorizontalMargin;//_textLabel.ysy_right;
         origin.y = imageTop;
         _imageView.ysy_frame = (CGRect){.origin = origin, .size = _layout.picSize};
         _imageView.hidden = NO;

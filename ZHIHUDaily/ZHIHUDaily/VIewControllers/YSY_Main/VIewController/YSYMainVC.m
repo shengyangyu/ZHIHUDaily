@@ -60,8 +60,9 @@
 }
 
 - (void)setUI {
+    // nav 高度
+    _mNaviHeight = (kMainHeaderHeight+[UIDevice statusBarHeight]);
     // 列表
-    self.mTypeTable.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, (kRollHeadViewHeight-_mNaviHeight-kMaxRollHeight/2))];
     [self.view addSubview:self.mTypeTable];
     // 给一个标识符，告诉tableView要创建哪个类
     [self.mTypeTable registerClass:[ThemeListCell class] forCellReuseIdentifier:NSStringFromClass([ThemeListCell class])];
@@ -256,13 +257,16 @@
         _mTypeTable.delegate = self;
         _mTypeTable.dataSource = self;
         [_mTypeTable setFrame:CGRectMake(0, 0, __MainScreen_Width, __MainScreen_Height)];
+        CGFloat tHeight = (kRollHeadViewHeight-kMaxRollHeight/2);
+        UIView *vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, tHeight)];
+        vv.backgroundColor = [UIColor redColor];
+        _mTypeTable.tableHeaderView = vv;
     }
     return _mTypeTable;
 }
 
 - (YSYNavigationView *)naviView {
     if (!_mNaviView) {
-        _mNaviHeight = (kMainHeaderHeight+[UIDevice statusBarHeight]);
         _mNaviView = [[YSYNavigationView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, _mNaviHeight)];
     }
     return _mNaviView;

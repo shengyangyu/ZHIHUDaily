@@ -86,18 +86,19 @@ const CGFloat kRollHeadViewHeight = 260.0f;
                        context:(void *)context{
     UIScrollView *scrollView = object;
     CGFloat offSetY = scrollView.contentOffset.y;
-    NSLog(@"%@",@(offSetY));
+    //NSLog(@"%@",@(offSetY));
     // 渐变过程
     if (offSetY <= 0 && offSetY >= -kMaxRollHeight) {
-        self.frame = CGRectMake(0, -kMaxRollHeight-offSetY*0.5, self.mOriginWidth, self.mOriginHeight-offSetY*0.5);
+        NSLog(@"渐变过程:%@,%@,%@",@(offSetY),@(self.frame.origin.y),@((-kMaxRollHeight-[UIDevice statusBarHeight]-offSetY)*0.5));
+        self.frame = CGRectMake(0, (-kMaxRollHeight-[UIDevice statusBarHeight]-offSetY)*0.5, self.mOriginWidth, self.mOriginHeight-offSetY*0.5);
     }
     // 最大限度
     else if(offSetY < -kMaxRollHeight){
-        self.mObserveView.contentOffset = CGPointMake(0, -kMaxRollHeight);
+        self.mObserveView.contentOffset = CGPointMake(0, -kMaxRollHeight*0.5);
     }
     // 往上滚动
     else if(offSetY <= self.mOriginHeight) {
-        self.ysy_top = -kMaxRollHeight-offSetY;
+        self.ysy_top = -kMaxRollHeight*0.5-offSetY;
     }
 }
 
