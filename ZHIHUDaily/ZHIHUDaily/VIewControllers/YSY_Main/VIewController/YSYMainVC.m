@@ -257,9 +257,9 @@
         _mTypeTable.delegate = self;
         _mTypeTable.dataSource = self;
         [_mTypeTable setFrame:CGRectMake(0, 0, __MainScreen_Width, __MainScreen_Height)];
-        CGFloat tHeight = (kRollHeadViewHeight-kMaxRollHeight/2);
-        UIView *vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, tHeight)];
-        vv.backgroundColor = [UIColor redColor];
+        UIView *vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, kRollHeadHeight)];
+        vv.backgroundColor = [UIColor clearColor];
+        _mTypeTable.backgroundColor = [UIColor clearColor];
         _mTypeTable.tableHeaderView = vv;
     }
     return _mTypeTable;
@@ -274,7 +274,8 @@
 
 - (YSYAutoRollHeadView *)mTopHead {
     if (!_mTopHead) {
-        _mTopHead = [[YSYAutoRollHeadView alloc] initWithFrame:CGRectMake(0, -kMaxRollHeight/2, __MainScreen_Width, kRollHeadViewHeight) observeView:self.mTypeTable];
+        _mTopHead = [[YSYAutoRollHeadView alloc] initWithFrame:CGRectMake(0, -kMaxRollHeight*kRollScale, __MainScreen_Width, kRollHeadHeight+kMaxRollHeight*kRollScale+[UIDevice statusBarHeight]) observeView:self.mTypeTable];
+        _mTopHead.backgroundColor = [UIColor blueColor];
     }
     return _mTopHead;
 }
