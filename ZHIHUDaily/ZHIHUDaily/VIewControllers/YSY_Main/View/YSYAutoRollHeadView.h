@@ -13,7 +13,7 @@
 @class ThemeMainStories;
 @interface YSYRollUnitView : UIView
 
-@property (nonatomic, strong) ThemeMainStories *mModel;
+@property (nonatomic, strong) ThemeMainStories *mModel;// 数据
 
 @end
 
@@ -22,18 +22,16 @@
  */
 @interface YSYRollBaseView : UIView
 
-@property (nonatomic, strong) NSArray *dataArrays;
+@property (nonatomic, strong) NSArray *dataArrays;// 数据
 
 @end
 
 /**
  * 滚动视图
  */
-// 最大拖动高度
-UIKIT_EXTERN const CGFloat kMaxRollHeight;
-UIKIT_EXTERN const CGFloat kRollHeadViewHeight;
-UIKIT_EXTERN const CGFloat kRollHeadHeight;
-UIKIT_EXTERN const CGFloat kRollScale;
+UIKIT_EXTERN const CGFloat kMaxRollHeight;// 最大拖动高度
+UIKIT_EXTERN const CGFloat kRollHeadHeight;// headView高度
+UIKIT_EXTERN const CGFloat kRollScale;// 拖动系数
 
 @interface YSYAutoRollHeadView : YSYRollBaseView
 

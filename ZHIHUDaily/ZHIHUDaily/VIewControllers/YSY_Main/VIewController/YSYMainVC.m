@@ -275,7 +275,7 @@
 - (YSYAutoRollHeadView *)mTopHead {
     if (!_mTopHead) {
         _mTopHead = [[YSYAutoRollHeadView alloc] initWithFrame:CGRectMake(0, -kMaxRollHeight*kRollScale, __MainScreen_Width, kRollHeadHeight+kMaxRollHeight*kRollScale+[UIDevice statusBarHeight]) observeView:self.mTypeTable];
-        _mTopHead.backgroundColor = [UIColor blueColor];
+        _mTopHead.backgroundColor = [UIColor clearColor];
     }
     return _mTopHead;
 }

@@ -28,6 +28,7 @@
     
     self = [super initWithFrame:frame];
     if (self) {
+        //self.autoresizesSubviews = YES;
         _mOriginHeight = frame.size.height;
         _mOriginWidth = frame.size.width;
         [self addSubview:self.mImageView];
@@ -39,7 +40,7 @@
     if (!_mImageView) {
         _mImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _mOriginWidth, _mOriginHeight)];
         _mImageView.backgroundColor = [UIColor yellowColor];
-        _mImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        //_mImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     return _mImageView;
 }
@@ -79,7 +80,7 @@ static CGFloat kTimerDuration = 5.0f;
     
     self = [super initWithFrame:frame];
     if (self) {
-        self.autoresizesSubviews = YES;
+        //self.autoresizesSubviews = YES;
         [self addSubview:self.mScrollView];
         [self addSubview:self.mPageControl];
         self.mIndex = 0;
@@ -95,8 +96,9 @@ static CGFloat kTimerDuration = 5.0f;
 - (UIScrollView *)mScrollView {
     if (!_mScrollView) {
         _mScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-        _mScrollView.autoresizingMask = 0xFF;
-        _mScrollView.contentMode = UIViewContentModeCenter;
+        _mScrollView.backgroundColor = [UIColor redColor];
+        //_mScrollView.autoresizingMask = 0xFF;
+        //_mScrollView.contentMode = UIViewContentModeCenter;
         _mScrollView.contentSize = CGSizeMake(CGRectGetWidth(_mScrollView.frame), CGRectGetHeight(_mScrollView.frame));
         _mScrollView.delegate = self;
         _mScrollView.contentOffset = CGPointMake(0, 0);
@@ -212,7 +214,6 @@ static CGFloat kTimerDuration = 5.0f;
 @end
 
 const CGFloat kMaxRollHeight = 90.0f;
-const CGFloat kRollHeadViewHeight = 260.0f;
 const CGFloat kRollHeadHeight = 200.0f;
 const CGFloat kRollScale = 0.5f;
 
