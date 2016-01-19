@@ -80,7 +80,7 @@
     };
     // 顶部循环滚动
     [self.view addSubview:self.mTopHead];
-    // 透明
+    // navi
     [self.view addSubview:self.naviView];
 }
 
@@ -107,7 +107,7 @@
                 }
                 if (tArray.count != 0) {
                     [_mLayouts addObject:tArray];
-                    [_mDates addObject:themes.c_date];
+                    [self.mDates addObject:themes.c_date];
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     // reload
@@ -141,7 +141,7 @@
                 }
                 if (tArray.count != 0) {
                     [_mLayouts addObject:tArray];
-                    [_mDates addObject:themes.c_date];
+                    [self.mDates addObject:themes.c_date];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         // add
                         [self.mTypeTable insertSections:[NSIndexSet indexSetWithIndex:(_mLayouts.count-1)] withRowAnimation:UITableViewRowAnimationNone];
@@ -163,7 +163,7 @@
         return nil;
     }
     YSYSectionHeadView *header = (YSYSectionHeadView *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([YSYSectionHeadView class])];
-    [header setDataModel];
+    [header setDataModel:self.mDates[section]];
     return header;
 }
 
@@ -184,20 +184,24 @@
     
     return ((ThemeListLayout *)_mLayouts[indexPath.section][indexPath.row]).height;
 }
-
+/**
+ 将要显示
+ */
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     
     if (section == 0) {
-        self.mNaviView.backgroundView.ysy_height = _mNaviHeight;
-        self.mNaviView.title.hidden = NO;
+        self.mNaviView.mBackgroundView.ysy_height = _mNaviHeight;
+        self.mNaviView.mTitle.hidden = NO;
     }
 }
-
+/**
+ 显示完成
+ */
 - (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section {
     
     if (section == 0) {
-        self.mNaviView.backgroundView.ysy_height = (_mNaviHeight-kMainHeaderHeight);
-        self.mNaviView.title.hidden = YES;
+        self.mNaviView.mBackgroundView.ysy_height = (_mNaviHeight-kMainHeaderHeight);
+        self.mNaviView.mTitle.hidden = YES;
     }
 }
 #pragma mark -cell view
@@ -242,9 +246,9 @@
         CGFloat offsetY = scrollView.contentOffset.y;
         if (offsetY > 0) {
             CGFloat alpha = MIN(1, offsetY / _mNaviHeight);
-            [self.naviView.backgroundView setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+            [self.naviView.mBackgroundView setBackgroundColor:[color colorWithAlphaComponent:alpha]];
         } else {
-            [self.naviView.backgroundView setBackgroundColor:[color colorWithAlphaComponent:0]];
+            [self.naviView.mBackgroundView setBackgroundColor:[color colorWithAlphaComponent:0]];
         }
     }
 }
@@ -258,8 +262,8 @@
         _mTypeTable.dataSource = self;
         [_mTypeTable setFrame:CGRectMake(0, 0, __MainScreen_Width, __MainScreen_Height)];
         UIView *vv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, __MainScreen_Width, kRollHeadHeight)];
-        vv.backgroundColor = [UIColor clearColor];
-        _mTypeTable.backgroundColor = [UIColor clearColor];
+        vv.backgroundColor = [UIColor whiteColor];
+        _mTypeTable.backgroundColor = [UIColor whiteColor];
         _mTypeTable.tableHeaderView = vv;
     }
     return _mTypeTable;
@@ -275,7 +279,6 @@
 - (YSYAutoRollHeadView *)mTopHead {
     if (!_mTopHead) {
         _mTopHead = [[YSYAutoRollHeadView alloc] initWithFrame:CGRectMake(0, -kMaxRollHeight*kRollScale, __MainScreen_Width, kRollHeadHeight+kMaxRollHeight*kRollScale+[UIDevice statusBarHeight]) observeView:self.mTypeTable];
-        _mTopHead.backgroundColor = [UIColor clearColor];
     }
     return _mTopHead;
 }

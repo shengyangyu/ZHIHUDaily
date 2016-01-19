@@ -12,6 +12,6 @@ UIKIT_EXTERN const CGFloat kMainHeaderHeight;
 
 @interface YSYSectionHeadView : UITableViewHeaderFooterView
 
-- (void)setDataModel;
+- (void)setDataModel:(NSString *)model;
 
 @end

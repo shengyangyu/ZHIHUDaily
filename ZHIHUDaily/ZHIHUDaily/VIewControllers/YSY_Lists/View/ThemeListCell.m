@@ -47,7 +47,7 @@
         frame.size.height = 1;
     }
     self = [super initWithFrame:frame];
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor whiteColor];
     self.exclusiveTouch = YES;
 //    @weakify(self);
     _contentView = [UIView new];

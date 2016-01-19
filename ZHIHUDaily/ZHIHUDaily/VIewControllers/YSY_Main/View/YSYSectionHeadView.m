@@ -26,9 +26,9 @@ const CGFloat kMainHeaderHeight = 36.0f;
     self.textLabel.ysy_centerX = self.ysy_width/2;
 }
 
-- (void)setDataModel {
+- (void)setDataModel:(NSString *)model {
     self.contentView.backgroundColor = [UIColor ysy_convertHexToRGB:@"00AFF5"];
-    self.textLabel.attributedText = [[NSAttributedString alloc] initWithString:[self stringConvertToTitle:@"20160116"] attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:18] ,NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.textLabel.attributedText = [[NSAttributedString alloc] initWithString:[self stringConvertToTitle:model] attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:18] ,NSForegroundColorAttributeName:[UIColor whiteColor] ,NSBackgroundColorAttributeName:[UIColor ysy_convertHexToRGB:@"00AFF5"]}];
 }
 
 - (NSString *)stringConvertToTitle:(NSString *)str {

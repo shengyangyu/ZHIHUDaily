@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 /**
- * 基视图
+ * 基础填充视图
  */
 @class ThemeMainStories;
 @interface YSYRollUnitView : UIView
@@ -18,7 +18,7 @@
 @end
 
 /**
- * 滚动视图 基类
+ * 横向循环滚动视图 UIScrollView
  */
 @interface YSYRollBaseView : UIView
 
@@ -27,7 +27,16 @@
 @end
 
 /**
- * 滚动视图
+ * 横向循环滚动视图 自定义
+ */
+@interface YSYRollBaseMeView : UIView
+
+@property (nonatomic, strong) NSArray *dataArrays;// 数据
+
+@end
+
+/**
+ * 竖直拖动视图
  */
 UIKIT_EXTERN const CGFloat kMaxRollHeight;// 最大拖动高度
 UIKIT_EXTERN const CGFloat kRollHeadHeight;// headView高度

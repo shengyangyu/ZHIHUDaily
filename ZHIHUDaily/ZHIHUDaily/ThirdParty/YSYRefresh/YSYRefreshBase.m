@@ -32,7 +32,7 @@
     // 自动调整view的宽度，保证左边距和右边距不变
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     // 透明背景
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor whiteColor];
 }
 /**
  系统自动调用

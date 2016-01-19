@@ -52,7 +52,7 @@
     // default
     self.contentView.backgroundColor = [UIColor ysy_convertHexToRGB:@"232A30"];
     self.backgroundView.backgroundColor = [UIColor ysy_convertHexToRGB:@"232A30"];
-    self.textLabel.backgroundColor = [UIColor clearColor];
+    self.textLabel.backgroundColor = [UIColor whiteColor];
     // select
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
     self.selectedBackgroundView.backgroundColor = [UIColor ysy_convertHexToRGB:@"1B2228"];
@@ -60,7 +60,7 @@
     // customer accessoryView
     self.mAccessBtn = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setBackgroundColor:[UIColor clearColor]];
+        [btn setBackgroundColor:[UIColor whiteColor]];
         [btn addTarget:self action:@selector(accessAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {

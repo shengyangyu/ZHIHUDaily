@@ -20,9 +20,9 @@
         }
     }
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.backgroundView.backgroundColor = [UIColor clearColor];
-    self.contentView.backgroundColor = [UIColor clearColor];
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundView.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor whiteColor];
     return self;
 }
 
