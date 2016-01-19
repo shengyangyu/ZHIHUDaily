@@ -60,7 +60,7 @@
     // customer accessoryView
     self.mAccessBtn = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setBackgroundColor:[UIColor whiteColor]];
+        [btn setBackgroundColor:[UIColor clearColor]];
         [btn addTarget:self action:@selector(accessAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
