@@ -45,8 +45,8 @@ UIKIT_EXTERN const CGFloat kRollScale;// 拖动系数
 @interface YSYAutoRollHeadView : YSYRollBaseView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                  observeView:(UIScrollView *)oView;
+                  observeView:(nullable UIScrollView *)oView;
 
-@property (nonatomic, strong) UIScrollView *mObserveView;
+@property (nonatomic, strong) UIScrollView * _Nullable mObserveView;
 
 @end

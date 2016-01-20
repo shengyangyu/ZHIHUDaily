@@ -15,6 +15,7 @@
 #import "YSYNavigationView.h"
 #import "YSYSectionHeadView.h"
 #import "YSYAutoRollHeadView.h"
+#import "YSYRefreshHeader.h"
 
 #define NAVBAR_CHANGE_POINT 50
 
@@ -33,7 +34,10 @@
 @property (nonatomic, copy) NSString *mDate;
 // top head
 @property (nonatomic, strong) YSYAutoRollHeadView *mTopHead;
+// 默认状态栏高度
+@property (nonatomic, assign) CGFloat mStatusHeight;
 
+@property (nonatomic, strong) YSYRefreshHeader *mShowHead;
 @end
 
 @implementation YSYMainVC
@@ -46,6 +50,7 @@
 
 - (instancetype)init {
     self = [super init];
+    _mStatusHeight = [UIDevice statusBarHeight];
     _mLayouts = [NSMutableArray new];
     _mDates = [NSMutableArray new];
     return self;
@@ -56,7 +61,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self setUI];
-    [self requestForIndex:-1];
+    [self requestForIndex:-1 completion:nil];
 }
 
 - (void)setUI {
@@ -75,22 +80,38 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             // 请求
             typeof(weakSelf) __strong strongSelf = weakSelf;
-            [strongSelf requestForIndex:(1)];
+            [strongSelf requestForIndex:(1) completion:nil];
         });
     };
     // 顶部循环滚动
     [self.view addSubview:self.mTopHead];
     // navi
     [self.view addSubview:self.naviView];
+    // refresh head
+    self.mShowHead = [[YSYRefreshHeader alloc] initWithSuperView:self.view];
+    // __weak __typeof(self)weakSelf = self;
+    self.mShowHead.startBlock = ^() {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf requestForIndex:-1 completion:^(BOOL finished) {
+            if (finished) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [strongSelf.mShowHead endRefresh];
+                });
+            }
+        }];
+    };
 }
 
 #pragma mark - request data
-- (NSURLSessionDataTask *)requestForIndex:(u_int64_t)index {
+- (NSURLSessionDataTask *)requestForIndex:(u_int64_t)index completion:(void (^)(BOOL finished))completion{
     // 刷新首页
     if (index == -1) {
         return [ThemeMainModel themesLateWithBlock:^(ThemeMainModel *themes, NSError *error) {
             // 数据为空或失败
             if (!themes || error) {
+                if (completion) {
+                    completion(YES);
+                }
                 return ;
             }
             // 成功
@@ -115,6 +136,9 @@
                     // 顶部
                     if (themes.top_stories.count) {
                         self.mTopHead.dataArrays = [NSArray arrayWithArray:themes.top_stories];
+                    }
+                    if (completion) {
+                        completion(YES);
                     }
                 });
             });
@@ -243,12 +267,13 @@
     
     if (scrollView == self.mTypeTable) {
         UIColor * color = [UIColor ysy_convertHexToRGB:@"00AFF5"];
-        CGFloat offsetY = scrollView.contentOffset.y;
+        CGFloat offsetY = scrollView.contentOffset.y+self.mStatusHeight;
         if (offsetY > 0) {
             CGFloat alpha = MIN(1, offsetY / _mNaviHeight);
             [self.naviView.mBackgroundView setBackgroundColor:[color colorWithAlphaComponent:alpha]];
         } else {
             [self.naviView.mBackgroundView setBackgroundColor:[color colorWithAlphaComponent:0]];
+            scrollView.contentOffset = CGPointMake(0, -self.mStatusHeight);
         }
     }
 }

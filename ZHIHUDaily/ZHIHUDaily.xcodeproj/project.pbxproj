@@ -34,6 +34,7 @@
 		D36BE1F91C1E642200580A1E /* YSYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE1F81C1E642200580A1E /* YSYTableViewCell.m */; };
 		D36BE2061C1EC5AC00580A1E /* ThemeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */; };
 		D36BE2091C1EC5CD00580A1E /* YSYThemeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */; };
+		D3703D971C4F59F90064053D /* YSYRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3703D961C4F59F90064053D /* YSYRefreshHeader.m */; };
 		D3743EF81C1A5F7A00A222BB /* YSYCustomerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */; };
 		D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFC1C1AA00B00A222BB /* YSY_HttpRequest.m */; };
 		D3743F001C1AA07500A222BB /* YSY_NetWorkManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3743EFF1C1AA07500A222BB /* YSY_NetWorkManage.m */; };
@@ -107,6 +108,8 @@
 		D36BE2051C1EC5AC00580A1E /* ThemeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeListCell.m; sourceTree = "<group>"; };
 		D36BE2071C1EC5CD00580A1E /* YSYThemeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYThemeListVC.h; sourceTree = "<group>"; };
 		D36BE2081C1EC5CD00580A1E /* YSYThemeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYThemeListVC.m; sourceTree = "<group>"; };
+		D3703D951C4F59F90064053D /* YSYRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYRefreshHeader.h; sourceTree = "<group>"; };
+		D3703D961C4F59F90064053D /* YSYRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYRefreshHeader.m; sourceTree = "<group>"; };
 		D3743EF61C1A5F7A00A222BB /* YSYCustomerBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSYCustomerBtn.h; sourceTree = "<group>"; };
 		D3743EF71C1A5F7A00A222BB /* YSYCustomerBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSYCustomerBtn.m; sourceTree = "<group>"; };
 		D3743EFB1C1AA00B00A222BB /* YSY_HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSY_HttpRequest.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				D35C267D1C23DFC80014ED48 /* YSYRefreshConst.m */,
 				D35C267F1C23EEFD0014ED48 /* YSYRefreshFoot.h */,
 				D35C26801C23EEFD0014ED48 /* YSYRefreshFoot.m */,
+				D3703D951C4F59F90064053D /* YSYRefreshHeader.h */,
+				D3703D961C4F59F90064053D /* YSYRefreshHeader.m */,
 				D35B7B0C1C2D0E55003F5901 /* YSYRefreshFooter.h */,
 				D35B7B0D1C2D0E55003F5901 /* YSYRefreshFooter.m */,
 			);
@@ -620,6 +625,7 @@
 				D3650F781C465ADC00E6510C /* ThemeMainModel.m in Sources */,
 				D375C35C1C1822750040E03E /* UIColor+YSYCategory.m in Sources */,
 				D39C0A851C31226300FE71B1 /* DetailModel.m in Sources */,
+				D3703D971C4F59F90064053D /* YSYRefreshHeader.m in Sources */,
 				D34F958B1C3BC0DC00D05482 /* YSYControl.m in Sources */,
 				D36BE2091C1EC5CD00580A1E /* YSYThemeListVC.m in Sources */,
 				D3743EFD1C1AA00B00A222BB /* YSY_HttpRequest.m in Sources */,

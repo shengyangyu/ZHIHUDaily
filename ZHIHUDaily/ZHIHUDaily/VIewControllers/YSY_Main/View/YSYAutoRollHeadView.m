@@ -430,7 +430,7 @@ const CGFloat kRollScale = 0.5f;
 @implementation YSYAutoRollHeadView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                  observeView:(UIScrollView *)oView {
+                  observeView:(nullable UIScrollView *)oView {
     
     self = [super initWithFrame:frame];
     if (self) {
@@ -438,11 +438,13 @@ const CGFloat kRollScale = 0.5f;
         _mOriginHeight = frame.size.height;
         _mOriginWidth = frame.size.width;
         _mStatusHeight = [UIDevice statusBarHeight];
-        _mObserveView = oView;
-        [_mObserveView addObserver:self
-                forKeyPath:@"contentOffset"
-                   options:NSKeyValueObservingOptionNew
-                   context:nil];
+        if (oView) {
+            _mObserveView = oView;
+            [_mObserveView addObserver:self
+                            forKeyPath:@"contentOffset"
+                               options:NSKeyValueObservingOptionNew
+                               context:nil];
+        }
     }
     return self;
 }
