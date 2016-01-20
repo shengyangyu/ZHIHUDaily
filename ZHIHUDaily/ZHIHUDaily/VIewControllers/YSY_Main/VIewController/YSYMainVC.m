@@ -255,7 +255,7 @@
 #pragma mark -did select
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ThemeStories *tData = ((ThemeListLayout *)_mLayouts[indexPath.row][indexPath.row]).stories;
+    ThemeStories *tData = ((ThemeListLayout *)_mLayouts[indexPath.section][indexPath.row]).stories;
     DetailViewModel *tModel = [[DetailViewModel alloc] init];
     tModel.mModelID = tData.mID;
     YSYThemeDetailVC *detail = [[YSYThemeDetailVC alloc] initWithModel:tModel];

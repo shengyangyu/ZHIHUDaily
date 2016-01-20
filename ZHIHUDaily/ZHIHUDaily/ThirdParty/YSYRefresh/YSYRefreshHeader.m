@@ -129,8 +129,10 @@ static CGFloat kRefreshHeight = 100.0f;
 
 - (void)panAction:(UIPanGestureRecognizer *)sender {
     
-    // 刷新控件显示中 返回
-    if (self.mShowView.isShowing) {
+    // 刷新控件显示中
+    // 没有到达顶部
+    // 返回
+    if (self.mShowView.isShowing && self.isScrollTop) {
         return;
     }
     // 开始
