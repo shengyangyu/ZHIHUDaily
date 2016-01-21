@@ -8,6 +8,87 @@
 
 #import "YSYRefreshHeader.h"
 
+
+#pragma mark -
+#pragma mark YSYShowLayer
+
+#define kCenterY (self.frame.size.height/2)
+#define kRadius  10
+#define kSpace    1
+#define kLineLength 30
+#define kDegree M_PI/3
+
+@implementation YSYShowLayer
+
+- (void)drawInContext:(CGContextRef)ctx {
+    
+    [super drawInContext:ctx];
+    
+    UIGraphicsPushContext(ctx);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    // 开始绘制
+    //arrowPath
+    UIBezierPath *arrowPath = [UIBezierPath bezierPath];
+    //Path 2
+    UIBezierPath *curvePath2 = [UIBezierPath bezierPath];
+    curvePath2.lineCapStyle = kCGLineCapRound;
+    curvePath2.lineJoinStyle = kCGLineJoinRound;
+    curvePath2.lineWidth = 2.0f;
+    if (self.mProgress <= 0.5) {
+        CGPoint pointA = CGPointMake(self.frame.size.width/2+kRadius, 2*self.mProgress * (kCenterY + kSpace - kLineLength));
+        CGPoint pointB = CGPointMake(self.frame.size.width/2+kRadius,kLineLength + 2*self.mProgress*(kCenterY + kSpace - kLineLength));
+        [curvePath2 moveToPoint:pointA];
+        [curvePath2 addLineToPoint:pointB];
+        //arrow
+        [arrowPath moveToPoint:pointB];
+        [arrowPath addLineToPoint:CGPointMake(pointB.x + 3*(cosf(kDegree)), pointB.y - 3*(sinf(kDegree)))];
+        [curvePath2 appendPath:arrowPath];
+    }
+    if (self.mProgress > 0.5) {
+        [curvePath2 moveToPoint:CGPointMake(self.frame.size.width/2+kRadius, kCenterY + kSpace - kLineLength + kLineLength*(self.mProgress-0.5)*2)];
+        [curvePath2 addLineToPoint:CGPointMake(self.frame.size.width/2+kRadius, kCenterY + kSpace)];
+        [curvePath2 addArcWithCenter:CGPointMake(self.frame.size.width/2, (kCenterY+kSpace)) radius:kRadius startAngle:0 endAngle:(M_PI*9/10)*(self.mProgress-0.5)*2 clockwise:YES];
+        //arrow
+        [arrowPath moveToPoint:curvePath2.currentPoint];
+        [arrowPath addLineToPoint:CGPointMake(curvePath2.currentPoint.x + 3*(cosf(kDegree - ((M_PI*9/10) * (self.mProgress-0.5)*2))), curvePath2.currentPoint.y - 3*(sinf(kDegree - ((M_PI*9/10) * (self.mProgress-0.5)*2))))];
+        [curvePath2 appendPath:arrowPath];
+    }
+    
+    CGContextSaveGState(context);
+    CGContextRestoreGState(context);
+    
+    [[UIColor blackColor] setStroke];
+    [arrowPath  stroke];
+    [curvePath2 stroke];
+    
+    UIGraphicsPopContext();
+}
+
+#pragma mark Help Method
+- (CGPoint)getMiddlePointWithPoint1:(CGPoint)point1
+                             point2:(CGPoint)point2 {
+    
+    CGFloat middle_x = (point1.x + point2.x)/2;
+    CGFloat middle_y = (point1.y + point2.y)/2;
+    return CGPointMake(middle_x, middle_y);
+}
+
+- (CGFloat)getDistanceWithPoint1:(CGPoint)point1
+                          point2:(CGPoint)point2 {
+    
+    return sqrtf(pow(fabs(point1.x - point2.x), 2) + pow(fabs(point1.y - point2.y), 2));
+}
+
+#pragma mark setter getter
+- (void)setMProgress:(CGFloat)mProgress {
+    _mProgress = mProgress;
+    [self setNeedsDisplay];
+}
+
+@end
+
+
+
 #pragma mark -
 #pragma mark YSYShowHeader
 
@@ -18,6 +99,8 @@ const CGFloat kShowHeaderSize = 50.0f;
 
 // 显示中属性
 @property (nonatomic, assign ,readwrite) BOOL isShowing;
+// 转圈圈
+@property (nonatomic, strong) YSYShowLayer *mLayer;
 //
 @property (nonatomic, strong) UILabel *lab;
 
@@ -46,9 +129,10 @@ const CGFloat kShowHeaderSize = 50.0f;
         self.layer.shadowColor = [UIColor grayColor].CGColor;
         self.layer.shadowOffset = CGSizeMake(2,2);
         self.layer.shadowOpacity = 0.9;
-        
-        [self.lab setHidden:YES];
-        [self addSubview:self.lab];
+        // 圈圈
+        [self.layer addSublayer:self.mLayer];
+        //[self.lab setHidden:YES];
+        //[self addSubview:self.lab];
     }
     return self;
 }
@@ -61,6 +145,17 @@ const CGFloat kShowHeaderSize = 50.0f;
         _lab.textAlignment = NSTextAlignmentCenter;
     }
     return _lab;
+}
+
+- (YSYShowLayer *)mLayer {
+    if (!_mLayer) {
+        _mLayer = [YSYShowLayer layer];
+        _mLayer.frame = self.bounds;
+        _mLayer.contentsScale = [UIScreen mainScreen].scale;
+        _mLayer.mProgress = 0.0f;
+        [_mLayer setNeedsDisplay];
+    }
+    return _mLayer;
 }
 
 #pragma mark action
@@ -187,6 +282,8 @@ static CGFloat kRefreshHeight = 100.0f;
         [self.mShowView setAlpha:progress/kRefreshHeight];
         self.mShowView.ysy_top = MIN(progress-CGRectGetHeight(self.mShowView.frame), kRefreshHeight);
     }
+    // 进度
+    self.mShowView.mLayer.mProgress = progress/kRefreshHeight;
 }
 
 - (void)startRefresh {

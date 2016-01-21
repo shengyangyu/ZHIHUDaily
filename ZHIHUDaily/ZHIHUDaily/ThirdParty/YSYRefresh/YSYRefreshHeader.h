@@ -7,9 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
+
+/**
+ * 刷新基础组件
+ */
+@interface YSYShowLayer : CALayer
+
+// 显示进度
+@property (nonatomic, assign) CGFloat mProgress;
+
+@end
 
 UIKIT_EXTERN const CGFloat kShowHeaderSize;
-
+/**
+ * 刷新View
+ */
 @interface YSYShowHeader : UIView
 
 // 显示中属性
@@ -21,6 +35,9 @@ UIKIT_EXTERN const CGFloat kShowHeaderSize;
 
 @end
 
+/**
+ * 刷新控制器
+ */
 @interface YSYRefreshHeader : NSObject
 
 // 定义回调
