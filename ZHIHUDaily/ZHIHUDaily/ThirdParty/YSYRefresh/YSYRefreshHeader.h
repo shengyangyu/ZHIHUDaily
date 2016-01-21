@@ -28,10 +28,9 @@ typedef void(^YSYStartBlock)();
 typedef BOOL(^YSYEndBlock)();
 @property (nonatomic, copy) YSYStartBlock startBlock;
 @property (nonatomic, copy) YSYEndBlock endBlock;
-// 在顶部
-@property (nonatomic, assign) BOOL isScrollTop;
 // 初始化
-- (instancetype)initWithSuperView:(UIView *)sView;
+- (instancetype)initWithSuperView:(UIView *)superView
+                   withScrollView:(UIScrollView *)scrollView;
 // 开始刷新
 - (void)startRefresh;
 // 结束刷新

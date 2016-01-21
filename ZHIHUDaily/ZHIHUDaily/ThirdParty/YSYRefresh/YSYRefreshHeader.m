@@ -40,8 +40,13 @@ const CGFloat kShowHeaderSize = 50.0f;
     self = [super init];
     if (self) {
         self.frame = CGRectMake((__MainScreen_Width-kShowHeaderSize)/2, -kShowHeaderSize, kShowHeaderSize, kShowHeaderSize);
+        // 外观设置
         self.backgroundColor = [UIColor yellowColor];
         self.layer.cornerRadius = kShowHeaderSize/2;
+        self.layer.shadowColor = [UIColor grayColor].CGColor;
+        self.layer.shadowOffset = CGSizeMake(2,2);
+        self.layer.shadowOpacity = 0.9;
+        
         [self.lab setHidden:YES];
         [self addSubview:self.lab];
     }
@@ -85,11 +90,15 @@ const CGFloat kShowHeaderSize = 50.0f;
 
 // 父View
 @property (nonatomic, weak) UIView *mSuperView;
+// 父视图滚动view
+@property (nonatomic, weak) UIScrollView *mScrollView;
 // 刷新View
 @property (nonatomic, strong) YSYShowHeader *mShowView;
 // 控制属性
-@property (nonatomic, assign) BOOL isDragging;
+@property (nonatomic, assign) BOOL mIsScrollToTop;
 @property (nonatomic, assign) CGFloat mDragOffset;
+// 默认状态栏高度
+@property (nonatomic, assign) CGFloat mStatusHeight;
 
 @end
 
@@ -98,16 +107,28 @@ static CGFloat kRefreshHeight = 100.0f;
 
 @implementation YSYRefreshHeader
 
-- (instancetype)initWithSuperView:(UIView *)sView {
+- (instancetype)initWithSuperView:(UIView *)superView
+                   withScrollView:(UIScrollView *)scrollView {
+    
     self = [super init];
     if (self) {
-        _mSuperView = sView;
+        _mSuperView = superView;
+        _mStatusHeight = [UIDevice statusBarHeight];
         // 添加手势监听
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
         pan.delegate = self;
         [self.mSuperView addGestureRecognizer:pan];
         // 添加刷新控件
         [self.mSuperView addSubview:self.mShowView];
+        // 添加scrollView监听
+        _mIsScrollToTop = NO;
+        if (scrollView) {
+            _mScrollView = scrollView;
+            [_mScrollView addObserver:self
+                           forKeyPath:@"contentOffset"
+                              options:NSKeyValueObservingOptionNew
+                              context:nil];
+        }
     }
     return self;
 }
@@ -129,51 +150,49 @@ static CGFloat kRefreshHeight = 100.0f;
 
 - (void)panAction:(UIPanGestureRecognizer *)sender {
     
-    // 刷新控件显示中
-    // 没有到达顶部
+    // 刷新控件显示中、没有到达顶部
     // 返回
-    if (self.mShowView.isShowing && self.isScrollTop) {
+    if (self.mShowView.isShowing || !self.mIsScrollToTop) {
         return;
     }
-    // 开始
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"StateBegan");
-        self.isDragging = YES;
-        self.mDragOffset = 0.0f;
-    }
-    // 改变
-    else if (sender.state == UIGestureRecognizerStateChanged) {
-        NSLog(@"StateChanged");
-        CGPoint mLocation = [sender translationInView:self.mSuperView];
+    if (sender.state == UIGestureRecognizerStateChanged) {
+        CGPoint mLocation=[sender translationInView:self.mSuperView];
         // 往下拉
-        if (mLocation.y > 0 && self.isDragging) {
-            [self showProgress:MIN(mLocation.y,kRefreshHeight*1.4)];
+        if (mLocation.y > 0 && self.mIsScrollToTop) {
             self.mDragOffset = MAX(self.mDragOffset, mLocation.y);
+            [self showProgress:MIN(mLocation.y,kRefreshHeight*1.4) withAnimation:NO];
         }
     }
     // 结束
-    else {
-        NSLog(@"StateEnd");
-        self.isDragging = NO;
+    else if (sender.state == UIGestureRecognizerStateEnded){
         if (self.mDragOffset >= kRefreshHeight*1.4) {
             [self startRefresh];
         }
         else {
-            [self showProgress:0.0f];
+            [self endRefresh];
         }
     }
 }
 
-- (void)showProgress:(CGFloat)progress {
-    
-    [self.mShowView setAlpha:progress/kRefreshHeight];
-    self.mShowView.ysy_top = MIN(progress-CGRectGetHeight(self.mShowView.frame), kRefreshHeight);
+- (void)showProgress:(CGFloat)progress
+       withAnimation:(BOOL)isAnimation {
+   
+    if (isAnimation) {
+        [UIView animateWithDuration:0.35 animations:^{
+            [self.mShowView setAlpha:progress/kRefreshHeight];
+            self.mShowView.ysy_top = MIN(progress-CGRectGetHeight(self.mShowView.frame), kRefreshHeight);
+        }];
+    }
+    else {
+        [self.mShowView setAlpha:progress/kRefreshHeight];
+        self.mShowView.ysy_top = MIN(progress-CGRectGetHeight(self.mShowView.frame), kRefreshHeight);
+    }
 }
 
 - (void)startRefresh {
     
-    [self showProgress:kRefreshHeight];
     [self.mShowView showAnimation];
+    [self showProgress:kRefreshHeight withAnimation:YES];
     
     if (self.startBlock) {
         self.startBlock();
@@ -182,11 +201,36 @@ static CGFloat kRefreshHeight = 100.0f;
 
 - (void)endRefresh {
     
-    [self showProgress:0.0f];
     [self.mShowView dismissAnimation];
+    [self showProgress:0.0f withAnimation:YES];
     
     if (self.endBlock) {
         self.endBlock(YES);
+    }
+}
+
+#pragma mark 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context {
+    
+    UIScrollView *scrollView = object;
+    CGFloat offSetY = (scrollView.contentOffset.y+_mStatusHeight);
+    // 到顶了
+    if (offSetY == 0) {
+        self.mIsScrollToTop = YES;
+    }
+    else {
+        self.mIsScrollToTop = NO;
+        self.mDragOffset = 0.0f;
+    }
+}
+
+- (void)dealloc {
+    if (_mScrollView) {
+        [_mScrollView removeObserver:self
+                          forKeyPath:@"contentOffset"];
     }
 }
 

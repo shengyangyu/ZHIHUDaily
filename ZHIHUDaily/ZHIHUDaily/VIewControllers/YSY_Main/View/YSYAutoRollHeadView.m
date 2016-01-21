@@ -430,7 +430,7 @@ const CGFloat kRollScale = 0.5f;
 @implementation YSYAutoRollHeadView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                  observeView:(nullable UIScrollView *)oView {
+                  observeView:(UIScrollView *)oView {
     
     self = [super initWithFrame:frame];
     if (self) {

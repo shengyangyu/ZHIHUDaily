@@ -88,13 +88,13 @@
     // navi
     [self.view addSubview:self.naviView];
     // refresh head
-    self.mShowHead = [[YSYRefreshHeader alloc] initWithSuperView:self.view];
+    self.mShowHead = [[YSYRefreshHeader alloc] initWithSuperView:self.view withScrollView:self.mTypeTable];
     // __weak __typeof(self)weakSelf = self;
     self.mShowHead.startBlock = ^() {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf requestForIndex:-1 completion:^(BOOL finished) {
             if (finished) {
-                dispatch_async(dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [strongSelf.mShowHead endRefresh];
                 });
             }
