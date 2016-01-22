@@ -27,7 +27,7 @@ UIKIT_EXTERN const CGFloat kShowHeaderSize;
 @interface YSYShowHeader : UIView
 
 // 显示中属性
-@property (nonatomic, assign ,readonly) BOOL isShowing;
+@property (nonatomic, assign ,readonly) BOOL mIsShowing;
 // 显示动画
 - (void)showAnimation;
 // 结束动画

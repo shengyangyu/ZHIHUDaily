@@ -84,7 +84,7 @@
         });
     };
     // 顶部循环滚动
-    [self.view addSubview:self.mTopHead];
+    //[self.view addSubview:self.mTopHead];
     // navi
     [self.view addSubview:self.naviView];
     // refresh head

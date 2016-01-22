@@ -98,7 +98,7 @@ const CGFloat kShowHeaderSize = 50.0f;
 @interface YSYShowHeader ()
 
 // 显示中属性
-@property (nonatomic, assign ,readwrite) BOOL isShowing;
+@property (nonatomic, assign ,readwrite) BOOL mIsShowing;
 // 转圈圈
 @property (nonatomic, strong) YSYShowLayer *mLayer;
 //
@@ -167,13 +167,13 @@ const CGFloat kShowHeaderSize = 50.0f;
     anima.repeatCount = HUGE_VALF;
     anima.duration = 1.5f;
     [self.lab.layer addAnimation:anima forKey:@"rotateAnimation"];
-    self.isShowing = YES;
+    self.mIsShowing = YES;
 }
 
 - (void)dismissAnimation {
     [self.lab.layer removeAnimationForKey:@"rotateAnimation"];
     [self.lab setHidden:YES];
-    self.isShowing = NO;
+    self.mIsShowing = NO;
 }
 
 @end
@@ -181,7 +181,7 @@ const CGFloat kShowHeaderSize = 50.0f;
 #pragma mark -
 #pragma mark YSYRefreshHeader
 
-@interface YSYRefreshHeader ()<UIGestureRecognizerDelegate>
+@interface YSYRefreshHeader ()<UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
 // 父View
 @property (nonatomic, weak) UIView *mSuperView;
@@ -192,6 +192,7 @@ const CGFloat kShowHeaderSize = 50.0f;
 // 控制属性
 @property (nonatomic, assign) BOOL mIsScrollToTop;
 @property (nonatomic, assign) CGFloat mDragOffset;
+@property (nonatomic, strong) UIPanGestureRecognizer *mPan;
 // 默认状态栏高度
 @property (nonatomic, assign) CGFloat mStatusHeight;
 
@@ -210,9 +211,9 @@ static CGFloat kRefreshHeight = 100.0f;
         _mSuperView = superView;
         _mStatusHeight = [UIDevice statusBarHeight];
         // 添加手势监听
-        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
-        pan.delegate = self;
-        [self.mSuperView addGestureRecognizer:pan];
+        _mPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+        _mPan.delegate = self;
+        [self.mSuperView addGestureRecognizer:_mPan];
         // 添加刷新控件
         [self.mSuperView addSubview:self.mShowView];
         // 添加scrollView监听
@@ -240,26 +241,30 @@ static CGFloat kRefreshHeight = 100.0f;
 #pragma mark UIPanGestureRecognizer
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     
+    NSLog(@"gestureRecognizer:%@,otherGestureRecognizer%@",gestureRecognizer.view,otherGestureRecognizer.view);
     return YES;
 }
 
 - (void)panAction:(UIPanGestureRecognizer *)sender {
-    
+    //NSLog(@"panAction");
     // 刷新控件显示中、没有到达顶部
     // 返回
-    if (self.mShowView.isShowing || !self.mIsScrollToTop) {
+    if (self.mShowView.mIsShowing || !self.mIsScrollToTop) {
         return;
     }
     if (sender.state == UIGestureRecognizerStateChanged) {
+        //self.mScrollView.userInteractionEnabled = NO;
         CGPoint mLocation=[sender translationInView:self.mSuperView];
         // 往下拉
         if (mLocation.y > 0 && self.mIsScrollToTop) {
             self.mDragOffset = MAX(self.mDragOffset, mLocation.y);
+            // 增加
             [self showProgress:MIN(mLocation.y,kRefreshHeight*1.4) withAnimation:NO];
         }
     }
     // 结束
-    else if (sender.state == UIGestureRecognizerStateEnded){
+    else if (sender.state == UIGestureRecognizerStateEnded) {
+        //self.mScrollView.userInteractionEnabled = YES;
         if (self.mDragOffset >= kRefreshHeight*1.4) {
             [self startRefresh];
         }
@@ -312,6 +317,7 @@ static CGFloat kRefreshHeight = 100.0f;
                         change:(NSDictionary<NSString *,id> *)change
                        context:(void *)context {
     
+    //NSLog(@"observeValueForKeyPath");
     UIScrollView *scrollView = object;
     CGFloat offSetY = (scrollView.contentOffset.y+_mStatusHeight);
     // 到顶了
@@ -321,6 +327,10 @@ static CGFloat kRefreshHeight = 100.0f;
     else {
         self.mIsScrollToTop = NO;
         self.mDragOffset = 0.0f;
+        if (self.mShowView.alpha > 0) {
+            //scrollView.contentOffset = CGPointMake(0, offSetY-_mStatusHeight);
+            [self.mScrollView resignFirstResponder];
+        }
     }
 }
 
