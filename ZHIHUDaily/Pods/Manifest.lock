@@ -28,6 +28,7 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
+  - YSYRefreshKit (0.0.2)
   - YYModel (0.9.0)
   - YYText (0.9.13)
   - YYWebImage (0.9.11)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture (= 1.1)
   - Masonry (~> 0.6)
   - MMDrawerController (~> 0.5.7)
+  - YSYRefreshKit (~> 0.0.2)
   - YYModel (~> 0.9)
   - YYText (~> 0.9)
   - YYWebImage (~> 0.9)
@@ -46,6 +48,7 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
+  YSYRefreshKit: 13da30676c3acbf743cef28615f87a14d4439087
   YYModel: e6725042af0ebd67804f7a2246db1f264b333fc1
   YYText: e4895163da8c6f1b405c3fbf65a6c781596a5d27
   YYWebImage: a65b28461dc63d3b84de7c06ea0fbc4d46cdcd16

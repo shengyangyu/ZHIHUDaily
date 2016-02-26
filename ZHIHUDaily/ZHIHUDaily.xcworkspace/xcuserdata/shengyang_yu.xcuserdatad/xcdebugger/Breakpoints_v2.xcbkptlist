@@ -118,7 +118,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZHIHUDaily/VIewControllers/YSY_Main/View/YSYAutoRollHeadView.m"
@@ -150,16 +150,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZHIHUDaily/ThirdParty/YSYRefresh/YSYRefreshHeader.m"
-            timestampString = "475140852.953714"
+            filePath = "Pods/MMDrawerController/MMDrawerController/MMDrawerController.m"
+            timestampString = "478170508.708585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            startingLineNumber = "1014"
+            endingLineNumber = "1014"
+            landmarkName = "-panGestureCallback:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/MMDrawerController/MMDrawerController/MMDrawerController.m"
+            timestampString = "478171352.559717"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1361"
+            endingLineNumber = "1361"
+            landmarkName = "-possibleOpenGestureModesForGestureRecognizer:withTouch:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1EA22F64AE08D2C37F1CD2C2'
-               BlueprintName = 'FDFullscreenPopGesture'
+               BlueprintIdentifier = '0DAAC142C945D593DAC317DA'
+               BlueprintName = 'YSYRefreshKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libFDFullscreenPopGesture.a'>
+               BuildableName = 'libYSYRefreshKit.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

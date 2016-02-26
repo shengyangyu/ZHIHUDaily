@@ -15,7 +15,6 @@
 #import "YSYNavigationView.h"
 #import "YSYSectionHeadView.h"
 #import "YSYAutoRollHeadView.h"
-#import "YSYRefreshHeader.h"
 
 #define NAVBAR_CHANGE_POINT 50
 
@@ -36,8 +35,9 @@
 @property (nonatomic, strong) YSYAutoRollHeadView *mTopHead;
 // 默认状态栏高度
 @property (nonatomic, assign) CGFloat mStatusHeight;
+// 刷新控件
+@property (nonatomic, strong) YSYRefreshKit *mShowHead;
 
-@property (nonatomic, strong) YSYRefreshHeader *mShowHead;
 @end
 
 @implementation YSYMainVC
@@ -72,7 +72,7 @@
     // 给一个标识符，告诉tableView要创建哪个类
     [self.mTypeTable registerClass:[ThemeListCell class] forCellReuseIdentifier:NSStringFromClass([ThemeListCell class])];
     [self.mTypeTable registerClass:[YSYSectionHeadView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([YSYSectionHeadView class])];
-    // 加载更多
+    // refresh foot
     mFoot = [[YSYRefreshFooter alloc] initFooterWithFrame:CGRectZero withSuper:self.mTypeTable];
     typeof(self) __weak weakSelf = self;
     mFoot.beginBlock = ^(){
@@ -84,11 +84,12 @@
         });
     };
     // 顶部循环滚动
-    //[self.view addSubview:self.mTopHead];
+    [self.view addSubview:self.mTopHead];
     // navi
     [self.view addSubview:self.naviView];
     // refresh head
-    self.mShowHead = [[YSYRefreshHeader alloc] initWithSuperView:self.view withScrollView:self.mTypeTable];
+    self.mShowHead = [[YSYRefreshKit alloc] initWithSuperView:self.view withScrollView:self.mTypeTable];
+    self.mShowHead.mStatusHeight = self.mStatusHeight;
     // __weak __typeof(self)weakSelf = self;
     self.mShowHead.startBlock = ^() {
         __strong __typeof(weakSelf)strongSelf = weakSelf;

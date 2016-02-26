@@ -10,6 +10,7 @@
 #define YSYHeader_h
 
 /**** file path ****/
+#import <YSYRefreshKit/YSYRefreshKit.h>
 #import <Masonry/Masonry.h>
 #import <YYText/YYText.h>
 #import <YYModel/YYModel.h>
